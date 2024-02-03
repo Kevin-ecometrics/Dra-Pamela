@@ -1,0 +1,35 @@
+---
+import "@fontsource/prata";
+import Card from "./UI/Card.astro";
+---
+
+<section class="px-8">
+  <div>
+    <h1 class="text-[#798672] text-center text-5xl font-prata font-normal">
+      Más información
+    </h1>
+    <div class="flex flex-col md:flex-row justify-center my-12 items-center md:items-stretch ">
+        <Card
+        title="Secretos de una Rinoplastia Exitosa."
+        text="Desde la personalización de cada detalle hasta la armonización facial, este blog te guiará a través de los secretos detrás de una rinoplastia que transforma y eleva tu belleza."
+        image="/fotoblog.png"
+      />
+      <Card
+        title="Mirada Renovada: Blefaroplastia y sus Beneficios "
+        text="Este blog explora cómo este procedimiento puede rejuvenecer tu mirada, eliminando años de cansancio y resaltando la expresión natural de tus ojos. Descubre cómo una mirada renovada puede transformar tu apariencia y elevar tu confianza."
+        image="/fotoblog.png"
+      />
+      <Card
+        title="La Ciencia del Rejuvenecimiento Facial: Tratamientos No Quirúrgicos "
+        text="Descubre cómo puedes lograr una apariencia fresca y natural sin pasar por el quirófano.  Desde rellenos dérmicos hasta terapias con láser, este blog desentrañará la ciencia detrás del rejuvenecimiento facial sin intervenciones invasivas."
+        image="/fotoblog.png"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .font-prata {
+    font-family: "Prata", serif;
+  }
+</style>
