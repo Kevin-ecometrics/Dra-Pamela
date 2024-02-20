@@ -1,3 +1,8 @@
+---
+import banner from "@assets/banner.png"
+import { Image } from "astro:assets"
+---
+
 <section>
-  <img src="/banner.png" class="w-screen md:h-auto h-48 object-cover" alt="" />
+  <Image src={banner} class="w-screen md:h-auto h-48 object-cover" title=hero-image alt="hero-image" />
 </section>

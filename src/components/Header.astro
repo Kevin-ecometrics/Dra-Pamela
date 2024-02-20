@@ -1,6 +1,10 @@
 ---
 import "@fontsource/italiana";
 import "@fontsource/poiret-one";
+import { Image } from "astro:assets";
+import logo from "@assets/logo_nav.png"
+import whatsApp from "@assets/whatsapp.svg"
+import hero from "@assets/image_hero.png"
 ---
 
 <header class="bg-[#798672] text-white">
@@ -11,7 +15,7 @@ import "@fontsource/poiret-one";
     <ul
       class="flex justify-between items-center [&>a]:text-2xl font-medium text-xl px-24"
     >
-      <li><img src="/logo_nav.png" alt="" /></li>
+      <li><Image title=logo src={logo} alt="logo" /></li>
       <!-- <li><a href="/">Home</a></li>
       <li><a href="/">Contact</a></li>
       <li><a href="/">Blog</a></li>
@@ -22,8 +26,9 @@ import "@fontsource/poiret-one";
       target="_blank"
       rel="noopener noreferrer"
       href="https://wa.me/+526644468960/?text=Quiero obtener mas información sobre sus servicios."
+      title="whatsapp function"
      >
-        <li class="flex items-center gap-2"><img src="/whatsapp.svg" alt="" />WhatsApp</li>
+        <li class="flex items-center gap-2"><Image src={whatsApp} alt="whatsapp-icon" title="whatsapp-icon" />WhatsApp</li>
       </a>
     </ul>
   </nav>
@@ -44,7 +49,7 @@ import "@fontsource/poiret-one";
       >
     </div>
     <div>
-      <img src="/image_hero.png" alt="" />
+      <Image src={hero} alt="image-hero" title="image-hero" />
     </div>
   </section>
 </header>

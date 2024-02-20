@@ -1,6 +1,9 @@
 ---
 import "@fontsource/prata";
 import "@fontsource/poppins";
+import { Image } from "astro:assets";
+import mail from "@assets/mail.svg";
+import phone from  "@assets/phone.svg";
 ---
 
 <section class="flex justify-center items-center flex-col my-12">
@@ -40,12 +43,12 @@ import "@fontsource/poppins";
   </form>
   <div class="font-poppins font-light flex flex-col md:flex-row gap-8 my-12">
     <div class="flex gap-2 items-center">
-        <img src="/mail.svg" class="size-8" alt="">
-        <span class="font-poppins font-light">pacientes@doctorapamelaperez.com</span>
+        <Image title="mail-icon" src={mail} class="size-8" alt="mail-icon"/>
+        <h1 class="font-poppins font-light">pacientes@doctorapamelaperez.com</h1>
     </div>
     <div class="flex items-center justify-center">
-        <img src="/phone.svg" class="size-8" alt="">
-        <span class="font-poppins font-light">664 446 8960</span>
+        <Image src={phone} title="phone-icon"  class="size-8" alt="phone-icon"/>
+        <span class="font-poppins font-light ">664 446 8960</span>
     </div>
   </div>
 </section>

@@ -9,12 +9,14 @@ import "@fontsource/poppins/600.css";
 import "@fontsource/poppins/700.css";
 import "@fontsource/poppins/800.css";
 import "@fontsource/poppins/900.css";
+import { Image } from "astro:assets";
+import AboutImage from "@assets/about_image.png";
 ---
 
 <section class="bg-white flex justify-center">
   <div class="gap-4 grid grid-cols-1 md:grid-cols-2 pt-12">
     <div>
-      <img src="/about_image.png" alt="" />
+      <Image src={AboutImage} title="Dra Pamela Perez" alt="Dra Pamela Perez" />
     </div>
     <div class="md:w-[500px] px-4 md:px-0 text-justify">
       <h1 class="text-[#798672] text-center md:text-start text-3xl md:text-5xl font-prata">Dra. Pamela Perez</h1>

@@ -1,12 +1,13 @@
 ---
-const { title, text, image } = Astro.props
+const { title, text, image, titleImage } = Astro.props
 import "@fontsource/poppins"; 
+import { Image } from "astro:assets";
 ---
 
     <div>
-        <img class="rounded-t-lg" src={image} alt="" />
+        <Image class="rounded-t-lg" src={image} title={titleImage} alt="card-image" />
         <div class="py-5 w-[350px] px-2">
-            <p class="mb-2 text-lg md:text-2xl font-semibold text-[#6C5545] font-poppins">{title}</h4>
+            <p class="mb-2 text-lg md:text-2xl font-semibold text-[#6C5545] font-poppins">{title}</p>
             <p class="mb-3 font-light text-gray-500 font-poppinsk">{text}</p>
         </div>
     </div>

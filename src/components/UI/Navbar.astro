@@ -1,0 +1,34 @@
+---
+import { Image } from "astro:assets";
+import logo from "@assets/logo_nav.png";
+import whatsApp from "@assets/whatsapp.svg"
+---
+
+<main class="bg-[#798672] text-white">
+  <span class="flex justify-center md:justify-end px-0 md:px-24 py-4"
+    >Mn - St: 8:00am - 9:00pm Sn: Closed</span
+  >
+  <nav class="hidden md:block">
+    <ul
+      class="flex justify-between items-center [&>a]:text-2xl font-medium text-xl px-24"
+    >
+      <li><Image src={logo} title=logo alt="logo" /></li>
+      <!-- <li><a href="/">Home</a></li>
+            <li><a href="/">Contact</a></li>
+            <li><a href="/">Blog</a></li>
+            <li><a href="/">Gallery</a></li>
+            <li><a href="/">Service</a></li>
+            <li><a href="/">Appointment</a></li> -->
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://wa.me/+526644468960/?text=Quiero obtener mas información sobre sus servicios."
+        title="whatsapp function"
+      >
+        <li class="flex items-center gap-2">
+          <Image src={whatsApp} title=whatsapp-icon alt="whatsapp-icon" />WhatsApp
+        </li>
+      </a>
+    </ul>
+  </nav>
+</main>
