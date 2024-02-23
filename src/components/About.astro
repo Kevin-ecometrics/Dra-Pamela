@@ -11,12 +11,18 @@ import "@fontsource/poppins/800.css";
 import "@fontsource/poppins/900.css";
 import { Image } from "astro:assets";
 import AboutImage from "@assets/about_image.png";
+import Fondo from "@assets/background_image4.png";
+import Fondo2 from "@assets/background_image5.png";
+import Fondo3 from "@assets/background_image6.png";
 ---
 
 <section class="bg-white flex justify-center">
   <div class="gap-4 grid grid-cols-1 md:grid-cols-2 pt-12">
     <div>
-      <Image src={AboutImage} title="Dra Pamela Perez" alt="Dra Pamela Perez" />
+      <Image src={AboutImage} title="Dra Pamela Perez" alt="Dra Pamela Perez" class="flex justify-center items-center" />
+      <Image src={Fondo} title="Dra Pamela Perez" alt="Dra Pamela Perez" class="absolute top-[700px] left-0 hidden md:inline-block" />
+      <Image src={Fondo2} title="Dra Pamela Perez" alt="Dra Pamela Perez" class="absolute top-[700px] right-0 hidden md:inline-block" />
+      <Image src={Fondo3} title="Dra Pamela Perez" alt="Dra Pamela Perez" class="absolute top-[1300px] left-0 hidden md:inline-block" />
     </div>
     <div class="md:w-[500px] px-4 md:px-0 text-justify">
       <h1 class="text-[#798672] text-center md:text-start text-3xl md:text-5xl font-prata">Dra. Pamela Perez</h1>
