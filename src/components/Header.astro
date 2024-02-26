@@ -10,36 +10,38 @@ import fondo2 from "@assets/background_image2.png"
 import fondo3 from "@assets/background_image3.png"
 ---
 
-<header class="bg-[#798672] text-white md:h-[600px]">
-  <span class="flex justify-center md:justify-end px-0 md:px-[280px] py-4"
-    >Mn - St: 8:00am - 9:00pm Sn: Closed</span
-  >
-  <nav class="hidden md:block">
-    <ul
-      class="flex justify-between px-[280px] items-center [&>a]:text-2xl font-medium text-xl"
+<main class="bg-[#798672] text-white md:h-[600px]">
+  <div class="md:absolute z-10 w-full">
+    <span class="flex justify-center md:justify-end px-0 md:px-[280px] py-4"
+      >Mn - St: 8:00am - 9:00pm Sn: Closed</span
     >
-      <li><Image title=logo src={logo} alt="logo" /></li>
-      <!-- <li><a href="/">Home</a></li>
-      <li><a href="/">Contact</a></li>
-      <li><a href="/">Blog</a></li>
-      <li><a href="/">Gallery</a></li>
-      <li><a href="/">Service</a></li>
-      <li><a href="/">Appointment</a></li> -->
-      <a
-      target="_blank"
-      rel="noopener noreferrer"
-      href="https://wa.me/+526644468960/?text=Quiero obtener mas información sobre sus servicios."
-      title="whatsapp function"
-     >
-        <li class="flex items-center gap-2"><Image src={whatsApp} alt="whatsapp-icon" title="whatsapp-icon" />WhatsApp</li>
-      </a>
-    </ul>
-  </nav>
+    <nav class="hidden md:block">
+      <ul
+        class="flex justify-between px-[280px] items-center [&>a]:text-2xl font-medium text-xl"
+      >
+        <li><Image title=logo src={logo} alt="logo" /></li>
+        <!-- <li><a href="/">Home</a></li>
+        <li><a href="/">Contact</a></li>
+        <li><a href="/">Blog</a></li>
+        <li><a href="/">Gallery</a></li>
+        <li><a href="/">Service</a></li>
+        <li><a href="/">Appointment</a></li> -->
+        <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://wa.me/+526644468960/?text=Quiero obtener mas información sobre sus servicios."
+        title="whatsapp function"
+       >
+          <li class="flex items-center gap-2"><Image src={whatsApp} alt="whatsapp-icon" title="whatsapp-icon" />WhatsApp</li>
+        </a>
+      </ul>
+    </nav>
+  </div>
   <section
     class="text-justify w-screen items-center md:px-0 flex flex-col md:flex-row"
   >
   <Image class="hidden md:block" src={fondo} alt="background-image" title="background-image" />
-    <div class="flex-col flex px-2 md:px-24">
+    <div class="flex-col flex px-2 md:px-24 md:my-48">
       <span
         class="font-italiana text-2xl text-center md:text-start md:text-8xl"
       >
@@ -54,11 +56,11 @@ import fondo3 from "@assets/background_image3.png"
     </div>
     <div>
       <Image src={fondo2} alt="background-image2" title="background-image2" class="z-10 right-0 absolute hidden md:block" />
-      <Image src={fondo3} alt="background-image3" title="background-image3" class="z-0 right-16 top-96 absolute hidden md:block" />
-      <Image src={hero} alt="image-hero" title="image-hero" class="w-[610px] relative"/>
+      <Image src={fondo3} alt="background-image3" title="background-image3" class="z-0 right-32 top-[400px] absolute hidden md:block" />
+      <Image src={hero} alt="image-hero" title="image-hero" class="w-[840px] relative"/>
     </div>
   </section>
-</header>
+</main>
 
 <style>
   .font-italiana {
