@@ -1,0 +1,43 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 0;
+    grid-template-areas:
+        "Foto1 Foto1 Foto2 Foto3"
+        "Foto1 Foto1 Foto4 Foto5"
+        "Foto6 Foto7 Foto9 Foto9"
+        "Foto8 Foto8 Foto9 Foto9";
+}
+
+.Foto1 { grid-area: Foto1; }
+.Foto2 { grid-area: Foto2; }
+.Foto3 { grid-area: Foto3; }
+.Foto4 { grid-area: Foto4; }
+.Foto5 { grid-area: Foto5; }
+.Foto6 { grid-area: Foto6; }
+.Foto7 { grid-area: Foto7; }
+.Foto8 { grid-area: Foto8; }
+.Foto9 { grid-area: Foto9; }
+
+.compare-slider-container {
+    padding: 8px;
+}
+
+/* Estilos para dispositivos con pantalla de hasta 768px de ancho */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(9, 1fr);
+        grid-template-areas:
+            "Foto1"
+            "Foto2"
+            "Foto3"
+            "Foto4"
+            "Foto5"
+            "Foto6"
+            "Foto7"
+            "Foto8"
+            "Foto9";
+    }
+}

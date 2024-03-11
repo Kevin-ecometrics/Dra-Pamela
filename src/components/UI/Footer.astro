@@ -3,8 +3,58 @@ import { Image } from "astro:assets";
 import logo from "@assets/logo_nav.png";
 ---
 
-<footer class="bg-[#798672] md:h-96">
-    <div class="flex justify-center md:justify-start md:px-80 py-16">
-        <Image src={logo} title=logo alt="logo" >
+<footer class="bg-[#798672]">
+  <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+    <div
+      class="flex justify-center items-center flex-col md:justify-between md:flex-row gap-8 md:gap-2"
+    >
+      <Image src={logo} title="footer-icon" alt="footer-icon" />
+      <ul
+        class="flex flex-col md:flex-row items-center mb-6 text-xl font-medium text-white gap-3"
+      >
+        <li>
+          <a href="/" class="hover:underline me-4 md:me-6 font-italiana"
+            >Inicio</a
+          >
+        </li>
+        <li>
+          <a href="/gallery" class="hover:underline me-4 md:me-6 font-italiana"
+            >Galeria</a
+          >
+        </li>
+        <li>
+          <a href="/" class="hover:underline me-4 md:me-6 font-italiana"
+            >Servicios</a
+          >
+        </li>
+        <li>
+          <a href="/" class="hover:underline me-4 md:me-6 font-italiana"
+            >Contacto</a
+          >
+        </li>
+        <li>
+          <a href="/" class="hover:underline me-4 md:me-6 font-italiana">Blog</a
+          >
+        </li>
+        <li>
+          <a href="/" class="hover:underline me-4 md:me-6 font-italiana"
+            >Agendar Cita</a
+          >
+        </li>
+      </ul>
     </div>
+    <div class="py-8">
+      <hr />
+      <p class="text-center text-white text-2xl mt-8 font-italiana">
+        Todos los derechos reservados por Dra. Pamela Perez 2024 ©.
+        <a class="hover:underline" href="http://www.doctorapamelaperez.com/"
+          >doctorapamelaperez.com</a
+        >
+        {" "} está desarrollado por
+        <a class="hover:underline" href="https://ecommetrica.com/">
+          ecometrica.com
+        </a>
+      </p>
+    </div>
+  </div>
 </footer>

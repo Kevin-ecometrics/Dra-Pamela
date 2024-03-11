@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import logo from "@assets/logo_nav.png";
-import whatsApp from "@assets/whatsapp.svg"
+import whatsApp from "@assets/whatsapp.svg";
 ---
 
 <main class="bg-[#798672] text-white">
@@ -12,7 +12,11 @@ import whatsApp from "@assets/whatsapp.svg"
     <ul
       class="flex justify-between items-center [&>a]:text-2xl font-medium text-xl px-24"
     >
-      <li><Image src={logo} title=logo alt="logo" /></li>
+      <li>
+        <a href="/">
+          <Image src={logo} title="logo" alt="logo" />
+        </a>
+      </li>
       <!-- <li><a href="/">Home</a></li>
             <li><a href="/">Contact</a></li>
             <li><a href="/">Blog</a></li>
@@ -26,7 +30,11 @@ import whatsApp from "@assets/whatsapp.svg"
         title="whatsapp function"
       >
         <li class="flex items-center gap-2">
-          <Image src={whatsApp} title=whatsapp-icon alt="whatsapp-icon" />WhatsApp
+          <Image
+            src={whatsApp}
+            title="whatsapp-icon"
+            alt="whatsapp-icon"
+          />WhatsApp
         </li>
       </a>
     </ul>
