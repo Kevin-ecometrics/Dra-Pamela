@@ -12,14 +12,18 @@ import fondo3 from "@assets/background_image3.png";
 
 <main class="bg-[#798672] text-white">
   <span
-    class="flex justify-center md:justify-end px-0 font-poppins md:px-[280px] py-4"
+    class="flex justify-center md:justify-end px-4 font-poppins md:px-[280px] py-4"
     >Lunes - Sabado: 8:00 am - 9:00 pm Domingo: Cerrado</span
   >
   <nav class="hidden lg:block absolute w-screen z-50">
     <ul
       class="flex justify-between px-[280px] items-center [&>a]:text-2xl font-medium text-xl"
     >
-      <li><Image title="logo" src={logo} alt="logo" /></li>
+      <li>
+        <a href="/">
+          <Image title="logo" src={logo} alt="logo" />
+        </a>
+      </li>
       <!-- <li><a href="/">Home</a></li>
         <li><a href="/">Contact</a></li>
         <li><a href="/">Blog</a></li>
@@ -49,14 +53,14 @@ import fondo3 from "@assets/background_image3.png";
       <div class="px-4 flex flex-col md:py-24 md:ml-[30%] md:w-[100%]">
         <Image src={fondo} alt="fondo" title="fondo" class="absolute left-0" />
         <span
-          class="font-italiana text-2xl text-center mb-4 md:text-start md:text-6xl lg:text-7xl"
+          class="font-italiana text-2xl text-center md:text-start md:text-6xl lg:text-7xl"
         >
           RINOPLASTIA</span
         >
-        <span class="font-poiret text-2xl mb-4 md:text-5xl lg:text-6xl"
+        <span class="font-poiret text-2xl md:text-5xl lg:text-6xl"
           >Personalización absoluta.
         </span>
-        <span class="font-poiret text-md md:text-2xl lg:text-4xl"
+        <span class="font-poiret text-md md:text-2xl lg:text-3xl"
           >Redefine la armonía de tu rostro, resalta tu singularidad con un
           aspecto natural. Refinamiento del perfil y armonización estética del
           conjunto nasal.
@@ -73,14 +77,14 @@ import fondo3 from "@assets/background_image3.png";
           src={fondo3}
           alt="background-image3"
           title="background-image3"
-          class="z-0 right-32 top-[390px] absolute hidden md:block"
+          class="z-0 right-32 top-[310px] absolute hidden md:block"
         />
 
         <Image
           src={hero}
           alt="image-hero"
           title="image-hero"
-          class="md:absolute right-0 top-0 h-[570px]"
+          class="md:absolute right-0 top-0 h-[487px]"
         />
       </div>
     </div>
