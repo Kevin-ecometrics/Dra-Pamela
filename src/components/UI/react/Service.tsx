@@ -146,12 +146,18 @@ const ServicePage = 8;
 
 const ServiceComponent: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(2);
+  const [servicesPerPage, setServicesPerPage] = useState(ServicePage);
+  const [showAll, setShowAll] = useState(false); // Nuevo estado para rastrear si se están mostrando todos los servicios
   const totalPages = Math.ceil(services.length / ServicePage);
 
-  const currentServices = services.slice(
-    (currentPage - 1) * ServicePage,
-    currentPage * ServicePage
-  );
+  const currentServices =
+    servicesPerPage === services.length
+      ? services
+      : services.slice(
+          (currentPage - 1) * servicesPerPage,
+          currentPage * servicesPerPage
+        );
+
   return (
     <main>
       <section
@@ -243,9 +249,27 @@ const ServiceComponent: React.FC = () => {
                       .getElementById("services")
                       ?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-[#798672] rounded-e-lg hover:bg-gray-100 hover:text-gray-700 "
+                  className="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-[#798672] hover:bg-gray-100 hover:text-gray-700 "
                 >
                   Siguiente
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    setCurrentPage(1);
+                    if (showAll) {
+                      setServicesPerPage(ServicePage); // Vuelve a la paginación normal
+                    } else {
+                      setServicesPerPage(services.length); // Muestra todos los servicios en una página
+                    }
+                    setShowAll(!showAll); // Cambia el estado de showAll
+                  }}
+                  className="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-[#798672] rounded-e-lg hover:bg-gray-100 hover:text-gray-700 "
+                >
+                  {showAll
+                    ? "Filtrar elementos"
+                    : "Mostrar todos los servicios"}
                 </button>
               </li>
             </ul>
