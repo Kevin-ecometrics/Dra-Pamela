@@ -7,6 +7,7 @@ export default {
         prata: ["Prata", "serif"],
         poppins: ["Poppins", "sans-serif"],
         italiana: ["Italiana", "serif"],
+        poiretone: ["Poiret One", "cursive"],
       },
     },
   },

@@ -2,9 +2,9 @@
 import "@fontsource/italiana";
 import "@fontsource/poiret-one";
 import { Image } from "astro:assets";
-import logo from "@assets/logo_nav.png";
-import whatsApp from "@assets/whatsapp.svg";
-import hero from "@assets/image_hero.png";
+import logo from "@assets/Dra. Pamela especialista en cirugia de cabeza cuello y otorrinolaringologia.png";
+import whatsApp from "@assets/Contactanos via WhatsApp para agendar con la Doctora Pamela.svg";
+import hero from "@assets/Resultados funcionales y esteticos realizados por la Doctora Pamela postoperatorios de los pacientes.png";
 import fondo from "@assets/background_image.png";
 import fondo2 from "@assets/background_image2.png";
 import fondo3 from "@assets/background_image3.png";
@@ -20,27 +20,26 @@ import fondo3 from "@assets/background_image3.png";
       class="flex justify-between px-[280px] items-center [&>a]:text-2xl font-medium text-xl"
     >
       <li>
-        <a href="/">
-          <Image title="logo" src={logo} alt="logo" />
+        <a href="/" title="Doctora pamela | Personalización Absoluta">
+          <Image
+            title="La Doctora Pamela garantiza procedimientos con enfoque integral en la cirugía facial y otorrinolaringología "
+            src={logo}
+            alt="La Doctora Pamela garantiza procedimientos con enfoque integral en la cirugía facial y otorrinolaringología "
+          />
         </a>
       </li>
-      <!-- <li><a href="/">Home</a></li>
-        <li><a href="/">Contact</a></li>
-        <li><a href="/">Blog</a></li>
-        <li><a href="/">Gallery</a></li>
-        <li><a href="/">Service</a></li>
-        <li><a href="/">Appointment</a></li> -->
+
       <a
         target="_blank"
         rel="noopener noreferrer"
         href="https://wa.me/+526644468960/?text=Quiero obtener mas información sobre sus servicios."
-        title="whatsapp function"
+        title="Dra Pamela | Contacto vía WhatsApp"
       >
         <li class="flex items-center gap-2">
           <Image
             src={whatsApp}
-            alt="whatsapp-icon"
-            title="whatsapp-icon"
+            alt="Contáctanos vía WhatsApp al 663 439 5024 Con gusto la Doctora Pamela te atenderá"
+            title="Contáctanos vía WhatsApp al 663 439 5024 Con gusto la Doctora Pamela te atenderá "
           />WhatsApp
         </li>
       </a>
@@ -51,7 +50,12 @@ import fondo3 from "@assets/background_image3.png";
   >
     <div class="grid grid-cols-1 md:grid-cols-2 px-4">
       <div class="px-4 flex flex-col md:py-24 md:ml-[30%] md:w-[100%]">
-        <Image src={fondo} alt="fondo" title="fondo" class="absolute left-0" />
+        <Image
+          src={fondo}
+          alt="Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral "
+          title="Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral "
+          class="absolute left-0"
+        />
         <span
           class="font-italiana text-2xl text-center md:text-start md:text-6xl lg:text-7xl"
         >
@@ -69,21 +73,21 @@ import fondo3 from "@assets/background_image3.png";
       <div class="">
         <Image
           src={fondo2}
-          alt="background-image2"
-          title="background-image2"
+          alt="Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral "
+          title="Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral "
           class="z-10 right-0 top-0 absolute hidden md:block"
         />
         <Image
           src={fondo3}
-          alt="background-image3"
-          title="background-image3"
+          alt="Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral "
+          title="Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral "
           class="z-0 right-32 top-[310px] absolute hidden md:block"
         />
 
         <Image
           src={hero}
-          alt="image-hero"
-          title="image-hero"
+          alt="Los resultados de la Doctora Pamela obtenidos armonizan la estructura facial, dan funcionalidad y realzan la belleza de los pacientes"
+          title="Los resultados de la Doctora Pamela obtenidos armonizan la estructura facial, dan funcionalidad y realzan la belleza de los pacientes"
           class="md:absolute right-0 top-0 h-[487px]"
         />
       </div>

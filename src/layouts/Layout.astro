@@ -1,6 +1,6 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -8,45 +8,96 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Dra Pamela Perez" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-		<link rel="apple-touch-icon image_src" href="/logo_nav.png">
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Conoce como trasformar tu apariencia y calidad de vida con la mejor especialista que combina tratamientos de vanguardia con técnica y precisión para brindarte resultados excepcionales "
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      href="/Dra. Pamela especialista en cirugia de cabeza cuello y otorrinolaringologia.png"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="keywords" content="Cirugía, Personalización, Bienestar" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://www.doctorapamelaperez.com/" />
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- Author -->
+    <meta name="author" content="Ecommetrica" />
+
+    <!-- Publisher -->
+    <link rel="publisher" href="https://ecommetrica.com" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.doctorapamelaperez.com/" />
+    <meta
+      property="og:title"
+      content="Descubre la nueva dimensión de belleza con resultados funcionales y naturales."
+    />
+    <meta
+      property="og:description"
+      content="Conoce como trasformar tu apariencia y calidad de vida con la mejor especialista que combina tratamientos de vanguardia con técnica y precisión para brindarte resultados excepcionales "
+    />
+    <meta
+      property="og:image"
+      content="/Dra. Pamela especialista en cirugia de cabeza cuello y otorrinolaringologia.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="http://www.doctorapamelaperez.com/" />
+    <meta
+      property="twitter:title"
+      content="Descubre la nueva dimensión de belleza con resultados funcionales y naturales."
+    />
+    <meta
+      property="twitter:description"
+      content="Conoce como trasformar tu apariencia y calidad de vida con la mejor especialista que combina tratamientos de vanguardia con técnica y precisión para brindarte resultados excepcionales "
+    />
+    <meta
+      property="twitter:image"
+      content="/Dra. Pamela especialista en cirugia de cabeza cuello y otorrinolaringologia.png"
+    />
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #fff;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New, 
-			monospace;
-	}
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+  html {
+    font-family: system-ui, sans-serif;
+    background: #fff;
+    background-size: 224px;
+  }
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
 </style>

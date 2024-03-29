@@ -1,0 +1,163 @@
+---
+import Medical from "@components/icons/serviceIcon";
+const services = [
+  {
+    id: 1,
+    title: "Rinoseptumplastia O Rinoplastia",
+    description:
+      "Cirugía de corrección de problemas nasales tanto funcionales como estéticos o cosméticos.",
+  },
+  {
+    id: 2,
+    title: "Blefaroplastia",
+    description:
+      "Cirugía de corrección de párpados superiores o inferiores por exceso de piel o grasa.",
+  },
+  {
+    id: 3,
+    title: "Liposuccion De Cuello Y Papada",
+    description:
+      "Cirugía de extracción de grasa localizada en el cuello y papada.",
+  },
+  {
+    id: 4,
+    title: "Mentoplastia",
+    description:
+      "Cirugía de colocación de implante en mentón para su aumento definitivo.",
+  },
+  {
+    id: 5,
+    title: "Bichectomia",
+    description:
+      "Extracción quirúrgica de las bolsas de bichat para redefinir el rostro.",
+  },
+  {
+    id: 6,
+    title: "Otoplastia",
+    description:
+      "Cirugía de orejas para corrección de deformidades o alteraciones.",
+  },
+  {
+    id: 7,
+    title: "Levantamiento De Temporal",
+    description:
+      "Cirugía de lifting de tercio medio para rejuvenecimiento facial si cicatrices visibles.",
+  },
+  {
+    id: 8,
+    title: "Levantamiento De Cejas",
+    description: "Cirugía de corrección de altura de cejas.",
+  },
+  {
+    id: 9,
+    title: "Levantamiento De Labio",
+    description:
+      "Cirugía para rejuvenecimiento de labios también llamada bullhorn lip lift.",
+  },
+  {
+    id: 10,
+    title: "Meloplastia",
+    description: "Resección de mucosa bucal para redefinir rostro.",
+  },
+  {
+    id: 11,
+    title: "Aplicacion De Botox",
+    description:
+      "Toxina botulínica que relaja la musculatura lo que da una relajación de las líneas de la expresión facial.",
+  },
+  {
+    id: 12,
+    title: "Acido Hialuronico En Labios",
+    description:
+      "Colocación para su aumento o definición, así como corrección de asimetrías visibles.",
+  },
+  {
+    id: 13,
+    title: "Armonizacion Facial",
+    description:
+      "Aplicación de ácido hialurónico o grasa en áreas que carecen de volumen para lograr las proporciones faciales ideales o más armónicas.",
+  },
+  {
+    id: 14,
+    title: "Perfilamiento Mandibular",
+    description:
+      "Colocación de ácido hialurónico o hidroxiapatita de calcio en mandíbula para su definición.",
+  },
+  {
+    id: 15,
+    title: "Acido Hialuronico En Pomulos",
+    description:
+      "Colocación para lograr elevar pómulo o evitar signos de envejecimiento.",
+  },
+  {
+    id: 16,
+    title: "Dermapen",
+    description:
+      "Micro agujas que penetran la piel logrando una luminosidad al rostro.",
+  },
+  {
+    id: 17,
+    title: "Tratamiento En Ojeras",
+    description:
+      "Colocación de NCTF por mesoterapia para lograr disminuir coloración y mejorar la transición del párpado.",
+  },
+  {
+    id: 18,
+    title: "Valoracion De Consulta De Otorrinolaringologia",
+    description: "",
+  },
+  {
+    id: 19,
+    title: "Injerto Con Grasa O Transferencia En Rostro",
+    description:
+      "Para redefinir los sitios de pérdida de grasa o mejorar las proporciones faciales.",
+  },
+];
+
+const { serviceName } = Astro.props;
+
+const currentService = services.find((s) => s.title === serviceName);
+
+if (!currentService) {
+  throw new Error(`No service found with name: ${serviceName}`);
+}
+---
+
+<main class="font-poppins px-4">
+  <section class="py-16">
+    <div class="text-center md:px-28 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div
+        role="status"
+        class="space-y-8 animate-pulse md:space-y-0 md:space-x-8 rtl:space-x-reverse md:flex md:items-center"
+      >
+        <div
+          class="flex items-center justify-center w-full h-48 bg-gray-200 rounded sm:w-96"
+        >
+          <svg
+            class="w-10 h-10 text-gray-400"
+            aria-hidden="true"
+            fill="currentColor"
+            viewBox="0 0 20 18"
+          >
+            <path
+              d="M18 0H2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm4.376 10.481A1 1 0 0 1 16 15H4a1 1 0 0 1-.895-1.447l3.5-7A1 1 0 0 1 7.468 6a.965.965 0 0 1 .9.5l2.775 4.757 1.546-1.887a1 1 0 0 1 1.618.1l2.541 4a1 1 0 0 1 .028 1.011Z"
+            ></path>
+          </svg>
+        </div>
+
+        <span class="sr-only">Loading...</span>
+      </div>
+      <div class="flex justify-center items-center flex-col">
+        <div class="flex items-center gap-2 mb-6">
+          <Medical />
+          <h2 class="text-[#798672] text-3xl font-bold">
+            Servicio: {currentService.title}
+          </h2>
+        </div>
+        <h2 class="text-2xl text-center">
+          {currentService.description}
+        </h2>
+      </div>
+    </div>
+  </section>
+</main>
