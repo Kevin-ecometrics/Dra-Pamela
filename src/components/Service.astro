@@ -140,21 +140,33 @@ if (!currentService) {
           ></path>
         </svg>
       </div>
-      <div class="flex items-center flex-col">
-        <div class="flex justify-center items-center gap-2 mb-6">
+      <div class="px-4 md:px-0">
+        <div class="gap-2 mb-6 flex items-center">
           <Medical />
           <h2 class="text-[#798672] text-3xl font-bold">
             Servicio: {currentService.title}
           </h2>
         </div>
         <hr class="w-full border-[#798672] border-2 mb-6" />
-        <h2 class="text-2xl text-center">
+        <h1 class="mb-2 text-3xl text-[#798672] font-bold">
+          Informacion sobre este servicio:
+        </h1>
+        <h2 class="text-2xl text-start mb-2">
           {currentService.description}
+        </h2>
+        <h1 class="mb-2 text-3xl text-[#798672] font-bold">Como trabajamos:</h1>
+        <h2 class="text-2xl text-start mb-4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
+          aliquid animi laboriosam voluptatum rem sed tenetur reiciendis atque
+          eligendi ullam, similique minus, alias corrupti dignissimos porro
+          ipsam nostrum velit? Quibusdam itaque adipisci ad atque fugiat!
         </h2>
       </div>
     </div>
 
-    <aside class="hidden md:block col-span-1 border border-black font-poppins">
+    <aside
+      class="hidden md:block col-span-1 bg-[#F8F9FC] border-[#798672] border-2 font-poppins"
+    >
       <h1
         class="text-center py-2 font-bold font-poppins uppercase text-[#798672]"
       >
