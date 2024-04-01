@@ -125,7 +125,7 @@ if (!currentService) {
 
 <main class="font-poppins px-4">
   <section class="py-16 grid grid-cols-1 md:grid-cols-3 gap-4">
-    <div class="col-span-2 w-[700px] mx-auto">
+    <div class="col-span-2 w-[700px] mx-auto animate-pulse">
       <div
         class="flex items-center justify-center mx-auto w-[700px] h-96 bg-gray-200 rounded mb-4"
       >
@@ -149,10 +149,14 @@ if (!currentService) {
         </div>
         <hr class="w-full border-[#798672] border-2 mb-6" />
         <h1 class="mb-2 text-3xl text-[#798672] font-bold">
-          Informacion sobre este servicio:
+          Descripcion sobre este servicio:
         </h1>
         <h2 class="text-2xl text-start mb-2">
-          {currentService.description}
+          {
+            currentService.description
+              ? currentService.description
+              : "Descripcion no disponible para este servicio."
+          }
         </h2>
         <h1 class="mb-2 text-3xl text-[#798672] font-bold">Como trabajamos:</h1>
         <h2 class="text-2xl text-start mb-4">
@@ -172,7 +176,7 @@ if (!currentService) {
       >
         Servicios
       </h1>
-      <hr class="border-black w-full" />
+      <hr class="border-[#798672] w-full border-1" />
       <ul>
         {
           services.map((service) => (
