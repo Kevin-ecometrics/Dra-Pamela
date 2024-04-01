@@ -124,40 +124,76 @@ if (!currentService) {
 ---
 
 <main class="font-poppins px-4">
-  <section class="py-16">
-    <div class="text-center md:px-28 grid grid-cols-1 md:grid-cols-2 gap-8">
+  <section class="py-16 grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="col-span-2 w-[700px] mx-auto">
       <div
-        role="status"
-        class="space-y-8 animate-pulse md:space-y-0 md:space-x-8 rtl:space-x-reverse md:flex md:items-center"
+        class="flex items-center justify-center mx-auto w-[700px] h-96 bg-gray-200 rounded mb-4"
       >
-        <div
-          class="flex items-center justify-center w-full h-48 bg-gray-200 rounded sm:w-96"
+        <svg
+          class="w-10 h-10 text-gray-400"
+          aria-hidden="true"
+          fill="currentColor"
+          viewBox="0 0 20 18"
         >
-          <svg
-            class="w-10 h-10 text-gray-400"
-            aria-hidden="true"
-            fill="currentColor"
-            viewBox="0 0 20 18"
-          >
-            <path
-              d="M18 0H2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm4.376 10.481A1 1 0 0 1 16 15H4a1 1 0 0 1-.895-1.447l3.5-7A1 1 0 0 1 7.468 6a.965.965 0 0 1 .9.5l2.775 4.757 1.546-1.887a1 1 0 0 1 1.618.1l2.541 4a1 1 0 0 1 .028 1.011Z"
-            ></path>
-          </svg>
-        </div>
-
-        <span class="sr-only">Loading...</span>
+          <path
+            d="M18 0H2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm4.376 10.481A1 1 0 0 1 16 15H4a1 1 0 0 1-.895-1.447l3.5-7A1 1 0 0 1 7.468 6a.965.965 0 0 1 .9.5l2.775 4.757 1.546-1.887a1 1 0 0 1 1.618.1l2.541 4a1 1 0 0 1 .028 1.011Z"
+          ></path>
+        </svg>
       </div>
-      <div class="flex justify-center items-center flex-col">
-        <div class="flex items-center gap-2 mb-6">
+      <div class="flex items-center flex-col">
+        <div class="flex justify-center items-center gap-2 mb-6">
           <Medical />
           <h2 class="text-[#798672] text-3xl font-bold">
             Servicio: {currentService.title}
           </h2>
         </div>
+        <hr class="w-full border-[#798672] border-2 mb-6" />
         <h2 class="text-2xl text-center">
           {currentService.description}
         </h2>
       </div>
     </div>
+
+    <aside class="hidden md:block col-span-1 border border-black font-poppins">
+      <h1
+        class="text-center py-2 font-bold font-poppins uppercase text-[#798672]"
+      >
+        Servicios
+      </h1>
+      <hr class="border-black w-full" />
+      <ul>
+        {
+          services.map((service) => (
+            <li class="mb-2 relative">
+              <a
+                class={`font-medium block py-1 w-full text-center group relative ${currentService.title === service.title ? "bg-[#798672] text-white" : ""}`}
+                href={`/services/${service.title.toLowerCase().replace(/ /g, "_")}`}
+                style="z-index: 1;"
+              >
+                <div
+                  class="absolute inset-0 bg-[#798672] transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-in-out"
+                  style="z-index: -1;"
+                />
+                <span class="group-hover:text-white">{service.title}</span>
+              </a>
+            </li>
+          ))
+        }
+        <li class="mb-2 relative">
+          <a
+            class="font-medium block py-1 w-full text-center group relative"
+            href="/services"
+            style="z-index: 1;"
+          >
+            <div
+              class="absolute inset-0 bg-[#798672] transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-in-out"
+              style="z-index: -1;"
+            >
+            </div>
+            <span class="group-hover:text-white">Regresar a los servicios</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
   </section>
 </main>
