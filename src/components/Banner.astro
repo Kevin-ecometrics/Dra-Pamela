@@ -1,13 +1,12 @@
 ---
-import banner from "@assets/Ejecucion precisa de una operacion de nariz realizada por la Doctora Pamela Perez.png";
 import { Image } from "astro:assets";
+import banner from "@assets/Ejecucion precisa de una operacion de nariz realizada por la Doctora Pamela Perez.png";
 ---
 
-<section>
-  <Image
-    src={banner}
-    class="w-screen md:h-auto h-48 object-cover"
-    title="La precisión en una operación de nariz logra un equilibro perfecto entre estética y función, en manos de la Doctora Pamela "
-    alt="La precisión en una operación de nariz logra un equilibro perfecto entre estética y función, en manos de la Doctora Pamela "
-  />
+<section class="relative z-10">
+  <Image src={banner} class="w-screen md:h-auto h-48 object-cover" alt="" />
+  <button
+    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#798672] text-white px-4 rounded-2xl py-2 font-semibold font-poppins text-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out hover:bg-[#6a6a6a]"
+    >Agenda ahora</button
+  >
 </section>

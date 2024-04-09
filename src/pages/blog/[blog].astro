@@ -1,0 +1,44 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Hero from "@components/UI/blog/Hero.astro";
+import Navbar from "@components/UI/blog/Navbar.astro";
+import Blog1 from "@components/UI/blog/Blog1.astro";
+
+export function getStaticPaths() {
+  return [
+    { params: { blog: "secretos-de-una-rinoplastia-exitosa" } },
+    { params: { blog: "mirada-renovada-blefaroplastia-y-sus-beneficios" } },
+    {
+      params: {
+        blog: "la-ciencia-del-rejuvenecimiento-facial-tratamientos-no-quirurgicos",
+      },
+    },
+  ];
+}
+
+const { blog } = Astro.params;
+const title = blog.replace(/-/g, " ");
+---
+
+<Layout title={`Blog de: ${blog}`}>
+  <Navbar />
+  <Hero className="bg-[#798672] h-64 flex justify-center items-center">
+    <h1
+      class="text-center text-white sm:text-3xl md:text-5xl lg:text-7xl font-prata"
+    >
+      Blog
+    </h1>
+  </Hero>
+  {
+    blog === "secretos-de-una-rinoplastia-exitosa" ? (
+      <Blog1 title={title} />
+    ) : blog === "mirada-renovada-blefaroplastia-y-sus-beneficios" ? (
+      title
+    ) : blog ===
+      "la-ciencia-del-rejuvenecimiento-facial-tratamientos-no-quirurgicos" ? (
+      title
+    ) : (
+      <script>window.location.href = "/404.html";</script>
+    )
+  }
+</Layout>
