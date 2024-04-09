@@ -1,0 +1,309 @@
+---
+import { Image } from "astro:assets";
+const { title } = Astro.props;
+import Fondo1 from "@assets/blog_image9.png";
+import Fondo2 from "@assets/background_image10.png";
+import Fondo3 from "@assets/background_image11.png";
+import Fondo4 from "@assets/background_image12.png";
+import Fondo5 from "@assets/background_image13.png";
+import Fondo6 from "@assets/background_image14.png";
+import Fondo7 from "@assets/background_image15.png";
+import Fondo8 from "@assets/background_image16.png";
+import Fondo10 from "@assets/blog_image10.png";
+import Fondo11 from "@assets/blog_image11.png";
+import Fondo12 from "@assets/blog_image12.png";
+---
+
+<Image
+  class="object-cover absolute translate-x-[1378px] hidden lg:block"
+  src={Fondo2}
+  alt="imagen de fondo"
+/>
+<Image
+  class="object-cover absolute translate-x-[50px] translate-y-0 z-0 hidden lg:block"
+  src={Fondo3}
+  alt="imagen de fondo"
+/>
+<Image
+  class="object-cover absolute lg:translate-x-[1410px] translate-y-[900px] hidden lg:block"
+  src={Fondo5}
+  alt="imagen de fondo"
+/>
+<Image
+  class="object-cover absolute lg:translate-x-0 translate-y-[450px] hidden lg:block"
+  src={Fondo8}
+  alt="imagen de fondo"
+/>
+<section class="flex flex-col md:w-[80%] w-full px-8 mx-auto">
+  <div class="grid grid-cols-1 lg:grid-cols-3">
+    <div class="col-span-1">
+      <Image
+        class="z-0 hidden translate-x-[-200px] h-[1000px] absolute lg:block"
+        src={Fondo1}
+        alt="imagen de fondo"
+        style="mask-image: linear-gradient(to bottom, black 85%, transparent);"
+      />
+    </div>
+    <div class="col-span-2 font-poppins z-10">
+      <h1
+        class="text-[#798672] uppercase font-prata font-normal text-center sm:text-xl md:text-4xl lg:text-6xl py-6"
+      >
+        {title}
+      </h1>
+      <p class="font-semibold mb-8 text-start">
+        Adéntrate en el universo de los tratamientos no quirúrgicos con la Dra.
+        Pamela Pérez. Desde rellenos dérmicos hasta terapias con láser, este
+        blog averigua la ciencia detrás del rejuvenecimiento facial sin
+        intervenciones invasivas. Descubre cómo puedes lograr una apariencia
+        fresca y natural sin pasar por el quirófano.
+      </p>
+      <p class="font-light mb-8 text-start">
+        Hay aspectos de nuestro rostro que solo necesitan detalles mínimos para
+        que se vean increíbles, te hablaremos de algunos procedimientos para
+        lograrlo.
+      </p>
+      <p class="text-start mb-8 text-xl text-[#798672] font-bold">
+        Labios bien perfilados y con volumen solo con: ácido hialurónico.
+      </p>
+      <p class="font-normal">
+        El ácido hialurónico es capaz de retener hasta 1000 veces su peso en
+        agua y evita que esta se evapore de esta forma mantiene su hidratación
+        en la piel
+      </p>
+
+      <p class="font-normal">
+        Si buscas que tus labios se vean más llenos, revitalizados e hidratados
+        definitivamente te vendría bien el relleno, es un retoque sutil en el
+        que buscamos el balance de tus labios con el resto de tu carita.
+      </p>
+
+      <p class="font-normal">
+        Si has notado que tus labios tienen sus contornos no tan rellenos o ves
+        una recesión de los bordes ya es momento de redefinirnos con el
+        perfilado de ácido hialurónico, si lo que buscas es recuperar la forma
+        de forma natural el perfilado es un arreglito perfecto.
+      </p>
+
+      <p class="font-normal mb-8">
+        Una de las ventajas del uso del ácido hialurónico es que nos dan
+        resultados inmediatos y sutiles brindando al labio una suave y radiante.
+      </p>
+
+      <p class="font-bold mb-12">
+        La duración de estos procedimientos es de 6 a 9 meses
+      </p>
+
+      <p class="font-bold mb-4">Es un procedimiento ambulatorio:</p>
+      <ul class="md:mb-16">
+        <li>-Vista de frente: Se valora si hay desviaciones.</li>
+        <li>
+          -Vista de perfil: Aquí la doctora valora la forma de tu nariz, su
+          proyección que hace referencia a lo que sobresale tu nariz de la cara.
+        </li>
+        <li>
+          -Vista basal: Se examina la simetría de las fosas nasales y la forma
+          de la punta nasal.
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<Image
+  class="object-cover absolute lg:translate-x-[-50px] translate-y-[650px] hidden lg:block"
+  src={Fondo6}
+  alt="imagen de fondo"
+/>
+<Image
+  class="object-cover absolute lg:translate-x-64 translate-y-[1000px] hidden lg:block rotate-180"
+  src={Fondo7}
+  alt="imagen de fondo"
+/>
+<section class="bg-[#F3EFEF] px-8 font-poppins">
+  <div class="grid grid-cols-1 lg:grid-cols-3 md:w-[80%] mx-auto">
+    <div class="col-span-2 py-8">
+      <h1 class="text-[#798672] text-2xl mb-4 font-bold">
+        Dermapen: Micro agujas que penetran la piel logrando una luminosidad en
+        tu rostro
+      </h1>
+      <p>
+        Este procedimiento ambulatorio consiste en utilizar el dispositivo
+        Dermapen que tiene forma de un lápiz, a través de una técnica con micro
+        agujas de titanio hacen micro perforaciones en tu piel debido
+        estimulando la elastina y la formación de colágeno.
+      </p>
+      <p class="mb-8">
+        Es un tratamiento que ayuda a reducir arrugas, cicatrices e
+        imperfecciones de la piel, se realiza con un anestésico tópico.
+      </p>
+      <h1 class="font-bold mb-4">
+        Además de rejuvenecer en que otros casos se utiliza:
+      </h1>
+      <ul class="mb-8">
+        <li>-Cicatrices quirúrgicas.</li>
+        <li>-Melasma o hiperpigmentación.</li>
+        <li>-Cicatrices de acné.</li>
+        <li>-Piel con envejecimiento debido al sol.</li>
+      </ul>
+      <h1 class="font-bold mb-4">Que debes saber antes de hacértelo:</h1>
+      <p class="mb-4">
+        Acude a una revisión para que la doctora inspeccione tu carita y te de
+        las indicaciones previas.
+      </p>
+      <h1 class="font-bold mb-4">Después del rejuvenecimiento:</h1>
+      <p class="mb-4">
+        Puede aparecer rojez y una ligera inflamación en la piel durante las 48
+        horas.
+      </p>
+      <h1 class="mb-4 font-bold">Después del procedimiento:</h1>
+      <p class="mb-4">
+        El tiempo de recuperación es de 1 semana, ello no quiere decir que estes
+        en completo reposo, nos referimos a tener más cuidados de los que
+        normalmente llevas.
+      </p>
+      <ul class="mb-4">
+        <li>-Evitar la exposición al sol durante los primeros días.</li>
+        <li>-Utilizar cremas y bloqueadores que la Doctora recomiende.</li>
+        <li>-No utilices fragancias.</li>
+        <li>-No tocar el área, para evitar irritaciones o infecciones.</li>
+        <li>-Procurar no utilizar maquillaje.</li>
+      </ul>
+      <p>
+        Después de dos semanas notaras como tu piel comienza a tener un tono más
+        unificado, como mejora la textura y como mejoran gradualmente los poros.
+        Tu piel tendrá una completa luminosidad y apariencia más joven.
+      </p>
+    </div>
+    <div class="col-span-1">
+      <Image
+        src={Fondo10}
+        alt="imagen de fondo"
+        class="h-[800px] hidden lg:block transform scale-x-[-1] translate-x-44"
+        style="mask-image: linear-gradient(to bottom, black 85%, transparent);"
+      />
+    </div>
+  </div>
+</section>
+<section class="flex flex-col md:w-[80%] w-full px-8 mx-auto">
+  <div class="grid grid-cols-1 lg:grid-cols-3 px-8 py-8">
+    <div class="col-span-1">
+      <Image
+        src={Fondo11}
+        alt="imagen de fondo"
+        style="mask-image: linear-gradient(to bottom, black 85%, transparent);"
+        class="hidden lg:block translate-x-[-250px]"
+      />
+    </div>
+    <div class="col-span-2">
+      <h1 class="text-[#798672] text-2xl font-bold mb-4">Rinomodelación</h1>
+      <p>
+        Es un procedimiento mínimamente invasivo, que tiene el objetivo de
+        remodelar y mejorar el perfil de la nariz si no tienes planeado
+        someterte a una cirugía de rinoplastia
+      </p>
+      <p class="mb-4">
+        Este procedimiento nos permite mejorar irregularidades en la parte sobre
+        todo superior de la nariz, este procedimiento se realizar con ácido
+        hialurónico.
+      </p>
+      <h1 class="font-bold mb-4">Como saber si eres candidato.</h1>
+      <p class="mb-4">
+        Para aplicarte cualquier procedimiento te recomendamos acudir a tu cita
+        de valoración, ya que no es para todos los tipos de nariz, se recomienda
+        para narices con alguna malformación en la parte superior. Siempre acude
+        a expertos, al ser una zona delicada una mala ejecución del
+        procedimiento puede ponerte en riesgo.
+      </p>
+      <h1 class="font-bold mb-4">Los cuidados post -aplicación.</h1>
+      <ul class="mb-8">
+        <li>-Evitar el ejercicio durante las primeras 48 hrs.</li>
+        <li>-No sauna.</li>
+        <li>-Evitar tocar la nariz.</li>
+        <li>-Procurar no utilizar lentes durante una semana.</li>
+        <li>-Dormir boca arriba.</li>
+      </ul>
+      <h1 class="mb-4 font-bold">Duración</h1>
+      <p class="mb-4">
+        Esta depende del organismo de cada persona, normalmente tiene una
+        duración de año.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="bg-[#F3EFEF] px-8 font-poppins">
+  <div class="grid grid-cols-1 py-8 lg:grid-cols-3 w-[80%] mx-auto">
+    <div class="col-span-2">
+      <Image
+        class="object-cover absolute lg:translate-x-[-200px] translate-y-0 hidden lg:block"
+        src={Fondo8}
+        alt="imagen de fondo"
+      />
+      <h1 class="mb-4 text-[#798672] text-2xl font-bold">
+        Terapia de estimulación de colágeno
+      </h1>
+      <p class="mb-4">
+        Te explicamos brevemente como los estimuladores mejoran la elasticidad,
+        calidad y aspecto general de tu rostro.
+      </p>
+      <p>
+        A partir de los 25 años hay una disminución en la producción de
+        colágeno. El colágeno es una proteína encargada de generar fibras muy
+        resistentes y flexibles se encuentran en numerosos tejidos de nuestro
+        cuerpo, esta proteína es importante para la elasticidad, firmeza y
+        tersura de la piel, entre los 28 y 30 años se empiezan a percibir más
+        arrugas a partir de los 40 los cambios son evidentes en cuanto a la
+        textura y calidad de la piel, disminuye progresivamente el volumen de
+        musculo y grasa en la cara provocando flacidez.
+      </p>
+      <p class="mb-8">
+        La terapia de estimulación de colágeno es ideal prevenir o mejorar las
+        condiciones de tu rostro. Tanto hombres como mujeres pueden someterse a
+        este tratamiento, siempre y cuando se encuentren con estado de salud
+        óptimo. Se aplican estos estimuladores, que son sustancias que entran a
+        tu rostro que estimula a tus células para generar más colágeno mejorando
+        la elasticidad y grosor de tu piel, dándole una apariencia joven.
+      </p>
+      <h1 class="font-bold mb-4">¿Cómo es el procedimiento?</h1>
+      <p class="mb-4">
+        Se coloca un anestésico utópico previo al procedimiento, posteriormente
+        se aplican inyecciones pequeñitas en el rostro para depositar el
+        producto en forma de abanico en la capa de la piel en donde se hayan las
+        células especializadas en la producción del colágeno. Es un
+        procedimiento que te permite retomar tus actividades, solo es necesario
+        tomar las indicaciones sugeridas por la Doctora.
+      </p>
+      <h1 class="font-bold mb-4">¿Cuándo empiezan a notarse los resultados?</h1>
+      <p class="mb-4">
+        Una vez este producto se asiente y empieza el proceso de producción de
+        colágeno, los resultados se comenzarán a notar a partir de 6 a 8 semana,
+        comenzarás a notar una piel luminosa, la flacidez se reducirá y las
+        arrugas superficiales se percibirán menos, todo con un aspecto natural.
+      </p>
+      <h1 class="font-bold mb-4">¿Cuánto dura el tratamiento?</h1>
+      <p>
+        De 2 a 3 meses, algunos factores que permiten prolongar los efectos son
+        llevar una rutina de cuidado de piel y evitar el sol directo.
+      </p>
+      <p>
+        Es un método muy simple y efectivo para recuperar el aspecto juvenil y
+        saludable de tu rostro.
+      </p>
+      <p class="mb-8">
+        Si te interesa realizarlo escríbenos para agendar tu cita. En cada
+        tratamiento que ofrecemos, buscamos no solo corregir aspectos estéticos,
+        sino también mejorar tu salud y vitalidad.
+      </p>
+      <h1 class="font-bold mb-4">
+        ¿Te interesa una cita de valoración? <span class="font-light"
+          >¡Contáctanos!</span
+        >
+      </h1>
+    </div>
+    <div class="col-span-1">
+      <Image
+        src={Fondo12}
+        alt="imagen de fondo"
+        class="md:h-[800px] translate-x-44 hidden lg:block"
+      />
+    </div>
+  </div>
+</section>

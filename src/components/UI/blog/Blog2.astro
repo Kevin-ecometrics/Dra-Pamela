@@ -1,0 +1,176 @@
+---
+import { Image } from "astro:assets";
+import Slider from "@components/UI/react/Slider";
+const { title } = Astro.props;
+import Fondo2 from "@assets/background_image10.png";
+import Fondo3 from "@assets/background_image11.png";
+import Fondo4 from "@assets/background_image12.png";
+import Fondo5 from "@assets/background_image13.png";
+import Fondo6 from "@assets/background_image14.png";
+import Fondo7 from "@assets/background_image15.png";
+import Antes from "@assets/blog_image5.png";
+import Despues from "@assets/blog_image6.png";
+import Fondo10 from "@assets/blog_image7.png";
+import Fondo11 from "@assets/blog_image8.png";
+---
+
+<Image src={Fondo3} alt="Image one" class="absolute hidden lg:block" />
+<Image
+  src={Fondo2}
+  alt="Image one"
+  class="absolute translate-x-[1370px] hidden lg:block"
+/>
+<div class="flex flex-col md:w-[50%] px-8 mx-auto">
+  <div class="flex justify-center items-center flex-col">
+    <div class="font-poppins">
+      <h1
+        class="text-[#798672] uppercase font-prata font-normal text-center sm:text-xl md:text-4xl lg:text-6xl py-6"
+      >
+        {title}
+      </h1>
+      <p class="font-semibold mb-8 text-start">
+        Descubre lo fascinante de la blefaroplastia con la Dra. Pamela Pérez.
+        Este blog explora cómo este procedimiento puede rejuvenecer tu mirada,
+        eliminando años de cansancio y resaltando la expresión natural de tus
+        ojos. Descubre cómo una mirada renovada puede transformar tu apariencia
+        y elevar tu confianza.
+      </p>
+      <p class="font-light mb-8 text-start">
+        Los ojos todo el tiempo nos comunican y con el paso del tiempo es
+        inevitable envejecer y que esta comunicación vaya teniendo un aspecto
+        diferente al igual que nuestro rostro. Con forme los años empezamos a
+        notar alteraciones como son:
+      </p>
+      <p class="font-normal text-start mb-8">
+        -La flacidez: Debido a que los músculos se debilitan, esto es más
+        notorio en la zona los ojos. Una flacidez considerable alrededor de los
+        ojos puede reducir la visión periférica, convirtiéndose en un problema
+        funcional y estético. Esto sucede alrededor de los 40 años, otros
+        aspectitos a considerar para saber si eres un candidato son rasgos
+        hereditarios ya que pueden influir en que requieras de este
+        procedimiento a una edad más temprana.
+      </p>
+      <p class="font-normal mb-8">
+        A continuación, te damos una breve lista de características que te
+        indican es tiempo de rejuvenecer esa mirada y la blefaroplastia es una
+        opción.
+      </p>
+      <ul class="mb-8 font-bold">
+        <li>-Bolsas o flacidez en parpados superiores.</li>
+        <li>
+          -Exceso de piel en los parpados que bloquea tu visión periférica.
+        </li>
+        <li>-Exceso de piel en parpados inferiores .</li>
+        <li>-Bolsas debajo de los ojos</li>
+      </ul>
+    </div>
+  </div>
+  <div class="flex justify-center items-center py-16">
+    <Image
+      src={Fondo4}
+      alt="Image one"
+      class="absolute translate-x-[-690px] translate-y-[-300px] hidden lg:block"
+    />
+    <Image
+      src={Fondo5}
+      alt="Image one"
+      class="absolute translate-x-[690px] translate-y-[-150px] hidden lg:block"
+    />
+
+    <Slider
+      imageOne={{ src: Antes.src, alt: "Image one" }}
+      imageTwo={{ src: Despues.src, alt: "Image two" }}
+      client:visible
+    />
+  </div>
+  <div class="flex font-poppins flex-col">
+    <Image
+      src={Fondo7}
+      alt="Image one"
+      class="absolute translate-x-[-400px] translate-y-64 hidden lg:block"
+    />
+    <Image
+      src={Fondo6}
+      alt="Image one"
+      class="absolute translate-x-[750px] translate-y-[-150px] hidden lg:block"
+    />
+    <p class="text-start mb-8">
+      A continuación, te compartimos las Preguntas frecuentes con las que los
+      pacientes han abordado a la Doctora Pamela Pérez.
+    </p>
+    <p class="mb-8">
+      Gracias a que es un procedimiento mínimamente invasivo, no hay nada de lo
+      que te debas preocupar. Creemos que es super importante corregir y
+      respetar la armonía facial. La zona de los ojos en una zona dedicada y muy
+      visible por ello se tiene que intervenir con manos expertas para no perder
+      la naturalidad de las facciones, pero a la vez devolver ese brillo y
+      juventud.
+    </p>
+    <p class="mb-4 font-bold">¿Qué se revisa en la primera consulta?</p>
+    <p class="mb-8">
+      Primero queremos que este procedimiento te haga sentir feliz y con ilusión
+      por ello se aborda una consulta de valoración, en ella inspeccionamos tu
+      rostro, y ojos con detalle, nos ayuda a identificar si requieres una
+      blefaroplastia superior, inferior o ambas. Buscamos brindarte información
+      de forma sencilla para seguir con este proceso. Posterior a ello se te
+      solicitan estudios generales.
+    </p>
+    <p class="font-bold mb-4">¿Que se hará exactamente?</p>
+    <p>
+      En una blefaroplastia superior: Se extirpa la piel sobrante en la parte
+      superior de tu parpadito, se realiza una sutura que siguiendo la línea del
+      pliegue de tu parpado se esconde y resulta imperceptible.
+    </p>
+    <p class="mb-8">
+      En una blefaroplastia inferior se elimina la parte sobrante de la piel
+      situada en el parpado inferior, conocidas como bolsas.
+    </p>
+    <p class="font-bold mb-4">¿Será muy doloroso?</p>
+    <p>
+      Tranquilo, es un procedimiento sencillo y sin dolor, los efectos
+      secundarios son una hinchazón y moretones pequeñitos en la zona de tus
+      ojos.
+    </p>
+    <p class="mb-8">
+      Puedes presentar visión un poco borrosa al principio y un poco de comezón
+      es algo de lo que no hay que preocuparse, tus parpaditos están sanando es
+      normal.
+    </p>
+    <p class="mb-4 font-bold">¿Cuánto tardan en verse los resultados?</p>
+    <p>
+      De 3 a 4 semanas puedes percibir los resultados, después de 8 semanas ya
+      los resultados son definitivos, asimismo se te asignaran citas de revisión
+      en las cuales se te explicará el proceso de sanación el cual te
+      encuentres.
+    </p>
+    <p>¿Cuándo podré volver al trabajo y mi vida cotidiana?</p>
+    <p>
+      Esto depende que se hayan seguido los cuidados post operatorios de forma
+      adecuada.
+    </p>
+    <p>
+      Posterior a una semana, claro sin realizar actividades físicas extenuantes
+      como deportes, levantar objetos pesados, llevando con rigorosa atención
+      las medidas de protección, del sol, no estresar tus ojos a computadoras,
+      tu celular, descansando bien, con la cabeza elevada, llevando hábitos
+      buenos evitando el consumo de alcohol fumar o vapear.
+    </p>
+    <p class="mb-4">
+      Una vez sanado los disfruta de esta versión más rejuvenecida.
+    </p>
+    <p class="mb-4">Confía tu nueva mirada en expertos en blefaroplastia</p>
+    <p class="mb-16">
+      Conoce más sobre rejuvenecer tu mirada con la Dra. Pamela Pérez.
+    </p>
+    <Image
+      src={Fondo10}
+      alt="Image one"
+      class="absolute translate-x-[-400px] translate-y-[545px] hidden lg:block"
+    />
+    <Image
+      src={Fondo11}
+      alt="Image one"
+      class="absolute translate-x-[800px] translate-y-[545px] hidden lg:block"
+    />
+  </div>
+</div>
