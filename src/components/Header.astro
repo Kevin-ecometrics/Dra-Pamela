@@ -8,12 +8,13 @@ import hero from "@assets/Resultados funcionales y esteticos realizados por la D
 import fondo from "@assets/background_image.png";
 import fondo2 from "@assets/background_image2.png";
 import fondo3 from "@assets/background_image3.png";
+import i18next, { t } from "i18next";
 ---
 
-<main class="bg-[#798672] text-white">
+<main class="bg-[#798672] md:h-[500px] text-white" lang={i18next.language}>
   <span
     class="flex justify-center md:justify-end px-4 font-poppins md:px-[280px] py-4"
-    >Lunes - Sabado: 8:00 am - 9:00 pm Domingo: Cerrado</span
+    >{t("nav.title")}</span
   >
   <nav class="hidden lg:block absolute w-screen z-50">
     <ul
@@ -49,7 +50,7 @@ import fondo3 from "@assets/background_image3.png";
     class="text-justify items-center px-4 md:px-0 flex flex-col lg:flex-row"
   >
     <div class="grid grid-cols-1 md:grid-cols-2 px-4">
-      <div class="px-4 flex flex-col md:py-24 md:ml-[30%] md:w-[100%]">
+      <div class="px-4 flex flex-col md:py-24 md:ml-[25%] md:w-[100%]">
         <Image
           src={fondo}
           alt="Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral "
@@ -59,7 +60,7 @@ import fondo3 from "@assets/background_image3.png";
         <span
           class="font-italiana text-2xl text-center md:text-start md:text-6xl lg:text-7xl"
         >
-          RINOPLASTIA</span
+          {t("nav.rinoplastia")}</span
         >
         <span class="font-poiret text-2xl md:text-5xl lg:text-6xl"
           >Personalización absoluta.

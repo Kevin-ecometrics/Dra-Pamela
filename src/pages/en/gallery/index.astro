@@ -1,0 +1,30 @@
+---
+import { changeLanguage } from "i18next";
+import Layout from "@layouts/Layout.astro";
+import Hero from "@components/UI/Hero.astro";
+import Navbar from "@components/UI/Navbar.astro";
+import Bento from "@components/UI/react/Bento";
+import "@fontsource/prata";
+import Footer from "@components/UI/Footer.astro";
+
+changeLanguage("en");
+---
+
+<Layout
+  title="Descubre la nueva dimensión de belleza con resultados funcionales"
+>
+  <main>
+    <Navbar />
+    <Hero className="bg-[#798672] h-64 flex justify-center items-center">
+      <h1 class="text-center text-white text-7xl font-prata">Galeria</h1>
+    </Hero>
+    <Bento client:visible />
+    <Footer />
+  </main>
+</Layout>
+
+<style>
+  .font-prata {
+    font-family: "Prata", serif;
+  }
+</style>

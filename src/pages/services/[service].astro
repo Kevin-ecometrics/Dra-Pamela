@@ -1,37 +1,41 @@
 ---
+import { changeLanguage } from "i18next";
 import Hero from "@components/UI/Hero.astro";
 import Navbar from "@components/UI/Navbar.astro";
 import Layout from "@layouts/Layout.astro";
 import Footer from "@components/UI/Footer.astro";
 import ServiceComponent from "@components/Service.astro";
+
+changeLanguage("es");
+
 export function getStaticPaths() {
-  return [
-    { params: { service: "rinoseptumplastia_o_rinoplastia" } },
-    { params: { service: "blefaroplastia" } },
-    { params: { service: "liposuccion_de_cuello_y_papada" } },
-    { params: { service: "mentoplastia" } },
-    { params: { service: "bichectomia" } },
-    { params: { service: "otoplastia" } },
-    { params: { service: "levantamiento_de_temporal" } },
-    { params: { service: "levantamiento_de_cejas" } },
-    { params: { service: "levantamiento_de_labio" } },
-    { params: { service: "meloplastia" } },
-    { params: { service: "aplicacion_de_botox" } },
-    { params: { service: "acido_hialuronico_en_labios" } },
-    { params: { service: "armonizacion_facial" } },
-    { params: { service: "perfilamiento_mandibular" } },
-    { params: { service: "acido_hialuronico_en_pomulos" } },
-    { params: { service: "dermapen" } },
-    { params: { service: "tratamiento_en_ojeras" } },
-    { params: { service: "valoracion_de_consulta_de_otorrinolaringologia" } },
-    { params: { service: "injerto_con_grasa_o_transferencia_en_rostro" } },
-  ];
+    return [
+        { params: { service: "rinoseptumplastia_o_rinoplastia" } },
+        { params: { service: "blefaroplastia" } },
+        { params: { service: "liposuccion_de_cuello_y_papada" } },
+        { params: { service: "mentoplastia" } },
+        { params: { service: "bichectomia" } },
+        { params: { service: "otoplastia" } },
+        { params: { service: "levantamiento_de_temporal" } },
+        { params: { service: "levantamiento_de_cejas" } },
+        { params: { service: "levantamiento_de_labio" } },
+        { params: { service: "meloplastia" } },
+        { params: { service: "aplicacion_de_botox" } },
+        { params: { service: "acido_hialuronico_en_labios" } },
+        { params: { service: "armonizacion_facial" } },
+        { params: { service: "perfilamiento_mandibular" } },
+        { params: { service: "acido_hialuronico_en_pomulos" } },
+        { params: { service: "dermapen" } },
+        { params: { service: "tratamiento_en_ojeras" } },
+        { params: { service: "valoracion_de_consulta_de_otorrinolaringologia" } },
+        { params: { service: "injerto_con_grasa_o_transferencia_en_rostro" } },
+    ];
 }
 const { service } = Astro.params;
 const formattedServiceName = service
-  .split("_")
-  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-  .join(" ");
+    .split("_")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 ---
 
 <Layout title={`Servicio de: ${formattedServiceName}`}>

@@ -1,0 +1,32 @@
+---
+import { changeLanguage } from "i18next";
+import Layout from "@layouts/Layout.astro";
+import About from "@components/About.astro";
+import Content from "@components/Content.astro";
+import Banner from "@components/Banner.astro";
+import Contact from "@components/Contact.astro";
+import Blog from "@components/Blog.astro";
+import Video from "@components/Video.astro";
+import Footer from "@components/Footer.astro";
+import Hero from "@components/Header.astro";
+import Form from "@components/UI/react/Form";
+
+changeLanguage("en");
+---
+
+<Layout
+  title="Descubre la nueva dimensión de belleza con resultados funcionales"
+>
+  <!-- Layout -->
+  <main>
+    <Hero />
+    <About />
+    <Content />
+    <Video />
+    <Banner />
+    <Form client:visible />
+    <Contact />
+    <Blog />
+    <Footer />
+  </main>
+</Layout>

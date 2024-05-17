@@ -11,6 +11,7 @@ const BentoGrid: React.FC = () => {
   const photos = [
     {
       src: "/gallery1.png",
+      srcTwo: "/gallery1B.png",
       width: 1028,
       height: 1400,
       alt: "1-pic",
@@ -60,6 +61,7 @@ const BentoGrid: React.FC = () => {
     },
     {
       src: "/gallery9.png",
+      srcTwo: "/gallery9B.png",
       width: 1028,
       height: 1428,
       alt: "8-pic",
@@ -97,7 +99,7 @@ const BentoGrid: React.FC = () => {
                       }
                       itemTwo={
                         <ReactCompareSliderImage
-                          src={photo.src}
+                          src={photo.srcTwo} // Usa 'srcTwo' para la segunda imagen
                           alt={photo.alt}
                           className="object-cover rounded-xl"
                         />
