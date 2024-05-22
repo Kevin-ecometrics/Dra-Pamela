@@ -6,20 +6,19 @@ import Navbar from "@components/UI/blog/Navbar.astro";
 import Blog1 from "@components/UI/blog/Blog1.astro";
 import Blog2 from "@components/UI/blog/Blog2.astro";
 import Blog3 from "@components/UI/blog/Blog3.astro";
-import Footer from "@components/UI/Footer.astro";
 
 changeLanguage("es");
 
 export function getStaticPaths() {
-    return [
-        { params: { blog: "secretos-de-una-rinoplastia-exitosa" } },
-        { params: { blog: "mirada-renovada-blefaroplastia-y-sus-beneficios" } },
-        {
-            params: {
-                blog: "la-ciencia-del-rejuvenecimiento-facial-tratamientos-no-quirurgicos",
-            },
-        },
-    ];
+  return [
+    { params: { blog: "secretos-de-una-rinoplastia-exitosa" } },
+    { params: { blog: "mirada-renovada-blefaroplastia-y-sus-beneficios" } },
+    {
+      params: {
+        blog: "la-ciencia-del-rejuvenecimiento-facial-tratamientos-no-quirurgicos",
+      },
+    },
+  ];
 }
 const { blog } = Astro.params;
 const title = blog.replace(/-/g, " ");
@@ -34,18 +33,15 @@ const title = blog.replace(/-/g, " ");
     blog === "secretos-de-una-rinoplastia-exitosa" ? (
       <>
         <Blog1 title={title} />
-        <Footer />
       </>
     ) : blog === "mirada-renovada-blefaroplastia-y-sus-beneficios" ? (
       <>
         <Blog2 title={title} />
-        <Footer />
       </>
     ) : blog ===
       "la-ciencia-del-rejuvenecimiento-facial-tratamientos-no-quirurgicos" ? (
       <>
         <Blog3 title={title} />
-        <Footer />
       </>
     ) : (
       <script>window.location.href = "/404.html";</script>

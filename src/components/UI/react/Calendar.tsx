@@ -171,11 +171,16 @@ const App: React.FC = () => {
         : "",
     };
 
+    let apiUrl;
+
+    if (import.meta.env.MODE === "production") {
+      apiUrl = `${import.meta.env.PUBLIC_URL}/booking`;
+    } else {
+      apiUrl = "http://localhost:3000/booking";
+    }
+
     try {
-      const response = await axios.post(
-        `${import.meta.env.PUBLIC_URL}/booking`,
-        BookingData
-      );
+      const response = await axios.post(apiUrl, BookingData);
       console.log(response);
       toast.success("Reservación exitosa");
       setResetSelect((prevState) => !prevState);
@@ -189,10 +194,16 @@ const App: React.FC = () => {
 
   useEffect(() => {
     async function getBookedHours() {
+      let apiUrl;
+
+      if (import.meta.env.MODE === "production") {
+        apiUrl = `${import.meta.env.PUBLIC_URL}/bookedHours`;
+      } else {
+        apiUrl = "http://localhost:3000/bookedHours";
+      }
+
       try {
-        const response = await axios.get(
-          `${import.meta.env.PUBLIC_URL}/bookedHours`
-        );
+        const response = await axios.get(apiUrl);
         setBookedHours(response.data);
       } catch (error) {
         console.error(error);
@@ -277,7 +288,7 @@ const App: React.FC = () => {
             <input
               type="text"
               className="border-2 border-gray-300 p-2 rounded-md text-center focus:outline-none w-80"
-              placeholder="Nombre"
+              placeholder="Nombre Completo"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -285,7 +296,7 @@ const App: React.FC = () => {
             <input
               type="email"
               className="border-2 border-gray-300 p-2 rounded-md text-center focus:outline-none w-80"
-              placeholder="Correo"
+              placeholder="Correo Electrónico"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required

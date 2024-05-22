@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const moment = require("moment-timezone");
 const mysql = require("mysql2");
 const cors = require("cors");
+const ical = require("ical-generator"); // Agrega esta línea
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -57,6 +58,17 @@ app.post("/api/data", async (req, res) => {
 
 app.post("/booking", async (req, res) => {
   let { name, email, phone, date } = req.body;
+  const cal = ical.default({ name: "Mi calendario" });
+  cal.createEvent({
+    start: moment(),
+    end: moment().add(1, "hour"),
+    summary: "Evento de ejemplo",
+    description: "Es un evento de ejemplo",
+    location: "Mi ciudad",
+    url: "http://example.com",
+  });
+  const icalString = cal.toString();
+
   const dateInCalifornia = moment(date)
     .tz("America/Los_Angeles")
     .format("YYYY-MM-DD HH:mm:ss");
@@ -87,6 +99,13 @@ app.post("/booking", async (req, res) => {
       Número de teléfono: ${phone}\n
       Fecha de tu cita: ${dateInCalifornia}\n
       Si tienes alguna pregunta, estamos aquí para ayudarte.`,
+      attachments: [
+        {
+          filename: "invite.ics",
+          content: icalString,
+          contentType: "text/calendar",
+        },
+      ],
     };
 
     transporter.sendMail(mailOptions, (error, info) => {

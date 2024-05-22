@@ -4,7 +4,6 @@ import Layout from "@layouts/Layout.astro";
 import Hero from "@components/UI/Hero.astro";
 import Navbar from "@components/UI/Navbar.astro";
 import Service from "@components/UI/react/Service";
-import Footer from "@components/UI/Footer.astro";
 
 changeLanguage("en");
 ---
@@ -15,5 +14,4 @@ changeLanguage("en");
     <h1 class="text-center text-white text-7xl font-prata">Servicios</h1>
   </Hero>
   <Service client:load />
-  <Footer />
 </Layout>
