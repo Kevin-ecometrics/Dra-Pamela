@@ -8,6 +8,8 @@ export default {
         poppins: ["Poppins", "sans-serif"],
         italiana: ["Italiana", "serif"],
         poiretone: ["Poiret One", "cursive"],
+        japandi: ["Japandi", "sans-serif"],
+        selna: ["Selna", "serif"],
       },
     },
   },

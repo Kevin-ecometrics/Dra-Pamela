@@ -1,12 +1,15 @@
 ---
 import Footer from "../components/UI/Footer.astro";
 import { ViewTransitions } from "astro:transitions";
-
+import "@assets/styles/fonts.css";
+import Navbar from "@components/UI/react/Navbar";
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+
+const URL = Astro.url;
 ---
 
 <!doctype html>
@@ -73,6 +76,7 @@ const { title } = Astro.props;
   </head>
   <body class="overflow-x-hidden">
     <ViewTransitions />
+    <Navbar client:visible location={URL} />
     <slot />
     <Footer />
   </body>

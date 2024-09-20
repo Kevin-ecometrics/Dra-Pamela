@@ -1,0 +1,68 @@
+/* src/styles/fonts.css */
+@font-face {
+    font-family: 'Japandi';
+    font-weight: bold;
+    src: url('/fonts/Japandi Bold.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'Japandi';
+    font-weight: 300; /* Light */
+    src: url('/fonts/Japandi Light.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'Japandi';
+    font-weight: normal; /* Regular */
+    src: url('/fonts/Japandi Regular.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'Selna';
+    font-style: oblique;
+    src: url('/fonts/Selna-Oblique.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'Selna';
+    font-style: oblique;
+    src: url('/fonts/Selna-Oblique.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Selna';
+    font-style: oblique;
+    font-weight: 700; /* Outline */
+    src: url('/fonts/Selna-ObliqueOutline.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'Selna';
+    font-style: oblique;
+    font-weight: 700; /* Outline */
+    src: url('/fonts/Selna-ObliqueOutline.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Selna';
+    font-weight: 700; /* Outline */
+    src: url('/fonts/Selna-Outline.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'Selna';
+    font-weight: 700; /* Outline */
+    src: url('/fonts/Selna-Outline.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Selna';
+    font-weight: normal; /* Regular */
+    src: url('/fonts/Selna-Regular.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'Selna';
+    font-weight: normal; /* Regular */
+    src: url('/fonts/Selna-Regular.ttf') format('truetype');
+  }

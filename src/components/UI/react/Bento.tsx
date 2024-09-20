@@ -1,6 +1,5 @@
-import React from "react";
-import { Gallery, Item } from "react-photoswipe-gallery";
-import "photoswipe/dist/photoswipe.css";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   ReactCompareSlider,
   ReactCompareSliderImage,
@@ -8,6 +7,11 @@ import {
 import "./Bento.css";
 
 const BentoGrid: React.FC = () => {
+  const [selectedImage, setSelectedImage] = useState<{
+    primary: string;
+    secondary: string;
+  } | null>(null);
+
   const photos = [
     {
       src: "/gallery1.png",
@@ -19,6 +23,7 @@ const BentoGrid: React.FC = () => {
     },
     {
       src: "/gallery2.png",
+      srcTwo: "/gallery2.png",
       width: 728,
       height: 1000,
       alt: "2-pic",
@@ -26,6 +31,7 @@ const BentoGrid: React.FC = () => {
     },
     {
       src: "/gallery3.png",
+      srcTwo: "/gallery3.png",
       width: 728,
       height: 1000,
       alt: "3-pic",
@@ -33,6 +39,7 @@ const BentoGrid: React.FC = () => {
     },
     {
       src: "/gallery4.png",
+      srcTwo: "/gallery4.png",
       width: 728,
       height: 1000,
       alt: "4-pic",
@@ -40,6 +47,7 @@ const BentoGrid: React.FC = () => {
     },
     {
       src: "/gallery5.png",
+      srcTwo: "/gallery5.png",
       width: 728,
       height: 1000,
       alt: "5-pic",
@@ -47,6 +55,7 @@ const BentoGrid: React.FC = () => {
     },
     {
       src: "/gallery6.png",
+      srcTwo: "/gallery6.png",
       width: 728,
       height: 1000,
       alt: "6-pic",
@@ -54,6 +63,7 @@ const BentoGrid: React.FC = () => {
     },
     {
       src: "/gallery7.png",
+      srcTwo: "/gallery7.png",
       width: 728,
       height: 1000,
       alt: "7-pic",
@@ -69,6 +79,7 @@ const BentoGrid: React.FC = () => {
     },
     {
       src: "/gallery8.png",
+      srcTwo: "/gallery8.png",
       width: 1028,
       height: 728,
       alt: "9-pic",
@@ -76,19 +87,33 @@ const BentoGrid: React.FC = () => {
     },
   ];
 
+  const handleImageClick = (primary: string, secondary: string) => {
+    setSelectedImage({ primary, secondary });
+  };
+
+  const handleClose = () => {
+    setSelectedImage(null);
+  };
+
   return (
     <div className="flex items-center justify-center">
       <div className="w-[1100px] px-8 my-4">
         <div className="container">
           {photos.map((photo, i) => {
-            if (i === 0 || i === 7) {
-              return (
-                <div
-                  key={i}
-                  className={`rounded-xl ${
-                    i === 0 || i === 7 ? "md:col-span-2 md:row-span-2" : ""
-                  }`}
-                >
+            const classNames = [
+              "rounded-xl",
+              "p-1",
+              "transition-transform",
+              "duration-500",
+              "ease-in-out",
+              "hover:scale-105",
+              i === 0 || i === 7 ? "md:col-span-2 md:row-span-2" : "",
+              i === 8 ? "md:row-span-2 md:col-span-2" : "",
+            ].join(" ");
+
+            return (
+              <div key={i} className={classNames}>
+                {i === 0 || i === 7 ? (
                   <div className="compare-slider-container">
                     <ReactCompareSlider
                       itemOne={
@@ -99,53 +124,55 @@ const BentoGrid: React.FC = () => {
                       }
                       itemTwo={
                         <ReactCompareSliderImage
-                          src={photo.srcTwo} // Usa 'srcTwo' para la segunda imagen
+                          src={photo.srcTwo}
                           alt={photo.alt}
                           className="object-cover rounded-xl"
                         />
                       }
                     />
                   </div>
-                </div>
-              );
-            } else {
-              return (
-                <Gallery id="my-gallery" withCaption key={i}>
-                  <Item
-                    original={photo.src}
-                    thumbnail={photo.src}
-                    width={photo.width}
-                    height={photo.height}
-                    caption={photo.src}
-                  >
-                    {({ ref, open }) => (
-                      <img
-                        ref={ref}
-                        onClick={open}
-                        src={photo.src}
-                        alt={photo.alt}
-                        title={photo.title}
-                        loading="lazy"
-                        className={`size-full object-cover rounded-xl p-1 transition-transform duration-500 ease-in-out hover:scale-105 ${
-                          i === 0 || i === 7
-                            ? "md:col-span-2 md:row-span-2"
-                            : i === 1 || i === 2 || i === 3 || i === 4
-                            ? "md:col-span-1 md:row-span-1"
-                            : i === 5 || i === 6
-                            ? "md:col-span-1 md:row-span-1"
-                            : i === 8
-                            ? "md:col-span-2 md:row-span-2"
-                            : ""
-                        }`}
-                      />
-                    )}
-                  </Item>
-                </Gallery>
-              );
-            }
+                ) : (
+                  <img
+                    onClick={() => handleImageClick(photo.src, photo.srcTwo)}
+                    src={photo.src}
+                    alt={photo.alt}
+                    title={photo.title}
+                    loading="lazy"
+                    className="size-full object-cover rounded-xl"
+                  />
+                )}
+              </div>
+            );
           })}
         </div>
       </div>
+
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={handleClose}
+          >
+            <button
+              className="absolute top-4 right-4 text-white hover:text-gray-400 bg-transparent border-none text-4xl cursor-pointer"
+              onClick={handleClose}
+            >
+              &times;
+            </button>
+            <motion.img
+              src={selectedImage.secondary}
+              alt="Selected"
+              className="max-w-full max-h-full rounded-lg"
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.8 }}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

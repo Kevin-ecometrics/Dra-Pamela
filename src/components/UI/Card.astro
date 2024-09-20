@@ -1,25 +1,33 @@
 ---
-const { title, text, image, titleImage, link } = Astro.props;
+const { title, image, titleImage, link } = Astro.props;
 import "@fontsource/poppins";
 import { Image } from "astro:assets";
 ---
 
-<div>
+<div class="flex flex-col md:flex-row justify-between items-center border p-4">
   <a href={link}>
     <Image
-      class="rounded-t-lg transform transition-transform duration-500 hover:scale-110"
+      class="rounded-lg transform transition-transform duration-500 hover:scale-110"
       src={image}
       title={titleImage}
       alt="Descubre todo lo que necesitas saber sobre la rinoplastia y cómo la Dra. Pamela Pérez realiza este procedimiento con maestría"
     />
   </a>
-  <div class="py-5 w-[350px] px-2">
+  <div>
     <p
-      class="mb-2 text-lg md:text-2xl font-semibold text-start text-[#6C5545] font-poppins"
+      class="mb-2 text-lg md:text-2xl font-semibold text-[#6C5545] font-poppins"
     >
       {title}
     </p>
-    <p class="mb-3 font-light text-gray-500 font-poppins text-start">{text}</p>
+  </div>
+  <div>
+    <a
+      href={link}
+      class="text-[#6C5545] text-lg md:text-2xl font-semibold text-start
+      hover:text-white px-2 transition-colors duration-500 border-2 hover:bg-[#6C5545] border-[#6C5545]"
+    >
+      Ver más
+    </a>
   </div>
 </div>
 
