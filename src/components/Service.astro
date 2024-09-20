@@ -75,6 +75,8 @@ const services = [
     title: "Meloplastia",
     procedimiento: "Meloplastia",
     description: "Resección de mucosa bucal para redefinir rostro.",
+    videotext:
+      "Hola, ¿Qué tal? te voy a hablar Sobre un procedimiento del cual se llama meloplastia. La meloplastia es un procedimiento quirúrgico el cual consiste en el retiro de mucosa y de tejido por dentro de las mejillas, el cual se utiliza con fines estéticos para reducir las mejillas o en los casos en los cuales los pacientes se muerden las mejillas puede reducir este trauma. Se va a realizar en consultorio con uso de anestesia local o incluso en el quirófano asociado a otros procedimientos como lo son: Bichectomía. La construcción de cuello, contorno mandibular o implante, metón. Requiere un mínimo de incapacidad y tiene una inflamación alrededor de tres a cinco días ",
   },
   {
     id: 11,
@@ -84,7 +86,7 @@ const services = [
       "Toxina botulínica que relaja la musculatura lo que da una relajación de las líneas de la expresión facial.",
     video: "https://www.youtube.com/embed/pqF9-wsobSo?si=J7xFdYY7QOSPdMBP",
     videotext:
-      "Hola, ¿Qué tal? Te voy a hablar sobre la toxina botulínica o el Botox. El Botox es un procedimiento que se realiza con mínimo dolor, con una duración en consultorio de alrededor de 15 minutos y las unidades que se van a aplicar van a depender del tamaño del músculo, y qué tan arrugada está la piel del paciente.   Ese es un procedimiento que se puede colocar desde los 20 años y no requiere incapacidad. Si estás interesado en colocarte ese tipo de procedimiento o saber más al respecto, te invito a visitar mi página y mandarme un mensaje.",
+      "Hola, ¿Qué tal? Te voy a hablar sobre la toxina botulínica o el Botox. El Botox es un procedimiento que se realiza con mínimo dolor, con una duración en consultorio de alrededor de 15 minutos y las unidades que se van a aplicar van a depender del tamaño del músculo, y qué tan arrugada está la piel del paciente.   Ese es un procedimiento que se puede colocar desde los 20 años y no requiere incapacidad. ",
   },
   {
     id: 12,
@@ -99,6 +101,8 @@ const services = [
     description:
       "Aplicación de ácido hialurónico o grasa en áreas que carecen de volumen para lograr las proporciones faciales ideales o más armónicas.",
     procedimiento: "Armonizacion Facial",
+    videotext:
+      "Hola, ¿Qué tal? Te voy a hablar sobre la armonización facial. La armonización facial es un conjunto de procedimientos tanto quirúrgicos como no quirúrgicos. Entre los procedimientos no quirúrgicos está la colocación de ácido hialurónico o Radiesse en algunas áreas de la cara que les falta volumen y dentro de los procedimientos quirúrgicos incluiría metoplastia, menoplastia, bichectomía y liposucción de cal y cuello.  Dentro de la consulta de valoración vamos a ver cuáles de esto procedimientos son recomendados para ti para llegar a una adecuada armonización facial. En cuanto al proceso de recuperación de cada uno de sus procedimientos va a variar de acuerdo a que este es un tratamiento que se realiza de forma personalizada, valorando las áreas de pérdida de volumen o de exceso de volumen.  ",
   },
   {
     id: 14,
@@ -106,6 +110,8 @@ const services = [
     description:
       "Colocación de ácido hialurónico o hidroxiapatita de calcio en mandíbula para su definición.",
     procedimiento: "Perfilamiento Mandibular",
+    videotext:
+      "Hola, ¿Qué tal? te voy a hablar sobre un procedimiento que se llama perfilamiento mandibular. Este procedimiento se puede realizar con Radiesse  que es hidroxiapatita de calcio o con ácido ácido hialurónico  Este procedimiento se utiliza para darle volumen y maximizar la definición en contorno mandibular. Se realiza en consultorio con una duración de quince minutos y mínimo dolor y no requiere una incapacidad. Si estás interesado en saber más información sobre este procedimiento, te invito a dejarme un mensaje en mi página web que lo voy a dejar por aquí y no olvides seguirme en mis redes sociales. ",
   },
   {
     id: 15,
@@ -113,6 +119,8 @@ const services = [
     description:
       "Colocación para lograr elevar pómulo o evitar signos de envejecimiento.",
     procedimiento: "Acido Hialuronico En Pomulos",
+    videotext:
+      "Hola, ¿Qué tal? Te voy a hablar sobre un procedimiento el cual se llama meloplastía. La meloplastía es un procedimiento quirúrgico el cual consiste en el retiro de mucosa y de tejido por dentro de las mejillas, el cual se utiliza con fines estéticos para reducir las mejillas o en los casos en los cuales los pacientes se muerden las mejillas puede reducir este trauma.  Se va a realizar en consultorio con uso de anestesia local o incluso en quirófano asociado a otros procedimientos como lo son bichectomía, liposucción de cuello, contorno mandibular o implante de mentón.  Requiere un mínimo de incapacidad de inflamación alrededor de 3 a 5 días. En caso que estés interesado en este procedimiento, déjame un mensaje o visita mi página para hacer una cita de evaluación conmigo. ",
   },
   {
     id: 16,
@@ -164,7 +172,7 @@ if (!currentService) {
         </div>
         <hr class="w-full border-[#798672] border-2 mb-6" />
         {
-          currentService.video ? (
+          currentService.procedimiento ? (
             <div class="mt-4">
               <iframe
                 class="w-full h-96"
