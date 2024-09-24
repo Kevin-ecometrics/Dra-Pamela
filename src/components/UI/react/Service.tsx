@@ -4,7 +4,7 @@ import MedicalIcon from "@components/icons/medicalIcon";
 
 const services = [
   {
-    title: "Rinoseptumplastia o rinoplastia",
+    title: "Rinoseptumplastia o Rinoplastia",
     description:
       "Cirugía de corrección de problemas nasales tanto funcionales como estéticos o cosméticos.",
     imageURL: "operacion.avif",
@@ -46,20 +46,20 @@ const services = [
     link: "otoplastia",
   },
   {
-    title: "Levantamiento de temporal",
+    title: "Levantamiento De Temporal",
     description:
       "Cirugía de lifting de tercio medio para rejuvenecimiento facial si cicatrices visibles.",
     imageURL: "operacion.avif",
     link: "levantamiento_de_temporal",
   },
   {
-    title: "Levantamiento de cejas",
+    title: "Levantamiento De Cejas",
     description: "Cirugía de corrección de altura de cejas.",
     imageURL: "operacion.avif",
     link: "levantamiento_de_cejas",
   },
   {
-    title: "Levantamiento de labio",
+    title: "Levantamiento De Labio",
     description:
       "Cirugía para rejuvenecimiento de labios también llamada bullhorn lip lift.",
     imageURL: "operacion.avif",
@@ -72,60 +72,60 @@ const services = [
     link: "meloplastia",
   },
   {
-    title: "Aplicación de botox",
+    title: "Aplicación De Botox",
     description:
       "Toxina botulínica que relaja la musculatura lo que da una relajación de las líneas de la expresión facial.",
     imageURL: "operacion.avif",
     link: "aplicacion_de_botox",
   },
   {
-    title: "Ácido hialurónico en labios",
+    title: "Ácido Hialurónico",
     description:
       "Colocación para su aumento o definición, así como corrección de asimetrías visibles.",
     imageURL: "operacion.avif",
-    link: "acido_hialuronico_en_labios",
+    link: "acido_hialuronico",
   },
   {
-    title: "Armonización facial",
+    title: "Armonización Facial",
     description:
       "Aplicación de ácido hialurónico o grasa en áreas que carecen de volumen para lograr las proporciones faciales ideales o más armónicas.",
     imageURL: "operacion.avif",
     link: "armonizacion_facial",
   },
   {
-    title: "Perfilamiento mandibular",
+    title: "Perfilamiento Mandibular",
     description:
       "Colocación de ácido hialurónico o hidroxiapatita de calcio en mandíbula para su definición.",
     imageURL: "operacion.avif",
     link: "perfilamiento_mandibular",
   },
+  // {
+  //   title: "Ácido hialurónico en pómulos",
+  //   description:
+  //     "Colocación para lograr elevar pómulo o evitar signos de envejecimiento.",
+  //   imageURL: "operacion.avif",
+  //   link: "acido_hialuronico_en_pomulos",
+  // },
+  // {
+  //   title: "Dermapen",
+  //   description:
+  //     "Micro agujas que penetran la piel logrando una luminosidad al rostro.",
+  //   imageURL: "operacion.avif",
+  //   link: "dermapen",
+  // },
   {
-    title: "Ácido hialurónico en pómulos",
-    description:
-      "Colocación para lograr elevar pómulo o evitar signos de envejecimiento.",
-    imageURL: "operacion.avif",
-    link: "acido_hialuronico_en_pomulos",
-  },
-  {
-    title: "Dermapen",
-    description:
-      "Micro agujas que penetran la piel logrando una luminosidad al rostro.",
-    imageURL: "operacion.avif",
-    link: "dermapen",
-  },
-  {
-    title: "Tratamiento en ojeras",
+    title: "Tratamiento En Ojeras",
     description:
       "Colocación de NCTF por mesoterapia para lograr disminuir coloración y mejorar la transición del párpado.",
     imageURL: "operacion.avif",
     link: "tratamiento_en_ojeras",
   },
-  {
-    title: "Valoración de consulta de Otorrinolaringología",
-    description: "",
-    imageURL: "operacion.avif",
-    link: "valoracion_de_consulta_de_otorrinolaringologia",
-  },
+  // {
+  //   title: "Valoración de consulta de Otorrinolaringología",
+  //   description: "",
+  //   imageURL: "operacion.avif",
+  //   link: "valoracion_de_consulta_de_otorrinolaringologia",
+  // },
   {
     title: "Injerto con grasa o transferencia en rostro",
     description:

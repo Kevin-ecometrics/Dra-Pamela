@@ -1,7 +1,6 @@
 ---
 import { changeLanguage } from "i18next";
 import Layout from "@layouts/Layout.astro";
-import Navbar from "@components/UI/Navbar.astro";
 import Hero from "@components/UI/blog/Hero.astro";
 import Blog from "@components/Blog.astro";
 
@@ -13,7 +12,6 @@ changeLanguage("es");
 >
   <!-- Layout -->
   <main>
-    <Navbar />
     <Hero className="bg-[#798672] h-48 flex justify-center items-center">
       <h1 class="text-center text-white text-7xl font-prata">Blog</h1>
     </Hero>

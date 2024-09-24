@@ -1,17 +1,12 @@
 ---
-import { changeLanguage } from "i18next";
 import Layout from "@layouts/Layout.astro";
-import Navbar from "@components/UI/Navbar.astro";
 import Hero from "@components/UI/blog/Hero.astro";
 import AppoitmentForm from "@components/UI/appointment/AppoitmentForm.astro";
-
-changeLanguage("es");
 ---
 
 <Layout
   title="Descubre la nueva dimensión de belleza con resultados funcionales"
 >
-  <Navbar />
   <Hero className="bg-[#798672] h-48 flex justify-center items-center">
     <h1 class="text-center text-white text-7xl font-prata">Agenda tu cita</h1>
   </Hero>

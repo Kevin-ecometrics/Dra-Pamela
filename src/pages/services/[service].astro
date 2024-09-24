@@ -1,7 +1,6 @@
 ---
 import { changeLanguage } from "i18next";
 import Hero from "@components/UI/Hero.astro";
-import Navbar from "@components/UI/Navbar.astro";
 import Layout from "@layouts/Layout.astro";
 import ServiceComponent from "@components/Service.astro";
 
@@ -20,7 +19,7 @@ export function getStaticPaths() {
     { params: { service: "levantamiento_de_labio" } },
     { params: { service: "meloplastia" } },
     { params: { service: "aplicacion_de_botox" } },
-    { params: { service: "acido_hialuronico_en_labios" } },
+    { params: { service: "acido_hialuronico" } },
     { params: { service: "armonizacion_facial" } },
     { params: { service: "perfilamiento_mandibular" } },
     { params: { service: "acido_hialuronico_en_pomulos" } },
@@ -38,7 +37,6 @@ const formattedServiceName = service
 ---
 
 <Layout title={`Servicio de: ${formattedServiceName}`}>
-  <Navbar />
   <Hero className="bg-[#798672] h-64 flex justify-center items-center">
     <h1 class="text-center text-white text-7xl font-prata">
       {formattedServiceName}

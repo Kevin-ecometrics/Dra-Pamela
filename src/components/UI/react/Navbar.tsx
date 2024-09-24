@@ -25,7 +25,7 @@ const Navbar: React.FC<NavbarProps> = ({ location }) => {
 
   useEffect(() => {
     const toggleVisibility = () => {
-      setIsVisible(window.pageYOffset > 300);
+      setIsVisible(window.scrollY > 150);
     };
 
     window.addEventListener("scroll", toggleVisibility);
@@ -38,10 +38,28 @@ const Navbar: React.FC<NavbarProps> = ({ location }) => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  let blogsURL = [
+    {
+      href: "/blog/secretos-de-una-rinoplastia-exitosa",
+      title: "Rinoplastia Exitosa",
+    },
+    {
+      href: "/blog/mirada-renovada-blefaroplastia-y-sus-beneficios",
+      title: "Blefaroplastia Beneficios",
+    },
+    {
+      href: "/blog/la-ciencia-del-rejuvenecimiento-facial-tratamientos-no-quirurgicos",
+      title: "Rejuvenecimiento Facial",
+    },
+  ];
+
+  const isBlogPage = blogsURL.some((blog) => blog.href === location.pathname);
+
   return (
     <>
       <nav
         className={`
+          bg-[#798672] text-white shadow-2xl
           fixed top-0 left-0 right-0 z-40
           transition-all duration-300 ease-in-out
           ${
@@ -52,7 +70,10 @@ const Navbar: React.FC<NavbarProps> = ({ location }) => {
         `}
         aria-label="Main Navigation"
       >
-        <div className="bg-[#798672] text-white shadow-2xl">
+        <span className="flex justify-center md:justify-end font-poppins py-3 px-4">
+          Lunes - Sabado: 9:00am - 5:00pm Domingo: Cerrado
+        </span>
+        <div className=" text-white shadow-2xl">
           <div className="mx-auto px-4 flex justify-between items-center">
             <a href="/" className="text-lg font-bold" aria-label="Inicio">
               <img
@@ -60,23 +81,59 @@ const Navbar: React.FC<NavbarProps> = ({ location }) => {
                 alt="Logo"
               />
             </a>
-            <ul className="hidden md:flex space-x-4">
-              {navItems.map((item) => (
-                <li key={item.href}>
-                  <a
-                    href={item.href}
-                    className={`text-gray-300 hover:text-white transition-colors duration-200 ${
-                      location.pathname === item.href
-                        ? "text-white font-bold"
-                        : ""
-                    }`}
-                    aria-label={item.label}
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            {isBlogPage ? (
+              <ul className="hidden md:flex space-x-4">
+                {blogsURL.map((item) => (
+                  <li key={item.href}>
+                    <a
+                      href={item.href}
+                      className={`text-gray-300 hover:text-white transition-colors duration-200 ${
+                        location.pathname === item.href
+                          ? "text-white font-bold"
+                          : ""
+                      }`}
+                      aria-label={item.title}
+                    >
+                      {item.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <ul className="hidden md:flex space-x-4">
+                {navItems.map((item) => (
+                  <li key={item.href}>
+                    <a
+                      href={item.href}
+                      className={`text-gray-300 hover:text-white transition-colors duration-200 ${
+                        location.pathname === item.href
+                          ? "text-white font-bold"
+                          : ""
+                      }`}
+                      aria-label={item.label}
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://wa.me/+526644468960/?text=Quiero obtener mas información sobre sus servicios."
+              title="Dra Pamela | Contacto vía WhatsApp"
+            >
+              <li className="flex items-center gap-2">
+                <img
+                  src="/Contactanos via WhatsApp para agendar con la Doctora Pamela.svg"
+                  title="whatsapp-icon"
+                  alt="whatsapp-icon"
+                />
+                WhatsApp
+              </li>
+            </a>
             {/* Mobile Menu Button */}
             <button
               className="md:hidden text-white focus:outline-none"
@@ -147,21 +204,43 @@ const Navbar: React.FC<NavbarProps> = ({ location }) => {
             </svg>
           </button>
         </div>
-        <ul>
-          {navItems.map((item) => (
-            <li key={item.href}>
-              <a
-                href={item.href}
-                className={`text-gray-300 hover:text-white transition-colors duration-200 ${
-                  location.pathname === item.href ? "text-white font-bold" : ""
-                }`}
-                aria-label={item.label}
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        {isBlogPage ? (
+          <ul className="">
+            {blogsURL.map((item) => (
+              <li key={item.href}>
+                <a
+                  href={item.href}
+                  className={`text-gray-300 hover:text-white transition-colors duration-200 ${
+                    location.pathname === item.href
+                      ? "text-white font-bold"
+                      : ""
+                  }`}
+                  aria-label={item.title}
+                >
+                  {item.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <ul>
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <a
+                  href={item.href}
+                  className={`text-gray-300 hover:text-white transition-colors duration-200 ${
+                    location.pathname === item.href
+                      ? "text-white font-bold"
+                      : ""
+                  }`}
+                  aria-label={item.label}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
       </aside>
     </>
   );
