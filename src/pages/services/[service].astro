@@ -3,6 +3,7 @@ import { changeLanguage } from "i18next";
 import Hero from "@components/UI/Hero.astro";
 import Layout from "@layouts/Layout.astro";
 import ServiceComponent from "@components/Service.astro";
+import BannerAppointment from "@components/BannerAppointment.astro";
 
 changeLanguage("es");
 
@@ -35,9 +36,10 @@ const formattedServiceName = service
 
 <Layout title={`Servicio de: ${formattedServiceName}`}>
   <Hero className="bg-[#798672] h-64 flex justify-center items-center">
-    <h1 class="text-center text-white text-7xl font-prata">
+    <h1 class="text-center text-white text-4xl md:text-7xl font-prata">
       {formattedServiceName}
     </h1>
   </Hero>
   <ServiceComponent serviceName={formattedServiceName} />
+  <BannerAppointment bg="bg-[#A2948D]" />
 </Layout>

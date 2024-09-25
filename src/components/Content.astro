@@ -1,38 +1,49 @@
 ---
-import "@fontsource/poppins/100.css";
-import "@fontsource/poppins/200.css";
-import "@fontsource/poppins/300.css";
-import "@fontsource/poppins/400.css";
-import "@fontsource/poppins/500.css";
-import "@fontsource/poppins/600.css";
-import "@fontsource/poppins/700.css";
-import "@fontsource/poppins/800.css";
-import "@fontsource/poppins/900.css";
+import Education from "@components/UI/react/Education";
+import Mision from "@components/UI/react/Mision";
+import Testimonial from "@components/UI/react/Testimonial";
+let education = [
+  {
+    date: "2011-2018",
+    title: "Medicina General.",
+    image: "/education2.webp",
+  },
+  {
+    date: "2019-2023",
+    title: "Otorrinolaringologia y Cirugia de Cabeza y Cuello.",
+    image: "/education3.webp",
+  },
+  {
+    date: "2023",
+    title: "Diplomado de Rinologia y Cirugia Plastica Facial.",
+    image: "/education1.webp",
+  },
+];
+
+let mision = [
+  {
+    title: "Misión",
+    background: "bg-[#D9D9D9]",
+  },
+  {
+    title: "Visión",
+    background: "bg-[#A2948D]",
+  },
+  {
+    title: "Valores",
+    background: "bg-[#AB9279]",
+  },
+];
 ---
 
 <section class="px-4 md:px-16 py-8">
-  <div class="flex justify-center items-center flex-col">
-    <h1 class="text-justify font-poppins font-light mb-8">
-      Nuestra misión es brindarte resultados excepcionales que transformen no
-      solo tu apariencia, sino también tu calidad de vida. Nos dedicamos a
-      ofrecer tratamientos personalizados de vanguardia, combinando la precisión
-      de la cirugía facial y la especialización para lograr un equilibrio
-      perfecto entre estética y función.
+  <div class="flex justify-center items-center flex-col md:px-20">
+    <h1 class="font-prata text-3xl text-cente md:text-5xl text-[#798672] mb-8">
+      Educación Profesional.
     </h1>
-    <h1 class="text-justify font-poppins font-light">
-      En cada tratamiento que ofrecemos, buscamos no solo corregir aspectos
-      estéticos, sino también mejorar tu salud y vitalidad. Desde la rinoplastia
-      que redefine tu perfil hasta la otoplastia que restaura la confianza en tu
-      imagen, cada procedimiento es diseñado para realzar tu belleza natural..
-      En la Clínica de la Dra. Pamela Pérez, los resultados son más que
-      estéticos, son una expresión de tu mejor versión.
-    </h1>
-    <a
-      href="/services"
-      class="bg-[#798672] hover:bg-[#6d8361] rounded-3xl px-8 py-2 text-white font-poppins my-12"
-    >
-      Servicios
-    </a>
+    <Education client:visible education={education} />
+    <!-- <Mision client:visible mision={mision} /> -->
+    <Testimonial client:visible />
   </div>
 </section>
 

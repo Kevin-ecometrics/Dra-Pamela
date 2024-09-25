@@ -15,6 +15,7 @@ const navItems: NavItem[] = [
 
 const Navbar: React.FC = () => {
   const [pathname, setPathname] = useState("");
+  const year = new Date().getFullYear();
 
   const [isVisible, setIsVisible] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -70,9 +71,10 @@ const Navbar: React.FC = () => {
         `}
         aria-label="Main Navigation"
       >
-        <span className="flex justify-center md:justify-end font-poppins py-3 px-4">
-          Lunes - Sabado: 9:00am - 5:00pm Domingo: Cerrado
-        </span>
+        <p className="md:flex md:justify-end font-poppins py-3 px-4">
+          Lunes - Sabado: 9:00 Am - 5:00 Pm &nbsp;
+          <span className="block">Domingo: Cerrado</span>
+        </p>
         <div className=" text-white shadow-2xl">
           <div className="mx-auto px-4 flex justify-between items-center">
             <a href="/" className="text-lg font-bold" aria-label="Inicio">
@@ -173,7 +175,7 @@ const Navbar: React.FC = () => {
       </nav>
       {/* Mobile Menu */}
       <aside
-        className={`fixed top-0 right-0 h-full bg-[#798672] p-4 transform transition-transform duration-300 ease-in-out z-50 ${
+        className={`fixed top-0 right-0 h-full text-center  bg-[#798672] p-4 transform border border-gray-800 transition-transform  duration-300 ease-in-out z-50 ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         } md:hidden`}
         aria-label="Mobile Navigation"
@@ -200,14 +202,22 @@ const Navbar: React.FC = () => {
             </svg>
           </button>
         </div>
+
+        <a href="/">
+          <img
+            src="/Dra. Pamela especialista en cirugia de cabeza cuello y otorrinolaringologia.png"
+            alt="Logo"
+          />
+        </a>
+
         {isBlogPage ? (
-          <ul className="">
+          <ul className="px-4">
             {blogsURL.map((item) => (
-              <li key={item.href}>
+              <li key={item.href} className="mb-4 font-bold py-2">
                 <a
                   href={item.href}
                   className={`text-gray-300 hover:text-white transition-colors duration-200 ${
-                    pathname === item.href ? "text-white font-bold" : ""
+                    pathname === item.href ? "text-white font-bold " : ""
                   }`}
                   aria-label={item.title}
                 >
@@ -217,13 +227,13 @@ const Navbar: React.FC = () => {
             ))}
           </ul>
         ) : (
-          <ul>
+          <ul className="px-4">
             {navItems.map((item) => (
-              <li key={item.href}>
+              <li key={item.href} className="mb-4 font-bold">
                 <a
                   href={item.href}
                   className={`text-gray-300 hover:text-white transition-colors duration-200 ${
-                    pathname === item.href ? "text-white font-bold" : ""
+                    pathname === item.href ? "text-white font-bold " : ""
                   }`}
                   aria-label={item.label}
                 >
@@ -233,6 +243,9 @@ const Navbar: React.FC = () => {
             ))}
           </ul>
         )}
+        <div className="absolute bottom-0 left-0 w-full py-6 text-white text-center border-t border-white">
+          <p>Dra. Pamela Perez {year} &copy;.</p>
+        </div>
       </aside>
     </>
   );

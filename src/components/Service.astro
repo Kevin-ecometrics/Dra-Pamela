@@ -195,7 +195,7 @@ if (!currentService) {
 
 <main class="font-poppins px-4">
   <section class="py-16 grid grid-cols-1 md:grid-cols-3 gap-4">
-    <div class="col-span-2 w-[700px] mx-auto">
+    <div class="col-span-2 md:w-[700px] mx-auto">
       <div class="px-4 md:px-0">
         <div class="gap-2 mb-6 flex items-center">
           <Medical />
@@ -251,10 +251,10 @@ if (!currentService) {
     </div>
 
     <aside
-      class="hidden md:block col-span-1 bg-[#F8F9FC] border-[#798672] border-2 font-poppins md:h-[750px]"
+      class="hidden md:block col-span-1 bg-[#F8F9FC] h-screen border border-gray-300 font-poppins md:h-[850px]"
     >
       <h1
-        class="text-center py-2 font-bold font-poppins uppercase text-[#798672]"
+        class="text-center bg-[#6C5545] text-white py-2 font-bold font-poppins uppercase"
       >
         Servicios
       </h1>
@@ -262,7 +262,7 @@ if (!currentService) {
       <ul>
         {
           services.map((service) => (
-            <li class="mb-2 relative">
+            <li class="mb-4 relative">
               <a
                 class={`font-medium block py-1 w-full text-center group relative ${currentService.title === service.title ? "bg-[#798672] text-white" : ""}`}
                 href={`/services/${service.title.toLowerCase().replace(/ /g, "_")}`}
@@ -293,5 +293,14 @@ if (!currentService) {
         </li>
       </ul>
     </aside>
+    <div class="block md:hidden px-4">
+      <a href="/services">
+        <button
+          class="text-white bg-[#6C5545] text-start rounded-3xl py-2 px-4 font-bold"
+        >
+          Regresar a los servicios
+        </button>
+      </a>
+    </div>
   </section>
 </main>

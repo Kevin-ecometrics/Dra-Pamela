@@ -1,0 +1,45 @@
+#macbook {
+    margin:50px;
+    & #top {
+      margin: 0 auto;
+      border: 4px solid #bbb;
+      border-bottom:none;
+      width: 600px;
+      height: 350px;
+      border-radius: 15px 15px 0px 0px;
+      background:#222;
+      & #camera {
+        margin: 8px auto 0 auto;
+        border-radius:50%;
+        background:#111;
+        width:5px;
+        height:5px;
+      }
+      & #screen {
+        position:relative;
+        top: 7px;
+        left: 15px;
+        width: 560px;
+        height: 320px;
+        border-radius: 5px 5px 0px 0px;
+        background:#333;
+      }
+    }
+    & #keyboard {
+        margin: 0 auto;
+        width: 750px;
+        height: 20px;
+        background: #ddd;
+        border-radius: 2px 2px 0 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra en la parte inferior */
+        
+        & #top-shade {
+          top: 0;
+          margin: 0 auto;
+          width: 150px;
+          height: 8px;
+          background: #aaa;
+          border-radius: 0 0 10px 10px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra en la parte inferior */
+        }
+      }}

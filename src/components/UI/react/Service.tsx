@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ServiceIcon from "@components/icons/serviceIcon";
 import MedicalIcon from "@components/icons/medicalIcon";
 
@@ -122,22 +122,7 @@ interface Service {
   link: string;
 }
 
-const ServicePage = 8;
-
 const ServiceComponent: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState(2);
-  const [servicesPerPage, setServicesPerPage] = useState(ServicePage);
-  const [showAll, setShowAll] = useState(false);
-  const totalPages = Math.ceil(services.length / ServicePage);
-
-  const currentServices =
-    servicesPerPage === services.length
-      ? services
-      : services.slice(
-          (currentPage - 1) * servicesPerPage,
-          currentPage * servicesPerPage
-        );
-
   return (
     <main>
       <section
@@ -154,31 +139,9 @@ const ServiceComponent: React.FC = () => {
           Conoce todo lo que ofrecemos para ti
         </p>
         <hr className="border-[#798672] border-1 w-full" />
-        <div className="flex justify-center md:justify-end px-4 items-center py-4">
-          <ul>
-            <li>
-              <button
-                onClick={() => {
-                  setCurrentPage(2);
-                  if (showAll) {
-                    setServicesPerPage(ServicePage);
-                  } else {
-                    setServicesPerPage(services.length);
-                  }
-                  setShowAll(!showAll);
-                  document
-                    .getElementById("services")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }}
-                className="flex items-center justify-center px-4 h-10 leading-tight text-[#798672] border-2 bg-white  border-[#798672] rounded-lg hover:bg-gray-100 hover:text-gray-700 "
-              >
-                {showAll ? "Paginar servicios" : "Mostrar todos los servicios"}
-              </button>
-            </li>
-          </ul>
-        </div>
+
         <article className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mb-8">
-          {currentServices.map((service: Service, index: number) => (
+          {services.map((service: Service, index: number) => (
             <div
               key={index}
               className="relative overflow-hidden flex flex-col items-center justify-center p-4 m-4 bg-[#f5f5f5] rounded-lg group transform transition-all duration-500 ease-in-out border-[#798672] border-2"
@@ -203,65 +166,6 @@ const ServiceComponent: React.FC = () => {
             </div>
           ))}
         </article>
-        <div className="flex justify-center px-4 gap-4 items-center">
-          {!showAll && (
-            <nav>
-              <ul className="inline-flex -space-x-px text-base h-10">
-                <li style={{ display: currentPage === 1 ? "none" : "block" }}>
-                  <button
-                    onClick={() => {
-                      setCurrentPage((oldPage) => Math.max(oldPage - 1, 1));
-                      document
-                        .getElementById("services")
-                        ?.scrollIntoView({ behavior: "smooth" });
-                    }}
-                    className="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-[#798672] rounded-s-lg hover:bg-gray-100 hover:text-gray-700 "
-                  >
-                    Anterior
-                  </button>
-                </li>
-                {[...Array(totalPages)].map((_, index) => (
-                  <li key={index}>
-                    <button
-                      onClick={() => {
-                        setCurrentPage(index + 1);
-                        document
-                          .getElementById("services")
-                          ?.scrollIntoView({ behavior: "smooth" });
-                      }}
-                      className={`flex items-center justify-center px-4 h-10 leading-tight text-gray-500 border border-[#798672] hover:bg-gray-100 hover:text-gray-700 ${
-                        currentPage === index + 1
-                          ? "text-white bg-[#798672] "
-                          : ""
-                      }`}
-                    >
-                      {index + 1}
-                    </button>
-                  </li>
-                ))}
-                <li
-                  style={{
-                    display: currentPage === totalPages ? "none" : "block",
-                  }}
-                >
-                  <button
-                    onClick={() => {
-                      setCurrentPage((oldPage) =>
-                        Math.min(oldPage + 1, totalPages)
-                      );
-                      document
-                        .getElementById("services")
-                        ?.scrollIntoView({ behavior: "smooth" });
-                    }}
-                    className="flex items-center justify-center px-4 h-10 leading-tight rounded-e-lg text-gray-500 bg-white border border-[#798672] hover:bg-gray-100 hover:text-gray-700 "
-                  >
-                    Siguiente
-                  </button>
-                </li>
-              </ul>
-            </nav>
-          )}
-        </div>
       </section>
     </main>
   );
