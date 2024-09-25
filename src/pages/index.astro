@@ -1,5 +1,4 @@
 ---
-import { changeLanguage } from "i18next";
 import Layout from "@layouts/Layout.astro";
 import About from "@components/About.astro";
 import Content from "@components/Content.astro";
@@ -9,8 +8,7 @@ import Blog from "@components/Blog.astro";
 import Video from "@components/Video.astro";
 import Hero from "@components/Header.astro";
 import Form from "@components/UI/react/Form";
-
-changeLanguage("es");
+import BannerAppointment from "@components/BannerAppointment.astro";
 ---
 
 <Layout
@@ -19,9 +17,10 @@ changeLanguage("es");
   <Hero />
   <About />
   <Content />
-  <Video />
   <Banner />
+  <Video />
+  <Blog />
+  <BannerAppointment bg="bg-[#AB9279]" />
   <Form client:visible />
   <Contact />
-  <Blog />
 </Layout>

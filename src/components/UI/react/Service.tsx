@@ -99,20 +99,6 @@ const services = [
     imageURL: "operacion.avif",
     link: "perfilamiento_mandibular",
   },
-  // {
-  //   title: "Ácido hialurónico en pómulos",
-  //   description:
-  //     "Colocación para lograr elevar pómulo o evitar signos de envejecimiento.",
-  //   imageURL: "operacion.avif",
-  //   link: "acido_hialuronico_en_pomulos",
-  // },
-  // {
-  //   title: "Dermapen",
-  //   description:
-  //     "Micro agujas que penetran la piel logrando una luminosidad al rostro.",
-  //   imageURL: "operacion.avif",
-  //   link: "dermapen",
-  // },
   {
     title: "Tratamiento En Ojeras",
     description:
@@ -120,12 +106,6 @@ const services = [
     imageURL: "operacion.avif",
     link: "tratamiento_en_ojeras",
   },
-  // {
-  //   title: "Valoración de consulta de Otorrinolaringología",
-  //   description: "",
-  //   imageURL: "operacion.avif",
-  //   link: "valoracion_de_consulta_de_otorrinolaringologia",
-  // },
   {
     title: "Injerto con grasa o transferencia en rostro",
     description:

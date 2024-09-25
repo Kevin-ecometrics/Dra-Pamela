@@ -5,12 +5,6 @@ interface NavItem {
   label: string;
 }
 
-interface NavbarProps {
-  location: {
-    pathname: string;
-  };
-}
-
 const navItems: NavItem[] = [
   { href: "/", label: "Inicio" },
   { href: "/gallery", label: "Galeria" },
@@ -19,9 +13,15 @@ const navItems: NavItem[] = [
   { href: "/appointment", label: "Agendar Cita" },
 ];
 
-const Navbar: React.FC<NavbarProps> = ({ location }) => {
+const Navbar: React.FC = () => {
+  const [pathname, setPathname] = useState("");
+
   const [isVisible, setIsVisible] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    setPathname(window.location.pathname);
+  }, []);
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -53,7 +53,7 @@ const Navbar: React.FC<NavbarProps> = ({ location }) => {
     },
   ];
 
-  const isBlogPage = blogsURL.some((blog) => blog.href === location.pathname);
+  const isBlogPage = blogsURL.some((blog) => blog.href === pathname);
 
   return (
     <>
@@ -88,9 +88,7 @@ const Navbar: React.FC<NavbarProps> = ({ location }) => {
                     <a
                       href={item.href}
                       className={`text-gray-300 hover:text-white transition-colors duration-200 ${
-                        location.pathname === item.href
-                          ? "text-white font-bold"
-                          : ""
+                        pathname === item.href ? "text-white font-bold" : ""
                       }`}
                       aria-label={item.title}
                     >
@@ -106,9 +104,7 @@ const Navbar: React.FC<NavbarProps> = ({ location }) => {
                     <a
                       href={item.href}
                       className={`text-gray-300 hover:text-white transition-colors duration-200 ${
-                        location.pathname === item.href
-                          ? "text-white font-bold"
-                          : ""
+                        pathname === item.href ? "text-white font-bold" : ""
                       }`}
                       aria-label={item.label}
                     >
@@ -211,9 +207,7 @@ const Navbar: React.FC<NavbarProps> = ({ location }) => {
                 <a
                   href={item.href}
                   className={`text-gray-300 hover:text-white transition-colors duration-200 ${
-                    location.pathname === item.href
-                      ? "text-white font-bold"
-                      : ""
+                    pathname === item.href ? "text-white font-bold" : ""
                   }`}
                   aria-label={item.title}
                 >
@@ -229,9 +223,7 @@ const Navbar: React.FC<NavbarProps> = ({ location }) => {
                 <a
                   href={item.href}
                   className={`text-gray-300 hover:text-white transition-colors duration-200 ${
-                    location.pathname === item.href
-                      ? "text-white font-bold"
-                      : ""
+                    pathname === item.href ? "text-white font-bold" : ""
                   }`}
                   aria-label={item.label}
                 >

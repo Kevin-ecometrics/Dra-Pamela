@@ -8,8 +8,6 @@ interface Props {
 }
 
 const { title } = Astro.props;
-
-const URL = Astro.url;
 ---
 
 <!doctype html>
@@ -76,7 +74,7 @@ const URL = Astro.url;
   </head>
   <body class="overflow-x-hidden">
     <ViewTransitions />
-    <Navbar client:visible location={URL} />
+    <Navbar client:visible />
     <slot />
     <Footer />
   </body>
