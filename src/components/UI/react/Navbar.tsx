@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
     };
 
     window.addEventListener("scroll", toggleVisibility);
-    toggleVisibility(); // Check initial scroll position
+    toggleVisibility();
 
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
