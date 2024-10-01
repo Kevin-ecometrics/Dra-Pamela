@@ -35,7 +35,14 @@ const Modal: React.FC<{ content: ModalContent; onClose: () => void }> = ({
         &times;
       </button>
       <h2 className="text-2xl mb-4">{content.title}</h2>
-      <p>{content.description}</p>
+      <div className="max-h-96 overflow-y-auto">
+        {content.description.split("\n").map((line, index) => (
+          <React.Fragment key={index}>
+            {line}
+            <br />
+          </React.Fragment>
+        ))}
+      </div>{" "}
     </motion.div>
   </div>
 );

@@ -1,11 +1,16 @@
 ---
 interface Props {
-    className: string;
+  className: string;
+  backgroundImage: string;
 }
 
-const { className } = Astro.props;
+const { className, backgroundImage } = Astro.props;
 ---
 
-<section class={`${className}`}>
-    <slot />
+<section
+  style={`background-image: url(${backgroundImage}); background-size: cover; background-position: center; background-repeat: no-repeat;`}
+  id="hero-element"
+  class={`${className}`}
+>
+  <slot />
 </section>

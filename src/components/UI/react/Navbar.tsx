@@ -80,7 +80,8 @@ const Navbar: React.FC = () => {
             <a href="/" className="text-lg font-bold" aria-label="Inicio">
               <img
                 src="/Dra. Pamela especialista en cirugia de cabeza cuello y otorrinolaringologia.png"
-                alt="Logo"
+                alt="La Doctora Pamela garantiza procedimientos con enfoque integral en la cirugía facial y otorrinolaringología "
+                title="La Doctora Pamela garantiza procedimientos con enfoque integral en la cirugía facial y otorrinolaringología "
               />
             </a>
             {isBlogPage ? (
@@ -206,7 +207,8 @@ const Navbar: React.FC = () => {
         <a href="/">
           <img
             src="/Dra. Pamela especialista en cirugia de cabeza cuello y otorrinolaringologia.png"
-            alt="Logo"
+            alt="La Doctora Pamela garantiza procedimientos con enfoque integral en la cirugía facial y otorrinolaringología "
+            title="La Doctora Pamela garantiza procedimientos con enfoque integral en la cirugía facial y otorrinolaringología "
           />
         </a>
 

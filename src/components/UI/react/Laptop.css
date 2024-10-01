@@ -22,6 +22,7 @@
         width: 560px;
         height: 320px;
         border-radius: 5px 5px 0px 0px;
+        
         background:#333;
       }
     }
@@ -29,17 +30,19 @@
         margin: 0 auto;
         width: 750px;
         height: 20px;
-        background: #ddd;
-        border-radius: 2px 2px 0 0;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra en la parte inferior */
+        background: #d1d1d1;
+        border-radius: 0px 0px 24px 24px;
+        border: #a0a0a0 1px solid;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 8px 10px rgba(0, 0, 0, 0.1); 
         
         & #top-shade {
           top: 0;
           margin: 0 auto;
           width: 150px;
           height: 8px;
-          background: #aaa;
+          background: #757575;
           border-radius: 0 0 10px 10px;
+          border: #a0a0a0 1px solid;
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra en la parte inferior */
         }
       }}

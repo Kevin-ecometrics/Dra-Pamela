@@ -12,7 +12,7 @@ interface EducationProps {
 
 const Education: React.FC<EducationProps> = ({ education }) => {
   return (
-    <div className="flex flex-col md:flex-row justify-between items-center gap-16 ">
+    <div className="flex flex-col md:flex-row md:justify-between items-center gap-16 ">
       {education.map((item, index) => (
         <div key={index} className="flex flex-col items-center w-96">
           <h1 className="font-prata text-xl text-black mb-4">{item.date}</h1>

@@ -1,116 +1,147 @@
 import React from "react";
 import ServiceIcon from "@components/icons/serviceIcon";
-import MedicalIcon from "@components/icons/medicalIcon";
 
 const services = [
   {
     title: "Rinoseptumplastia o Rinoplastia",
     description:
       "Cirugía de corrección de problemas nasales tanto funcionales como estéticos o cosméticos.",
-    imageURL: "operacion.avif",
+    imageURL: "servicio1.avif",
     link: "rinoseptumplastia_o_rinoplastia",
+    icon: "/icono1A.webp",
+    hoverIcon: "/icono1B.webp",
   },
   {
     title: "Blefaroplastia",
     description:
       "Cirugía de corrección de párpados superiores o inferiores por exceso de piel o grasa.",
-    imageURL: "operacion.avif",
+    imageURL: "servicio2.webp",
+    icon: "/icono2A.webp",
+    hoverIcon: "/icono2B.webp",
     link: "blefaroplastia",
   },
   {
     title: "Liposucción de cuello y papada",
     description:
       "Cirugía de extracción de grasa localizada en el cuello y papada.",
-    imageURL: "operacion.avif",
+    imageURL: "servicio3.webp",
+    icon: "/icono18A.webp",
+    hoverIcon: "/icono18B.webp",
     link: "liposuccion_de_cuello_y_papada",
   },
   {
     title: "Mentoplastia",
     description:
       "Cirugía de colocación de implante en mentón para su aumento definitivo.",
-    imageURL: "operacion.avif",
+    imageURL: "servicio4.webp",
+    icon: "/icono4A.webp",
+    hoverIcon: "/icono4B.webp",
     link: "mentoplastia",
   },
   {
     title: "Bichectomia",
     description:
       "Extracción quirúrgica de las bolsas de bichat para redefinir el rostro.",
-    imageURL: "operacion.avif",
+    imageURL: "servicio5.webp",
+    icon: "/icono5A.webp",
+    hoverIcon: "/icono5B.webp",
     link: "bichectomia",
   },
   {
     title: "Otoplastia",
     description:
       "Cirugía de orejas para corrección de deformidades o alteraciones.",
-    imageURL: "operacion.avif",
+    imageURL: "servicio6.webp",
+    icon: "/icono6A.webp",
+    hoverIcon: "/icono6B.webp",
     link: "otoplastia",
   },
   {
     title: "Levantamiento De Temporal",
     description:
       "Cirugía de lifting de tercio medio para rejuvenecimiento facial si cicatrices visibles.",
-    imageURL: "operacion.avif",
+    imageURL: "servicio7.webp",
+    icon: "/icono7A.webp",
+    hoverIcon: "/icono7B.webp",
     link: "levantamiento_de_temporal",
   },
   {
     title: "Levantamiento De Cejas",
     description: "Cirugía de corrección de altura de cejas.",
-    imageURL: "operacion.avif",
+    imageURL: "servicio8.webp",
+    icon: "/icono8A.webp",
+    hoverIcon: "/icono8B.webp",
     link: "levantamiento_de_cejas",
   },
   {
     title: "Levantamiento De Labio",
     description:
       "Cirugía para rejuvenecimiento de labios también llamada bullhorn lip lift.",
-    imageURL: "operacion.avif",
+    imageURL: "servicio1.avif",
+    icon: "/icono9A.webp",
+    hoverIcon: "/icono9B.webp",
     link: "levantamiento_de_labio",
   },
   {
     title: "Meloplastia",
     description: "Resección de mucosa bucal para redefinir rostro.",
-    imageURL: "operacion.avif",
+    imageURL: "servicio9.webp",
+    icon: "/icono10A.webp",
+    hoverIcon: "/icono10B.webp",
     link: "meloplastia",
   },
   {
     title: "Aplicación De Botox",
     description:
       "Toxina botulínica que relaja la musculatura lo que da una relajación de las líneas de la expresión facial.",
-    imageURL: "operacion.avif",
+    imageURL: "servicio10.webp",
+    icon: "/icono11A.webp",
+    hoverIcon: "/icono11B.webp",
     link: "aplicacion_de_botox",
   },
   {
     title: "Ácido Hialurónico",
     description:
       "Colocación para su aumento o definición, así como corrección de asimetrías visibles.",
-    imageURL: "operacion.avif",
+    imageURL: "servicio11.webp",
+    icon: "/icono12A.webp",
+    hoverIcon: "/icono12B.webp",
     link: "acido_hialuronico",
   },
   {
     title: "Armonización Facial",
     description:
       "Aplicación de ácido hialurónico o grasa en áreas que carecen de volumen para lograr las proporciones faciales ideales o más armónicas.",
-    imageURL: "operacion.avif",
+    imageURL: "servicio12.webp",
+    icon: "/icono13A.webp",
+    hoverIcon: "/icono13B.webp",
     link: "armonizacion_facial",
   },
   {
     title: "Perfilamiento Mandibular",
     description:
       "Colocación de ácido hialurónico o hidroxiapatita de calcio en mandíbula para su definición.",
-    imageURL: "operacion.avif",
+    imageURL: "servicio13.webp",
+    icon: "/icono14A.webp",
+    hoverIcon: "/icono14B.webp",
     link: "perfilamiento_mandibular",
   },
   {
     title: "Tratamiento En Ojeras",
     description:
       "Colocación de NCTF por mesoterapia para lograr disminuir coloración y mejorar la transición del párpado.",
-    imageURL: "operacion.avif",
+    imageURL: "servicio14.webp",
+    icon: "/icono15A.webp",
+    hoverIcon: "/icono15B.webp",
     link: "tratamiento_en_ojeras",
   },
   {
     title: "Injerto con grasa o transferencia en rostro",
     description:
       "Para redefinir los sitios de pérdida de grasa o mejorar las proporciones faciales.",
-    imageURL: "operacion.avif",
+    imageURL: "servicio15.webp",
+    icon: "/icono16A.webp",
+    hoverIcon: "/icono16B.webp",
     link: "injerto_con_grasa_o_transferencia_en_rostro",
   },
 ];
@@ -120,6 +151,8 @@ interface Service {
   description: string;
   imageURL: string;
   link: string;
+  icon?: string;
+  hoverIcon?: string;
 }
 
 const ServiceComponent: React.FC = () => {
@@ -153,7 +186,19 @@ const ServiceComponent: React.FC = () => {
                 style={{ backgroundImage: `url(${service.imageURL})` }}
               />
 
-              <MedicalIcon className="w-12 h-12 stroke-white rounded-full bg-[#798672] px-2 mb-2 group-hover:bg-white  group-hover:stroke-[#798672] z-10" />
+              <div className="relative z-10">
+                <img
+                  src={service.icon}
+                  alt={`${service.title} icon`}
+                  className="w-12 h-12 rounded-full bg-[#798672]  mb-2 group-hover:hidden"
+                />
+                <img
+                  src={service.hoverIcon}
+                  alt={`${service.title} hover icon`}
+                  className="w-12 h-12 rounded-full bg-white  mb-2 hidden group-hover:block"
+                />
+              </div>
+
               <h2 className="text-[#798672] font-bold text-xl group-hover:text-white z-10 text-center mb-4">
                 {service.title}
               </h2>
