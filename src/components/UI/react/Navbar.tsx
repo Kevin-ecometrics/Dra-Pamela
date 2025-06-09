@@ -121,7 +121,7 @@ const Navbar: React.FC = () => {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://wa.me/+526644468960/?text=Quiero obtener mas información sobre sus servicios."
+              href="https://wa.me/+526634395024/?text=Quiero obtener mas información sobre sus servicios."
               title="Dra Pamela | Contacto vía WhatsApp"
             >
               <li className="flex items-center gap-2">

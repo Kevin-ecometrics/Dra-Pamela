@@ -36,7 +36,7 @@ const Form: React.FC = () => {
     event.preventDefault();
     console.log(formData);
     const promise = axios.post(
-      "http://www.doctorapamelaperez.com/api/data",
+      "https://www.doctorapamelaperez.com/api/data",
       formData
     );
     toast.promise(promise, {
