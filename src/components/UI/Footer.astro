@@ -8,21 +8,26 @@ interface Link {
   description: string;
 }
 
+const { Lang } = Astro.props;
+
 const links: Link[] = [
   {
-    text: "Sobre Nosotros",
-    description:
-      "Mi compromiso contigo es la trasformación más allá de la superficie, combinando la precisión técnica con atención y escucha consciente para brindarte resultados excepcionales  y armónicos.  Mi objetivo es ofrecerte una cirugía estética de vanguardia y tratamientos no invasivos con la más avanzada tecnología.  Sera un placer conocerte, escucharte y trabajar juntos para hacer realidad tus necesidades y deseos en tu trasformación ",
+    text: Lang ? "About Us" : "Sobre Nosotros",
+    description: Lang
+      ? "My commitment to you is transformation beyond the surface, combining technical precision with mindful attention and listening to provide you with exceptional and harmonious results.\nMy goal is to offer cutting-edge aesthetic surgery and non-invasive treatments with the most advanced technology.\nIt will be a pleasure to meet you, listen to you, and work together to make your transformation needs and desires come true."
+      : "Mi compromiso contigo es la trasformación más allá de la superficie, combinando la precisión técnica con atención y escucha consciente para brindarte resultados excepcionales y armónicos.\nMi objetivo es ofrecerte una cirugía estética de vanguardia y tratamientos no invasivos con la más avanzada tecnología.\nSera un placer conocerte, escucharte y trabajar juntos para hacer realidad tus necesidades y deseos en tu trasformación.",
   },
   {
-    text: "Términos y Servicio",
-    description:
-      "La página de doctorapamelaperez.com contiene el contacto directo con nuestro personal de atención al cliente. \n\nToda reservación realizada en la página es directa a nuestra agenda en la recepción. \n\nLas citas son confirmadas por teléfono y deberán ser atendidas por el cliente en el periodo de 48hrs a 24hrs antes de la cita. \n\nCitas no confirmadas podrán ser consideradas como canceladas por el cliente. \n\nToda situación que se presente por cambio o devolución deberán ser notificado por correo electrónico a pacientes@doctorapamelaperez.com enviando descripción del problema o razón de la cancelación.",
+    text: Lang ? "Terms and Service" : "Términos y Servicio",
+    description: Lang
+      ? `The page doctorapamelaperez.com contains direct contact with our customer service staff.\n\nAll reservations made on the page go directly to our reception schedule.\n\nAppointments are confirmed by phone and must be attended by the client within 48 to 24 hours before the appointment.\n\nUnconfirmed appointments may be considered canceled by the client.\n\nAny situation involving changes or refunds must be notified by email to pacientes@doctorapamelaperez.com with a description of the problem or reason for cancellation.`
+      : `La página de doctorapamelaperez.com contiene el contacto directo con nuestro personal de atención al cliente.\n\nToda reservación realizada en la página es directa a nuestra agenda en la recepción.\n\nLas citas son confirmadas por teléfono y deberán ser atendidas por el cliente en el periodo de 48hrs a 24hrs antes de la cita.\n\nCitas no confirmadas podrán ser consideradas como canceladas por el cliente.\n\nToda situación que se presente por cambio o devolución deberán ser notificado por correo electrónico a pacientes@doctorapamelaperez.com enviando descripción del problema o razón de la cancelación.`,
   },
   {
-    text: "Política de Privacidad",
-    description:
-      "En doctorapamelaperez.com accesible desde http://doctorapamelaperez.com/ una de nuestras principales prioridades es la privacidad de nuestros visitantes. Este documento de Política de Privacidad contiene los tipos de información que son recopilados y registrados por Bites Creadores de Sonrisas y cómo los usamos. \n\n Si tiene preguntas adicionales o requiere más información sobre nuestra Política de Privacidad, no dude en contactarnos. \n\nEsta Política de Privacidad se aplica únicamente a nuestras actividades en línea y es válida para los visitantes de nuestro sitio web en lo que respecta a la información que comparten y/o recopilan en doctorapamelaperez.com \n\n Esta política no es aplicable a ninguna información recolectada fuera de línea o a través de otros canales que no sean este sitio web.\n\n Consentimiento \n\nAl utilizar nuestro sitio web, usted acepta nuestra Política de Privacidad y está de acuerdo con sus términos.\n\nLa información que recogemos \n\nLa información personal que se le pide que proporcione, y las razones por las que se le pide que la proporcione, se le aclarará en el momento en que le pidamos que proporcione su información personal. \n\nSi se pone en contacto con nosotros directamente, es posible que recibamos información adicional sobre usted, como su nombre, dirección de correo electrónico, número de teléfono, el contenido del mensaje y/o los archivos adjuntos que nos envíe, y cualquier otra información que decida proporcionar. \n\nCuando se registra en una Cuenta, podemos pedirle su información de contacto, incluyendo elementos como el nombre, el nombre de la empresa, la dirección, la dirección de correo electrónico y el número de teléfono. \n\nCómo utilizamos su información \n\nUtilizamos la información que recogemos de varias maneras, incluyendo: \n\nProporcionar, operar y mantener nuestra web \n\nMejorar, personalizar y ampliar nuestra web \n\nComprender y analizar cómo se utiliza nuestra web \n\nDesarrollar nuevos productos, servicios, características y funcionalidades \n\nComunicarse con usted, ya sea directamente o a través de uno de nuestros socios, incluyendo el servicio de atención al cliente, para proporcionarle actualizaciones y otra información relacionada con la web, y para fines de marketing y promoción. \n\nEnviarte emails \n\nEncontrar y prevenir el fraude \n\nArchivos de registro doctorapamelaperez.com sigue un procedimiento estándar de uso de archivos de registro. Estos archivos registran a los visitantes cuando visitan los sitios web. Todas las empresas de hosting hacen esto y una parte de los análisis de los servicios de hosting. La información recogida por los archivos de registro incluye las direcciones del protocolo de Internet (IP), el tipo de navegador, el proveedor de servicios de Internet (ISP), la fecha y la hora, las páginas de referencia/salida y posiblemente el número de clics. Éstas no están vinculadas a ninguna información que permita la identificación personal. El propósito de la información es analizar las tendencias, administrar el sitio, rastrear el movimiento de los usuarios en el sitio web y reunir información demográfica. Nuestra Política de Privacidad fue creada con la ayuda del Generador de Política de Privacidad y el Generador de Descargo de Responsabilidad.",
+    text: Lang ? "Privacy Policy" : "Política de Privacidad",
+    description: Lang
+      ? "At doctorapamelaperez.com accessible from http://doctorapamelaperez.com/ one of our top priorities is the privacy of our visitors.\nThis Privacy Policy document contains the types of information that are collected and recorded by Bites Smile Makers and how we use them.\nIf you have additional questions or require more information about our Privacy Policy, please feel free to contact us.\nThis Privacy Policy applies only to our online activities and applies to visitors to our website with respect to information they share and/or collect on doctorapamelaperez.com.\nThis policy does not apply to any information collected offline or through other channels other than this website.\nBy using our website, you accept our Privacy Policy and agree to its terms.\nThe personal information you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the time we ask you to provide your personal information.\nIf you contact us directly, we may receive additional information about you, such as your name, email address, telephone number, the content of the message and/or attachments you send us, and any other information you choose to provide.\nWhen you register for an Account, we may ask you for your contact information, including items such as name, company name, address, email address and phone number.\nHow we use your information\nWe use the information we collect in several ways, including:\n- Providing, operating and maintaining our website\n- Improving, customizing and enhancing our website\n- Understanding and analyzing how our website is used\n- Developing new products, services, features and functionality\n- Communicating with you, either directly or through one of our partners, including customer service, to provide you with updates and other website-related information, and for marketing and promotional purposes.\n- Send you emails.\n- Finding and preventing fraud.\nLog files\ndoctorapamelaperez.com follows a standard procedure of using log files.\nThese files record visitors when they visit websites.\nAll hosting companies do this and a part of the hosting services analysis.\nThe information collected by the log files includes Internet Protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time, referring/exit pages and possibly the number of clicks.\nThese are not linked to any personally identifiable information.\nThe purpose of the information is to analyze trends, administer the site, track users' movement around the website and gather demographic information.\nOur Privacy Policy was created with the help of the Privacy Policy Generator and Disclaimer Generator."
+      : "En doctorapamelaperez.com accesible desde http://doctorapamelaperez.com/ una de nuestras principales prioridades es la privacidad de nuestros visitantes.\nEste documento de Política de Privacidad contiene los tipos de información que son recopilados y registrados por Bites Creadores de Sonrisas y cómo los usamos.\nSi tiene preguntas adicionales o requiere más información sobre nuestra Política de Privacidad, no dude en contactarnos.\nEsta Política de Privacidad se aplica únicamente a nuestras actividades en línea y es válida para los visitantes de nuestro sitio web en lo que respecta a la información que comparten y/o recopilan en doctorapamelaperez.com.\nEsta política no es aplicable a ninguna información recolectada fuera de línea o a través de otros canales que no sean este sitio web.\nConsentimiento\nAl utilizar nuestro sitio web, usted acepta nuestra Política de Privacidad y está de acuerdo con sus términos.\nLa información que recogemos\nLa información personal que se le pide que proporcione, y las razones por las que se le pide que la proporcione, se le aclarará en el momento en que le pidamos que proporcione su información personal.\nSi se pone en contacto con nosotros directamente, es posible que recibamos información adicional sobre usted, como su nombre, dirección de correo electrónico, número de teléfono, el contenido del mensaje y/o los archivos adjuntos que nos envíe, y cualquier otra información que decida proporcionar.\nCuando se registra en una Cuenta, podemos pedirle su información de contacto, incluyendo elementos como el nombre, el nombre de la empresa, la dirección, la dirección de correo electrónico y el número de teléfono.\nCómo utilizamos su información\nUtilizamos la información que recogemos de varias maneras, incluyendo:\n- Proporcionar, operar y mantener nuestra web\n- Mejorar, personalizar y ampliar nuestra web\n- Comprender y analizar cómo se utiliza nuestra web\n- Desarrollar nuevos productos, servicios, características y funcionalidades\n- Comunicarse con usted, ya sea directamente o a través de uno de nuestros socios, incluyendo el servicio de atención al cliente, para proporcionarle actualizaciones y otra información relacionada con la web, y para fines de marketing y promoción.\n- Enviarte emails\n- Encontrar y prevenir el fraude\nArchivos de registro\ndoctorapamelaperez.com sigue un procedimiento estándar de uso de archivos de registro.\nEstos archivos registran a los visitantes cuando visitan los sitios web.\nTodas las empresas de hosting hacen esto y una parte de los análisis de los servicios de hosting.\nLa información recogida por los archivos de registro incluye las direcciones del protocolo de Internet (IP), el tipo de navegador, el proveedor de servicios de Internet (ISP), la fecha y la hora, las páginas de referencia/salida y posiblemente el número de clics.\nÉstas no están vinculadas a ninguna información que permita la identificación personal.\nEl propósito de la información es analizar las tendencias, administrar el sitio, rastrear el movimiento de los usuarios en el sitio web y reunir información demográfica.\nNuestra Política de Privacidad fue creada con la ayuda del Generador de Política de Privacidad y el Generador de Descargo de Responsabilidad.",
   },
 ];
 
@@ -36,9 +41,13 @@ let year = new Date().getFullYear();
     >
       <a href="/" class="cursor-pointer">
         <Image
-          title="La Doctora Pamela garantiza procedimientos con enfoque integral en la cirugía facial y otorrinolaringología "
+          title={Lang
+            ? "Dr. Pamela guarantees procedures with a comprehensive approach in facial surgery and otorhinolaryngology"
+            : "La Doctora Pamela garantiza procedimientos con enfoque integral en la cirugía facial y otorrinolaringología "}
           src={logo}
-          alt="La Doctora Pamela garantiza procedimientos con enfoque integral en la cirugía facial y otorrinolaringología "
+          alt={Lang
+            ? "Dr. Pamela guarantees procedures with a comprehensive approach in facial surgery and otorhinolaryngology"
+            : "La Doctora Pamela garantiza procedimientos con enfoque integral en la cirugía facial y otorrinolaringología "}
         />
       </a>
       <FooterList links={links} client:visible />
@@ -46,14 +55,21 @@ let year = new Date().getFullYear();
     <div class="py-2">
       <hr />
       <p class="text-center text-white text-md mt-8">
-        Todos los derechos reservados por Dra. Pamela Perez {year} &copy;.
+        {
+          Lang
+            ? `All rights reserved by Dr. Pamela Perez ${year} ©.`
+            : `Todos los derechos reservados por Dra. Pamela Perez ${year} ©.`
+        }
         <a
           class="hover:underline"
           href="http://www.doctorapamelaperez.com/"
-          title="Dra. Pamela Perez | Personalización Absoluta"
-          >doctorapamelaperez.com</a
+          title={Lang
+            ? "Dr. Pamela Perez | Absolute Personalization"
+            : "Dra. Pamela Perez | Personalización Absoluta"}
         >
-        {" "} está desarrollado por
+          doctorapamelaperez.com
+        </a>
+        {Lang ? " is developed by " : " está desarrollado por "}
         <a
           class="hover:underline"
           href="https://ecommetrica.com/"

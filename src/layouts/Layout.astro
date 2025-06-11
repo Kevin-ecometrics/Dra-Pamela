@@ -6,16 +6,19 @@ import "@fontsource/prata";
 import "@fontsource/poppins";
 import "@fontsource/italiana";
 import "@fontsource/pompiere";
+import "@fontsource/poiret-one";
 
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+
+const Language = Astro.url.pathname.startsWith("/en/");
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={Language ? "en" : "es"}>
   <head>
     <meta charset="UTF-8" />
     <meta
@@ -77,14 +80,17 @@ const { title } = Astro.props;
   </head>
   <body class="overflow-x-hidden">
     <ClientRouter />
-    <Navbar client:visible />
+    <Navbar client:visible Lang={Language} />
     <slot />
-    <Footer />
+    <Footer Lang={Language} />
   </body>
 </html>
 <style is:global>
   @import "tailwindcss";
 
+  .font-poiret {
+    font-family: "Poiret One", system-ui;
+  }
   .font-prata {
     font-family: "Prata", serif;
   }

@@ -10,6 +10,8 @@ import TikTok from "@components/icons/tiktok.astro";
 import Fondo from "@assets/background_image7.png";
 import Fondo2 from "@assets/background_image8.png";
 import Fondo3 from "@assets/background_image9.png";
+
+const { Lang } = Astro.props;
 ---
 
 <style>
@@ -114,15 +116,18 @@ import Fondo3 from "@assets/background_image9.png";
   </div>
 </div>
 <!-- segunda section -->
+<!-- Segunda sección -->
 <hr />
 <div class="grid grid-cols-1 md:grid-cols-2 py-16 mb-16">
   <div class="bg-[#F8F8F8] h-[500px] mt-4 w-full absolute z-0"></div>
+
   <div class="z-10">
     <h1
       class="font-prata text-center font-normal text-[#798672] text-2xl md:text-4xl py-8 md:py-16"
     >
-      Sígueme en mis redes sociales
+      {Lang ? "Follow me on social media" : "Sígueme en mis redes sociales"}
     </h1>
+
     <a
       href="https://www.instagram.com/dra_pamelaperez/"
       target="_blank"
@@ -133,6 +138,7 @@ import Fondo3 from "@assets/background_image9.png";
         Dra_Pamela Perez
       </p>
     </a>
+
     <a
       href="https://www.facebook.com/otorrino.drapamelaperez"
       target="_blank"
@@ -143,6 +149,7 @@ import Fondo3 from "@assets/background_image9.png";
         Dra. Pamela Perez
       </p>
     </a>
+
     <a
       href="https://www.tiktok.com/@dra_pamelaperez"
       target="_blank"
@@ -154,6 +161,7 @@ import Fondo3 from "@assets/background_image9.png";
       </p>
     </a>
   </div>
+
   <div class="iphone-case case-2 py-8 md:py-0">
     <video
       controls

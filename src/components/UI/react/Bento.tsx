@@ -62,7 +62,7 @@ const BentoGrid: React.FC = () => {
     },
     {
       src: "/gallery/2 A.webp",
-      srcTwo: "/gallery/gallery2 B.webp",
+      srcTwo: "/gallery/2 B.webp",
       width: 728,
       height: 1000,
       alt: "7-pic",

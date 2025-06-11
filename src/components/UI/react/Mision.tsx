@@ -1,25 +1,28 @@
 import React from "react";
 
-interface misionProps {
+interface MissionItem {
   title: string;
   background: string;
 }
 
-interface Props {
-  mision: misionProps[];
+interface MissionProps {
+  mission: MissionItem[];
 }
 
-const Mision: React.FC<Props> = ({ mision }) => {
+const Mision: React.FC<MissionProps> = ({ mission }) => {
   return (
-    <main className="py-16 container px-16">
-      <section className="flex justify-between items-center gap-16">
-        {mision.map((mision, index) => (
+    <main className="py-16  px-4 sm:px-8 md:px-16">
+      <section
+        className="flex items-center justify-between gap-8"
+        aria-label="Misión"
+      >
+        {mission.map((item, index) => (
           <div
             key={index}
-            className={`${mision.background} px-8 h-[480px] w-[300px] py-4`}
+            className={`${item.background} px-6 py-4 w-full sm:w-[300px] h-[480px] flex items-center justify-center`}
           >
-            <h1 className="font-prata text-5xl text-center text-[#798672] mb-4">
-              {mision.title}
+            <h1 className="font-prata text-4xl text-center text-[#798672]">
+              {item.title}
             </h1>
           </div>
         ))}

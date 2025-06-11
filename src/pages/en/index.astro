@@ -13,9 +13,7 @@ import BannerAppointment from "@components/BannerAppointment.astro";
 const Language = Astro.url.pathname.startsWith("/en/");
 ---
 
-<Layout
-  title="Descubre la nueva dimensión de belleza con resultados funcionales"
->
+<Layout title="Discover the new dimension of beauty with functional results">
   <Hero Lang={Language} />
   <About Lang={Language} />
   <Content Lang={Language} />

@@ -5,6 +5,8 @@ import Fondo from "@assets/background_image4.png";
 import Fondo2 from "@assets/background_image5.png";
 import Fondo3 from "@assets/background_image6.png";
 import AboutLogo from "@assets/about.webp";
+
+const { Lang } = Astro.props;
 ---
 
 <section class="bg-white flex justify-center">
@@ -12,26 +14,42 @@ import AboutLogo from "@assets/about.webp";
     <div>
       <Image
         src={AboutImage}
-        title="Conoce más acerca de la Dra. Pamela, más allá de su experiencia se destaca por su compromiso y arte en trasformar con funcionalidad    realzando la belleza de cada paciente al siguiente nivel"
-        alt="Conoce más acerca de la Dra. Pamela, más allá de su experiencia se destaca por su compromiso y arte en trasformar con funcionalidad    realzando la belleza de cada paciente al siguiente nivel"
+        title={Lang
+          ? "Learn more about Dr. Pamela — beyond her experience, she is known for her dedication and artistry in transforming with function and enhancing the beauty of each patient to the next level."
+          : "Conoce más acerca de la Dra. Pamela, más allá de su experiencia se destaca por su compromiso y arte en trasformar con funcionalidad realzando la belleza de cada paciente al siguiente nivel"}
+        alt={Lang
+          ? "Learn more about Dr. Pamela — beyond her experience, she is known for her dedication and artistry in transforming with function and enhancing the beauty of each patient to the next level."
+          : "Conoce más acerca de la Dra. Pamela, más allá de su experiencia se destaca por su compromiso y arte en trasformar con funcionalidad realzando la belleza de cada paciente al siguiente nivel"}
         class="flex justify-center items-center"
       />
       <Image
         src={Fondo}
-        alt="Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral "
-        title="Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral "
+        alt={Lang
+          ? "Your health in the hands of Dr. Pamela Pérez, a professional who ensures your comprehensive well-being"
+          : "Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral "}
+        title={Lang
+          ? "Your health in the hands of Dr. Pamela Pérez, a professional who ensures your comprehensive well-being"
+          : "Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral "}
         class="absolute top-[700px] left-0 hidden md:inline-block"
       />
       <Image
         src={Fondo2}
-        alt="Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral "
-        title="Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral "
+        alt={Lang
+          ? "Your health in the hands of Dr. Pamela Pérez, a professional who ensures your comprehensive well-being"
+          : "Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral "}
+        title={Lang
+          ? "Your health in the hands of Dr. Pamela Pérez, a professional who ensures your comprehensive well-being"
+          : "Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral "}
         class="absolute top-[700px] right-0 hidden md:inline-block"
       />
       <Image
         src={Fondo3}
-        alt="Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral "
-        title="Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral "
+        alt={Lang
+          ? "Your health in the hands of Dr. Pamela Pérez, a professional who ensures your comprehensive well-being"
+          : "Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral "}
+        title={Lang
+          ? "Your health in the hands of Dr. Pamela Pérez, a professional who ensures your comprehensive well-being"
+          : "Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral "}
         class="absolute top-[1300px] left-0 hidden md:inline-block"
       />
     </div>
@@ -39,22 +57,21 @@ import AboutLogo from "@assets/about.webp";
       <h1
         class="text-[#798672] text-center md:text-start text-3xl md:text-5xl font-prata"
       >
-        Dra. Pamela Perez
+        Dr{Lang ? "." : "a."} Pamela Perez
       </h1>
       <h2 class="font-poppins font-medium text-[#AA9170] text-lg mb-4">
-        Redefine la armonía de tu rostro, resalta tu belleza con un aspecto
-        natural
+        {
+          Lang
+            ? "Redefine your facial harmony and highlight your beauty with a natural look"
+            : "Redefine la armonía de tu rostro, resalta tu belleza con un aspecto natural"
+        }
       </h2>
       <h3 class="mb-4 font-poppins font-light">
-        Hola, que tal soy la doctora Pamela Pérez especialista en
-        otorrinolaringología y cirugía de cabeza y cuello.   Mi compromiso
-        contigo es la trasformación más allá de la superficie, combinando la
-        precisión técnica con atención y escucha consciente para brindarte
-        resultados excepcionales y armónicos.  Mi objetivo es ofrecerte una
-        cirugía estética de vanguardia y tratamientos no invasivos con la más
-        avanzada tecnología.  Sera un placer conocerte, escucharte y trabajar
-        juntos para realzar y armonizar rasgos de tu rostro llevando tu belleza
-        natural al siguiente nivel.
+        {
+          Lang
+            ? `Hello, I'm Dr. Pamela Pérez, a specialist in otolaryngology and head and neck surgery. My commitment to you goes beyond the surface—combining technical precision with conscious care and attentive listening to deliver exceptional and harmonious results. My goal is to provide you with cutting-edge aesthetic surgery and non-invasive treatments using the most advanced technology. It will be a pleasure to meet you, listen to you, and work together to enhance and harmonize your features, taking your natural beauty to the next level.`
+            : `Hola, que tal soy la doctora Pamela Pérez especialista en otorrinolaringología y cirugía de cabeza y cuello.   Mi compromiso contigo es la trasformación más allá de la superficie, combinando la precisión técnica con atención y escucha consciente para brindarte resultados excepcionales y armónicos.  Mi objetivo es ofrecerte una cirugía estética de vanguardia y tratamientos no invasivos con la más avanzada tecnología.  Sera un placer conocerte, escucharte y trabajar juntos para realzar y armonizar rasgos de tu rostro llevando tu belleza natural al siguiente nivel.`
+        }
       </h3>
       <div class="flex justify-center items-center">
         <Image src={AboutLogo} alt="background" class="hidden md:block" />
@@ -62,12 +79,3 @@ import AboutLogo from "@assets/about.webp";
     </div>
   </div>
 </section>
-
-<style>
-  .font-prata {
-    font-family: "Prata", serif;
-  }
-  .font-poppins {
-    font-family: "Poppins", sans-serif;
-  }
-</style>

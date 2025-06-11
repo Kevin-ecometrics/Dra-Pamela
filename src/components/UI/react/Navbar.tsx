@@ -5,15 +5,27 @@ interface NavItem {
   label: string;
 }
 
-const navItems: NavItem[] = [
+interface FormProps {
+  Lang: boolean; // true = English, false = Spanish (o viceversa)
+}
+
+const navItemsES: NavItem[] = [
   { href: "/", label: "Inicio" },
-  { href: "/gallery", label: "Galeria" },
+  { href: "/gallery", label: "Galería" },
   { href: "/services", label: "Servicios" },
   { href: "/blog", label: "Blog" },
   { href: "/appointment", label: "Agendar Cita" },
 ];
 
-const Navbar: React.FC = () => {
+const navItemsEN: NavItem[] = [
+  { href: "/en/", label: "Home" },
+  { href: "/en/gallery", label: "Gallery" },
+  { href: "/en/services", label: "Services" },
+  { href: "/en/blog", label: "Blog" },
+  { href: "/en/appointment", label: "Book Appointment" },
+];
+
+const Navbar: React.FC<FormProps> = ({ Lang }) => {
   const [pathname, setPathname] = useState("");
   const year = new Date().getFullYear();
 
@@ -39,20 +51,38 @@ const Navbar: React.FC = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  let blogsURL = [
-    {
-      href: "/blog/secretos-de-una-rinoplastia-exitosa",
-      title: "Rinoplastia Exitosa",
-    },
-    {
-      href: "/blog/mirada-renovada-blefaroplastia-y-sus-beneficios",
-      title: "Blefaroplastia Beneficios",
-    },
-    {
-      href: "/blog/la-ciencia-del-rejuvenecimiento-facial-tratamientos-no-quirurgicos",
-      title: "Rejuvenecimiento Facial",
-    },
-  ];
+  // Blogs URLs and titles depending on Lang
+  const blogsURL = Lang
+    ? [
+        {
+          href: "/blog/secretos-de-una-rinoplastia-exitosa",
+          title: "Successful Rhinoplasty",
+        },
+        {
+          href: "/blog/mirada-renovada-blefaroplastia-y-sus-beneficios",
+          title: "Blepharoplasty Benefits",
+        },
+        {
+          href: "/blog/la-ciencia-del-rejuvenecimiento-facial-tratamientos-no-quirurgicos",
+          title: "Facial Rejuvenation",
+        },
+      ]
+    : [
+        {
+          href: "/blog/secretos-de-una-rinoplastia-exitosa",
+          title: "Rinoplastia Exitosa",
+        },
+        {
+          href: "/blog/mirada-renovada-blefaroplastia-y-sus-beneficios",
+          title: "Blefaroplastia Beneficios",
+        },
+        {
+          href: "/blog/la-ciencia-del-rejuvenecimiento-facial-tratamientos-no-quirurgicos",
+          title: "Rejuvenecimiento Facial",
+        },
+      ];
+
+  const navItems = Lang ? navItemsEN : navItemsES;
 
   const isBlogPage = blogsURL.some((blog) => blog.href === pathname);
 
@@ -69,19 +99,36 @@ const Navbar: React.FC = () => {
               : "-translate-y-full opacity-0"
           }
         `}
-        aria-label="Main Navigation"
+        aria-label={Lang ? "Main Navigation" : "Navegación Principal"}
       >
         <p className="md:flex md:justify-end font-poppins py-3 px-4">
-          Lunes - Sabado: 9:00 Am - 5:00 Pm &nbsp;
-          <span className="block">Domingo: Cerrado</span>
+          {Lang
+            ? "Monday - Saturday: 9:00 AM - 5:00 PM"
+            : "Lunes - Sábado: 9:00 AM - 5:00 PM"}{" "}
+          &nbsp;
+          <span className="block">
+            {Lang ? "Sunday: Closed" : "Domingo: Cerrado"}
+          </span>
         </p>
-        <div className=" text-white shadow-2xl">
+        <div className="text-white shadow-2xl">
           <div className="mx-auto px-4 flex justify-between items-center">
-            <a href="/" className="text-lg font-bold" aria-label="Inicio">
+            <a
+              href="/"
+              className="text-lg font-bold"
+              aria-label={Lang ? "Home" : "Inicio"}
+            >
               <img
                 src="/Dra. Pamela especialista en cirugia de cabeza cuello y otorrinolaringologia.png"
-                alt="La Doctora Pamela garantiza procedimientos con enfoque integral en la cirugía facial y otorrinolaringología "
-                title="La Doctora Pamela garantiza procedimientos con enfoque integral en la cirugía facial y otorrinolaringología "
+                alt={
+                  Lang
+                    ? "Dr. Pamela guarantees procedures with a comprehensive approach in facial surgery and otorhinolaryngology"
+                    : "La Doctora Pamela garantiza procedimientos con enfoque integral en la cirugía facial y otorrinolaringología"
+                }
+                title={
+                  Lang
+                    ? "Dr. Pamela guarantees procedures with a comprehensive approach in facial surgery and otorhinolaryngology"
+                    : "La Doctora Pamela garantiza procedimientos con enfoque integral en la cirugía facial y otorrinolaringología"
+                }
               />
             </a>
             {isBlogPage ? (
@@ -121,23 +168,27 @@ const Navbar: React.FC = () => {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://wa.me/+526634395024/?text=Quiero obtener mas información sobre sus servicios."
-              title="Dra Pamela | Contacto vía WhatsApp"
+              href="https://wa.me/+526634395024/?text=I would like more information about your services."
+              title={
+                Lang
+                  ? "Dr Pamela | Contact via WhatsApp"
+                  : "Dra Pamela | Contacto vía WhatsApp"
+              }
             >
-              <li className="flex items-center gap-2">
+              <li className="flex items-center gap-2 cursor-pointer">
                 <img
                   src="/Contactanos via WhatsApp para agendar con la Doctora Pamela.svg"
                   title="whatsapp-icon"
                   alt="whatsapp-icon"
                 />
-                WhatsApp
+                {Lang ? "WhatsApp" : "WhatsApp"}
               </li>
             </a>
             {/* Mobile Menu Button */}
             <button
               className="md:hidden text-white focus:outline-none"
               onClick={toggleMobileMenu}
-              aria-label="Toggle mobile menu"
+              aria-label={Lang ? "Toggle mobile menu" : "Alternar menú móvil"}
             >
               {isMobileMenuOpen ? (
                 <svg
@@ -176,16 +227,16 @@ const Navbar: React.FC = () => {
       </nav>
       {/* Mobile Menu */}
       <aside
-        className={`fixed top-0 right-0 h-full text-center  bg-[#798672] p-4 transform border border-gray-800 transition-transform  duration-300 ease-in-out z-50 ${
+        className={`fixed top-0 right-0 h-full text-center bg-[#798672] p-4 transform border border-gray-800 transition-transform duration-300 ease-in-out z-50 ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         } md:hidden`}
-        aria-label="Mobile Navigation"
+        aria-label={Lang ? "Mobile Navigation" : "Navegación móvil"}
       >
         <div className="flex justify-end">
           <button
             className="text-white focus:outline-none"
             onClick={toggleMobileMenu}
-            aria-label="Close mobile menu"
+            aria-label={Lang ? "Close mobile menu" : "Cerrar menú móvil"}
           >
             <svg
               className="w-6 h-6"
@@ -207,8 +258,16 @@ const Navbar: React.FC = () => {
         <a href="/">
           <img
             src="/Dra. Pamela especialista en cirugia de cabeza cuello y otorrinolaringologia.png"
-            alt="La Doctora Pamela garantiza procedimientos con enfoque integral en la cirugía facial y otorrinolaringología "
-            title="La Doctora Pamela garantiza procedimientos con enfoque integral en la cirugía facial y otorrinolaringología "
+            alt={
+              Lang
+                ? "Dr. Pamela guarantees procedures with a comprehensive approach in facial surgery and otorhinolaryngology"
+                : "La Doctora Pamela garantiza procedimientos con enfoque integral en la cirugía facial y otorrinolaringología"
+            }
+            title={
+              Lang
+                ? "Dr. Pamela guarantees procedures with a comprehensive approach in facial surgery and otorhinolaryngology"
+                : "La Doctora Pamela garantiza procedimientos con enfoque integral en la cirugía facial y otorrinolaringología"
+            }
           />
         </a>
 
@@ -246,7 +305,11 @@ const Navbar: React.FC = () => {
           </ul>
         )}
         <div className="absolute bottom-0 left-0 w-full py-6 text-white text-center border-t border-white">
-          <p>Dra. Pamela Perez {year} &copy;.</p>
+          <p>
+            {Lang
+              ? `Dr. Pamela Perez ${year} ©.`
+              : `Dra. Pamela Perez ${year} ©.`}
+          </p>
         </div>
       </aside>
     </>

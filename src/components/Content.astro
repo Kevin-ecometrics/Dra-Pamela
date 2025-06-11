@@ -2,35 +2,45 @@
 import Education from "@components/UI/react/Education";
 import Mision from "@components/UI/react/Mision";
 import Testimonial from "@components/UI/react/Testimonial";
+
+const { Lang } = Astro.props;
+
 let education = [
   {
     date: "2011-2018",
-    title: "Medicina General.",
+    title: Lang ? "General Medicine" : "Medicina General.",
     image: "/education2.webp",
+    background: "hover:bg-[#D9D9D9]",
   },
   {
     date: "2019-2023",
-    title: "Otorrinolaringologia y Cirugia de Cabeza y Cuello.",
+    title: Lang
+      ? "Otorhinolaryngology and Head and Neck Surgery"
+      : "Otorrinolaringologia y Cirugia de Cabeza y Cuello.",
     image: "/education3.webp",
+    background: "hover:bg-[#A2948D]",
   },
   {
     date: "2023",
-    title: "Diplomado de Rinologia y Cirugia Plastica Facial.",
+    title: Lang
+      ? "Diploma in Rhinology and Facial Plastic Surgery"
+      : "Diplomado de Rinologia y Cirugia Plastica Facial.",
     image: "/education1.webp",
+    background: "hover:bg-[#AB9279]",
   },
 ];
 
 let mision = [
   {
-    title: "Misión",
+    title: Lang ? "Mission" : "Misión",
     background: "bg-[#D9D9D9]",
   },
   {
-    title: "Visión",
+    title: Lang ? "Vision" : "Visión",
     background: "bg-[#A2948D]",
   },
   {
-    title: "Valores",
+    title: Lang ? "Values" : "Valores",
     background: "bg-[#AB9279]",
   },
 ];
@@ -41,16 +51,10 @@ let mision = [
     <h1
       class="font-prata text-start px-8 text-3xl md:text-4xl text-[#798672] mb-8"
     >
-      Educación Profesional
+      {Lang ? "Professional Education" : "Educación Profesional"}
     </h1>
     <Education client:visible education={education} />
-    <!-- <Mision client:visible mision={mision} /> -->
-    <Testimonial client:visible />
+    <Mision client:visible mission={mision} />
+    <Testimonial client:visible Lang={Lang} />
   </div>
 </section>
-
-<style>
-  .font-poppins {
-    font-family: "Poppins", sans-serif;
-  }
-</style>
