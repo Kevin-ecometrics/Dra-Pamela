@@ -1,8 +1,12 @@
 ---
-import Footer from "../components/UI/Footer.astro";
-import { ViewTransitions } from "astro:transitions";
-import "@assets/styles/fonts.css";
+import Footer from "@components/UI/Footer.astro";
+import { ClientRouter } from "astro:transitions";
 import Navbar from "@components/UI/react/Navbar";
+import "@fontsource/prata";
+import "@fontsource/poppins";
+import "@fontsource/italiana";
+import "@fontsource/pompiere";
+
 interface Props {
   title: string;
 }
@@ -39,7 +43,6 @@ const { title } = Astro.props;
 
     <!-- Publisher -->
     <link rel="publisher" href="https://ecommetrica.com" />
-
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://www.doctorapamelaperez.com/" />
@@ -73,38 +76,116 @@ const { title } = Astro.props;
     />
   </head>
   <body class="overflow-x-hidden">
-    <ViewTransitions />
+    <ClientRouter />
     <Navbar client:visible />
     <slot />
     <Footer />
   </body>
 </html>
 <style is:global>
-  :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
+  @import "tailwindcss";
+
+  .font-prata {
+    font-family: "Prata", serif;
   }
-  html {
-    font-family: system-ui, sans-serif;
-    background: #fff;
-    background-size: 224px;
+
+  .font-poppins {
+    font-family: "Poppins", serif;
   }
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
+
+  .font-pompiere {
+    font-family: "Pompiere", serif;
+  }
+
+  .font-italiana {
+    font-family: "Italiana", serif;
+  }
+
+  .font-japandi {
+    font-family: "Japandi", serif;
+  }
+
+  .font-selna {
+    font-family: "Selna", serif;
+  }
+
+  .font-selna-oblique {
+    font-family: "Selna Oblique", serif;
+  }
+
+  .font-selna-outline {
+    font-family: "Selna Outline", serif;
+  }
+
+  .font-selna-oblique-outline {
+    font-family: "Selna Oblique Outline", serif;
+  }
+
+  @font-face {
+    font-family: "Japandi";
+    font-weight: bold;
+    src: url("/fonts/Japandi Bold.otf") format("opentype");
+  }
+
+  @font-face {
+    font-family: "Japandi";
+    font-weight: 300; /* Light */
+    src: url("/fonts/Japandi Light.otf") format("opentype");
+  }
+
+  @font-face {
+    font-family: "Japandi";
+    font-weight: normal; /* Regular */
+    src: url("/fonts/Japandi Regular.otf") format("opentype");
+  }
+
+  @font-face {
+    font-family: "Selna";
+    font-style: oblique;
+    src: url("/fonts/Selna-Oblique.otf") format("opentype");
+  }
+
+  @font-face {
+    font-family: "Selna";
+    font-style: oblique;
+    src: url("/fonts/Selna-Oblique.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Selna";
+    font-style: oblique;
+    font-weight: 700; /* Outline */
+    src: url("/fonts/Selna-ObliqueOutline.otf") format("opentype");
+  }
+
+  @font-face {
+    font-family: "Selna";
+    font-style: oblique;
+    font-weight: 700; /* Outline */
+    src: url("/fonts/Selna-ObliqueOutline.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Selna";
+    font-weight: 700; /* Outline */
+    src: url("/fonts/Selna-Outline.otf") format("opentype");
+  }
+
+  @font-face {
+    font-family: "Selna";
+    font-weight: 700; /* Outline */
+    src: url("/fonts/Selna-Outline.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Selna";
+    font-weight: normal; /* Regular */
+    src: url("/fonts/Selna-Regular.otf") format("opentype");
+  }
+
+  @font-face {
+    font-family: "Selna";
+    font-weight: normal; /* Regular */
+    src: url("/fonts/Selna-Regular.ttf") format("truetype");
   }
 </style>

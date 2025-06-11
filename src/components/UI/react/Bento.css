@@ -6,6 +6,7 @@
     grid-template-areas:
         "Foto1 Foto1 Foto2 Foto3"
         "Foto1 Foto1 Foto4 Foto5"
+        "Foto10 Foto10 Foto10 Foto10"
         "Foto6 Foto7 Foto9 Foto9"
         "Foto8 Foto8 Foto9 Foto9";
 }
@@ -19,6 +20,7 @@
 .Foto7 { grid-area: Foto7; }
 .Foto8 { grid-area: Foto8; }
 .Foto9 { grid-area: Foto9; }
+.Foto10 { grid-area: Foto10;}
 
 .compare-slider-container {
     padding: 8px;
@@ -38,6 +40,7 @@
             "Foto6"
             "Foto7"
             "Foto8"
-            "Foto9";
+            "Foto9"
+            "Foto10";
     }
 }

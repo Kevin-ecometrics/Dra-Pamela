@@ -5,7 +5,7 @@ import "./phone.css";
 const Testimonial: React.FC = () => {
   return (
     <>
-      <main className="md:container mx-auto lg:block ">
+      <main className="">
         <h1 className="text-[#798672] text-5xl font-prata text-start md:mb-0 mb-12">
           Testimonios
         </h1>

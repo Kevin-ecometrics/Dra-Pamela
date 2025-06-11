@@ -1,6 +1,4 @@
 ---
-import "@fontsource/italiana";
-import "@fontsource/poiret-one";
 import { Image } from "astro:assets";
 import logo from "@assets/Dra. Pamela especialista en cirugia de cabeza cuello y otorrinolaringologia.png";
 import whatsApp from "@assets/Contactanos via WhatsApp para agendar con la Doctora Pamela.svg";
@@ -8,44 +6,9 @@ import hero from "@assets/Resultados funcionales y esteticos realizados por la D
 import fondo from "@assets/background_image.png";
 import fondo2 from "@assets/background_image2.png";
 import fondo3 from "@assets/background_image3.png";
-import i18next, { t } from "i18next";
 ---
 
-<main class="bg-[#798672] md:h-[500px] text-white" lang={i18next.language}>
-  <!-- <span
-    class="flex justify-center md:justify-end px-4 font-poppins md:px-[260px] py-4"
-    >{t("nav.title")}</span
-  > -->
-  <!-- <nav class="hidden lg:block absolute w-screen z-50">
-    <ul
-      class="flex justify-between px-[280px] items-center [&>a]:text-2xl font-medium text-xl"
-    >
-      <li>
-        <a href="/" title="Doctora pamela | Personalización Absoluta">
-          <Image
-            title="La Doctora Pamela garantiza procedimientos con enfoque integral en la cirugía facial y otorrinolaringología "
-            src={logo}
-            alt="La Doctora Pamela garantiza procedimientos con enfoque integral en la cirugía facial y otorrinolaringología "
-          />
-        </a>
-      </li>
-
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://wa.me/+6634395024/?text=Hola Doctora Pamela, estoy viendo su pagina web tengo algunas dudas..."
-        title="Dra Pamela | Contacto vía WhatsApp"
-      >
-        <li class="flex items-center gap-2">
-          <Image
-            src={whatsApp}
-            alt="Contáctanos vía WhatsApp al 663 439 5024 Con gusto la Doctora Pamela te atenderá"
-            title="Contáctanos vía WhatsApp al 663 439 5024 Con gusto la Doctora Pamela te atenderá "
-          />WhatsApp
-        </li>
-      </a>
-    </ul>
-  </nav> -->
+<main class="bg-[#798672] md:h-[500px] text-white">
   <section
     class="text-justify items-center px-4 md:px-0 flex py-8 flex-col lg:flex-row"
   >
@@ -63,7 +26,7 @@ import i18next, { t } from "i18next";
         <span class="font-poiret text-2xl md:text-3xl lg:text-4xl"
           >Personalización absoluta.
         </span>
-        <span class="font-poiret text-md md:text-xl lg:text-2xl"
+        <span class="font-poiret md:w-[75%] text-md md:text-xl lg:text-2xl"
           >Redefine la armonía de tu rostro, resalta tu singularidad con un
           aspecto natural. Refinamiento del perfil y armonización estética del
           conjunto nasal.
