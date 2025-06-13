@@ -7,6 +7,8 @@ import Map from "@components/icons/Map.astro";
 import Fondo from "@assets/background_image6.png";
 import Fondo3 from "@assets/background_image12.png";
 import Fondo4 from "@assets/background_image13.png";
+
+const { Lang } = Astro.props;
 ---
 
 <main>
@@ -14,44 +16,62 @@ import Fondo4 from "@assets/background_image13.png";
     <div class="col-span-1">
       <Image
         src={Fondo}
-        alt="Fondo"
+        alt="Background"
         class="absolute rotate-180 translate-y-48 translate-x-[-120px] md:block hidden"
       />
       <Image
         src={Fondo3}
-        alt="Fondo"
+        alt="Background"
         class="absolute translate-x-[390px] translate-y-[650px] md:block hidden"
       />
       <div>
         <Image
           src={Dra}
-          alt="La Dra. Pamela Pérez es especialista en otorrinolaringología con sede en Tijuana"
+          alt={Lang
+            ? "Dr. Pamela Pérez is a specialist in otorhinolaryngology based in Tijuana"
+            : "La Dra. Pamela Pérez es especialista en otorrinolaringología con sede en Tijuana"}
           class="w-full h-full z-10"
         />
       </div>
     </div>
+
     <div class="col-span-2 flex justify-center items-center flex-col">
       <h1 class="text-[#AA9170] mb-4">
-        Event time zone: America/Tijuana GMT-07:00
+        {
+          Lang
+            ? "Event time zone: America/Tijuana GMT-07:00"
+            : "Zona horaria del evento: América/Tijuana GMT-07:00"
+        }
       </h1>
-      <span class="bg-[#798672] text-white px-4 rounded-lg py-1"
-        >Selecciona fecha y horario:</span
-      >
+
+      <span class="bg-[#798672] text-white px-4 rounded-lg py-1">
+        {Lang ? "Select date and time:" : "Selecciona fecha y horario:"}
+      </span>
+
       <Image src={Polygon} alt="Polygon" class="mb-4" />
+
       <div class="z-0">
-        <Calendar client:visible />
+        <Calendar client:visible Lang={Lang} />
       </div>
+
       <div class="flex items-center mt-4 mb-8 gap-4">
         <Map class="w-6 h-6 mr-2" />
         <ul class="[&>li]:text-[#798672] [&>li]:font-bold">
-          <li>P.º del Centenario 9580</li>
-          <li>Zona Urbana Rio Tijuana</li>
-          <li>22010 Tijuana, B.C.</li>
+          <li>
+            {Lang ? "P.º del Centenario 9580" : "P.º del Centenario 9580"}
+          </li>
+          <li>
+            {Lang ? "Zona Urbana Rio Tijuana" : "Zona Urbana Río Tijuana"}
+          </li>
+          <li>
+            {Lang ? "22010 Tijuana, Baja California" : "22010 Tijuana, B.C."}
+          </li>
         </ul>
       </div>
+
       <Image
         src={Fondo4}
-        alt="Fondo"
+        alt="Background"
         class="absolute translate-x-[100px] translate-y-[350px] md:block hidden"
       />
     </div>

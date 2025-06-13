@@ -1,0 +1,21 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Hero from "@components/UI/Hero.astro";
+import Bento from "@components/UI/react/Bento";
+import BannerAppointment from "@components/BannerAppointment.astro";
+
+const Language = Astro.url.pathname.startsWith("/en/");
+---
+
+<Layout title="Discover a new dimension of beauty with functional results">
+  <main>
+    <Hero
+      backgroundImage="/galleryHero.webp"
+      className=" h-[324px] flex justify-center items-center"
+    >
+      <h1 class="text-center text-white text-7xl font-prata">Gallery</h1>
+    </Hero>
+    <Bento client:visible />
+    <BannerAppointment bg="bg-[#6C5444]" Lang={Language} />
+  </main>
+</Layout>

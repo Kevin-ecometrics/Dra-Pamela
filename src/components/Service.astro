@@ -1,144 +1,287 @@
 ---
 import Medical from "@components/icons/serviceIcon";
-import Video from "./Video.astro";
+
+const { Lang } = Astro.props;
 const services = [
   {
     id: 1,
-    title: "Rinoseptumplastia O Rinoplastia",
-    description:
-      "Cirugía que modifica la estructura externa de forma estética y busca la corrección de problemas nasales",
-    procedimiento: "Rinoseptumplastia Y Rinoplastia",
+    title: {
+      es: "Rinoseptumplastia O Rinoplastia",
+      en: "Rhinoseptoplasty Or Rhinoplasty",
+    },
+    description: {
+      es: "Cirugía que modifica la estructura externa de forma estética y busca la corrección de problemas nasales",
+      en: "Surgery that modifies the external structure for aesthetic purposes and seeks to correct nasal problems",
+    },
+    procedimiento: {
+      es: "Rinoseptumplastia Y Rinoplastia",
+      en: "Rhinoseptoplasty And Rhinoplasty",
+    },
     video: "https://www.youtube.com/embed/g3F1GHCag04?si=tuJNhS8_mHxQtrLU",
-    videotext:
-      "Hola, el día de hoy te voy a hablar de qué hay detrás de una rinoplastia. La rinoplastia y la rinoseptumplastia se utilizan como sinónimos, ya que el término septum se refiere únicamente a que siempre se toma algo de septum o tabique nasal que tenemos aquí en medio para hacer modificaciones estéticas a la nariz. Tanto la rinoplastia como la rinoseptumplastía abordan cambios estéticos y cambios funcionales.   Existen dos abordajes de esta, uno es rinoplastía cerrada y otro es rinoplastía abierta. En ambos se realiza la misma disección que a lo mucho, sí, en caso de que sea rinoplastía abierta sería una incisión por aquí abajo. Se disecan todos los tejidos y después se tocan las áreas a tratar, ya sea pues Giba, la punta caída o diferentes áreas. En caso de que tengamos alteraciones funcionales, en la misma cirugía se van a tratar y se van a realizar con una valoración previa en la consulta. En esta valoración previa vamos a ver qué tipo de enfermedades tienes, qué tipo de abordaje sería, qué modificaciones o técnicas utilizaríamos en tu caso específico para poder llevarlas al quirófano. En cuanto a la recuperación, va a depender si tu tipo de trabajo es un trabajo que implique mucho esfuerzo o el levantar cosas pesadas o el estar en lugares muy calurosos. En los pacientes que trabajan de forma remota o en escritorio se recomienda que sea una semana, pero en estos otros pacientes que implica un esfuerzo físico tal vez es un poco más de dos semanas. ",
+    videotext: {
+      es: "Hola, el día de hoy te voy a hablar de qué hay detrás de una rinoplastia. La rinoplastia y la rinoseptumplastia se utilizan como sinónimos, ya que el término septum se refiere únicamente a que siempre se toma algo de septum o tabique nasal que tenemos aquí en medio para hacer modificaciones estéticas a la nariz. Tanto la rinoplastia como la rinoseptumplastía abordan cambios estéticos y cambios funcionales.   Existen dos abordajes de esta, uno es rinoplastía cerrada y otro es rinoplastía abierta. En ambos se realiza la misma disección que a lo mucho, sí, en caso de que sea rinoplastía abierta sería una incisión por aquí abajo. Se disecan todos los tejidos y después se tocan las áreas a tratar, ya sea pues Giba, la punta caída o diferentes áreas. En caso de que tengamos alteraciones funcionales, en la misma cirugía se van a tratar y se van a realizar con una valoración previa en la consulta. En esta valoración previa vamos a ver qué tipo de enfermedades tienes, qué tipo de abordaje sería, qué modificaciones o técnicas utilizaríamos en tu caso específico para poder llevarlas al quirófano. En cuanto a la recuperación, va a depender si tu tipo de trabajo es un trabajo que implique mucho esfuerzo o el levantar cosas pesadas o el estar en lugares muy calurosos. En los pacientes que trabajan de forma remota o en escritorio se recomienda que sea una semana, pero en estos otros pacientes que implica un esfuerzo físico tal vez es un poco más de dos semanas. ",
+      en: "Hello, today I will talk to you about what is behind a rhinoplasty. Rhinoplasty and rhinoseptoplasty are used as synonyms, since the term septum refers only to the fact that something from the septum or nasal septum is always taken to make aesthetic modifications to the nose. Both rhinoplasty and rhinoseptoplasty address aesthetic and functional changes. There are two approaches: closed rhinoplasty and open rhinoplasty. In both, the same dissection is performed, and in the case of open rhinoplasty, there is an incision below. All tissues are dissected and then the areas to be treated are addressed, such as the hump, drooping tip, or other areas. If there are functional alterations, they are treated in the same surgery after a prior consultation assessment. In this assessment, we will see what diseases you have, what approach would be used, and what modifications or techniques would be applied in your specific case. Recovery depends on your type of work: if it involves heavy lifting or hot environments, it may take longer. For remote or desk workers, one week is recommended; for others, it may be more than two weeks.",
+    },
   },
   {
     id: 2,
-    title: "Blefaroplastia",
-    description:
-      "Cirugía de corrección de párpados superiores o inferiores por exceso de piel o grasa.",
-    procedimiento: "Blefaroplastia",
+    title: {
+      es: "Blefaroplastia",
+      en: "Blepharoplasty",
+    },
+    description: {
+      es: "Cirugía de corrección de párpados superiores o inferiores por exceso de piel o grasa.",
+      en: "Surgery to correct upper or lower eyelids due to excess skin or fat.",
+    },
+    procedimiento: {
+      es: "Blefaroplastia",
+      en: "Blepharoplasty",
+    },
     video: "https://www.youtube.com/embed/X_hn5AcWPrg?si=3awpae87lbxNWLcP",
-    videotext:
-      "Hola, el dia de hoy vamos a hablar de un procedimiento muy discreto y muy bonito que es la blefaroplastia. La blefaroplastia superior la incisión queda justo en el pliegue donde abrimos el ojito, entonces queda muy oculta. Se utiliza para quitar exceso de piel que tenemos ya por la edad o por cuestiones genéticas. Incluso también podemos reacomodar la glándula que tenemos acá en los casos en los que  esta está muy caída o podemos retirar gasita.  En cuanto a la blefaroplastia inferior se realiza a uno o dos milimetritos por debajo del pliegue de las pestañas, las pestañitas ocultan la cicatriz y rara vez se percibe, otro tipo de abordaje de la blefaroplastia inferior es por dentro de la conjuntiva o por dentro del ojito, en esa se vierte un poco el parpadito para poder hacer la incisión y en estos casos es en los que los pacientes únicamente tienen exceso de grasita, si tienen exceso de piel, justamente se tiene que hacer una incisión por debajo  En cuanto a la recuperación de la blefaroplastia, usualmente se asocia a moretitos alrededor de los ojos, entonces este sí es un procedimiento que se recomienda que estemos alejados del sol. ya que se puede manchar la piel y sin hacer esfuerzos físicos.   ¿Cómo saber si eres candidato de este procedimiento? Usualmente dentro de la consulta de valoración verificaríamos si tienes algún problema ocular, algún antecedente de alguna enfermedad en los ojitos o si tienes alguna enfermedad sistémica como diabetes e hipertensión.  Hay dos tipos de opciones para realizarla, una es mediante sedación y anestesia local y la otra solamente es anestesia local, pero esto lo va a determinar el tipo de paciente que tú seas. ",
+    videotext: {
+      es: "Hola, el dia de hoy vamos a hablar de un procedimiento muy discreto y muy bonito que es la blefaroplastia. La blefaroplastia superior la incisión queda justo en el pliegue donde abrimos el ojito, entonces queda muy oculta. Se utiliza para quitar exceso de piel que tenemos ya por la edad o por cuestiones genéticas. Incluso también podemos reacomodar la glándula que tenemos acá en los casos en los que  esta está muy caída o podemos retirar gasita.  En cuanto a la blefaroplastia inferior se realiza a uno o dos milimetritos por debajo del pliegue de las pestañas, las pestañitas ocultan la cicatriz y rara vez se percibe, otro tipo de abordaje de la blefaroplastia inferior es por dentro de la conjuntiva o por dentro del ojito, en esa se vierte un poco el parpadito para poder hacer la incisión y en estos casos es en los que los pacientes únicamente tienen exceso de grasita, si tienen exceso de piel, justamente se tiene que hacer una incisión por debajo  En cuanto a la recuperación de la blefaroplastia, usualmente se asocia a moretitos alrededor de los ojos, entonces este sí es un procedimiento que se recomienda que estemos alejados del sol. ya que se puede manchar la piel y sin hacer esfuerzos físicos.   ¿Cómo saber si eres candidato de este procedimiento? Usualmente dentro de la consulta de valoración verificaríamos si tienes algún problema ocular, algún antecedente de alguna enfermedad en los ojitos o si tienes alguna enfermedad sistémica como diabetes e hipertensión.  Hay dos tipos de opciones para realizarla, una es mediante sedación y anestesia local y la otra solamente es anestesia local, pero esto lo va a determinar el tipo de paciente que tú seas. ",
+      en: "Hello, today we are going to talk about a very discreet and beautiful procedure: blepharoplasty. The incision for upper blepharoplasty is right in the crease where the eye opens, so it is very hidden. It is used to remove excess skin due to age or genetics. The gland can also be repositioned if it is drooping, or fat can be removed. For lower blepharoplasty, the incision is made one or two millimeters below the lash line, so the lashes hide the scar and it is rarely noticeable. Another approach is through the conjunctiva, for patients with only excess fat. Recovery usually involves bruising around the eyes, so it is recommended to stay out of the sun and avoid physical effort. To know if you are a candidate, we check for eye problems or systemic diseases like diabetes or hypertension during consultation. There are two options: sedation with local anesthesia or just local anesthesia, depending on the patient.",
+    },
   },
   {
     id: 3,
-    title: "Liposuccion De Cuello Y Papada",
-    description:
-      "Cirugía de extracción de grasa localizada en el cuello y papada.",
-    procedimiento: "Liposuccion De Cuello Y Papada",
+    title: {
+      es: "Liposuccion De Cuello Y Papada",
+      en: "Neck And Chin Liposuction",
+    },
+    description: {
+      es: "Cirugía de extracción de grasa localizada en el cuello y papada.",
+      en: "Surgery to remove localized fat in the neck and chin.",
+    },
+    procedimiento: {
+      es: "Liposuccion De Cuello Y Papada",
+      en: "Neck And Chin Liposuction",
+    },
     video: "https://www.youtube.com/embed/pqF9-wsobSo?si=J7xFdYY7QOSPdMBP",
-    videotext:
-      "Hola, ¿Cómo estás? El día de hoy te voy a hablar sobre un procedimiento muy bonito que es  la liposucción de cuello o liposucción de cara y cuello. Este es un procedimiento en el cual se realizan tres incisiones que son muy pequeñas, estas incisiones son de tres milímetros, se realiza una por debajo del mentón en la línea que tenemos que se nos hacen el pliegue entre la papada y el mentón y las otras dos son por debajo de la orejita, éstas rara vez son percibidas. Por esas incisiones se va a pasar una cánula muy pequeña de tres milímetros con la cual se va a disecar y retirar la grasa localizada. Este procedimiento se va a realizar en personas que tienen grasa localizada en el área de su papada o de su cuello, incluso se puede abordar hasta una parte del cachetito y se realiza por medio de anestesia local, a veces acompañada de sedación o a veces sin sedación Incluso. Es un procedimiento que tiene el mínimo de dolor y usualmente se puede acompañar de otros procedimientos como rinoplastia, mentoplastia para modificar un poquito la definición mandibular, el proceso de recuperación es alrededor de tres semanas utilizando un barbicuello o mementonera pero ésta no requiere una incapacidad laboral como tal. ",
+    videotext: {
+      es: "Hola, ¿Cómo estás? El día de hoy te voy a hablar sobre un procedimiento muy bonito que es  la liposucción de cuello o liposucción de cara y cuello. Este es un procedimiento en el cual se realizan tres incisiones que son muy pequeñas, estas incisiones son de tres milímetros, se realiza una por debajo del mentón en la línea que tenemos que se nos hacen el pliegue entre la papada y el mentón y las otras dos son por debajo de la orejita, éstas rara vez son percibidas. Por esas incisiones se va a pasar una cánula muy pequeña de tres milímetros con la cual se va a disecar y retirar la grasa localizada. Este procedimiento se va a realizar en personas que tienen grasa localizada en el área de su papada o de su cuello, incluso se puede abordar hasta una parte del cachetito y se realiza por medio de anestesia local, a veces acompañada de sedación o a veces sin sedación Incluso. Es un procedimiento que tiene el mínimo de dolor y usualmente se puede acompañar de otros procedimientos como rinoplastia, mentoplastia para modificar un poquito la definición mandibular, el proceso de recuperación es alrededor de tres semanas utilizando un barbicuello o mementonera pero ésta no requiere una incapacidad laboral como tal. ",
+      en: "Hello, how are you? Today I will talk about a very nice procedure: neck liposuction or face and neck liposuction. This procedure involves making three small incisions, each three millimeters long. One is made under the chin, in the line where the fold between the chin and the neck is, and the other two are made under the ear, rarely noticeable. Through these incisions, a very small cannula is inserted to dissect and remove localized fat. It is performed on people with localized fat in the chin or neck area and can even address part of the cheek. It is done under local anesthesia, sometimes with sedation, sometimes without. It is a procedure with minimal pain and can usually be combined with other procedures like rhinoplasty or mentoplasty to slightly modify the mandibular definition. The recovery process takes about three weeks using a neck brace, but it does not require a work stoppage.",
+    },
   },
   {
     id: 4,
-    title: "Mentoplastia",
-    procedimiento: "Mentoplastia",
-    description:
-      "Cirugía de colocación de implante en mentón para su aumento definitivo.",
+    title: {
+      es: "Mentoplastia",
+      en: "Mentoplasty",
+    },
+    procedimiento: {
+      es: "Mentoplastia",
+      en: "Mentoplasty",
+    },
+    description: {
+      es: "Cirugía de colocación de implante en mentón para su aumento definitivo.",
+      en: "Surgery to place an implant in the chin for permanent augmentation.",
+    },
     video: "https://www.youtube.com/embed/zWQRDxVD_yU?si=DRZ_f7cOPBoyyRot",
-    videotext:
-      "Te voy a hablar de un procedimiento muy discreto y muy elegante que es la mentoplastía. La mentoplastía es un procedimiento que nadie nota, usualmente te pueden llegar a decir como que algo te hiciste, pero no sé qué. Es un procedimiento que se realiza usualmente acompañado de otros procedimientos como lo es rinoplastia, liposucción de cuello, bichectomía. Usualmente no implica mucha inflamación ni mucha recuperación, una recuperación a muy largo plazo. Pero si se asocia a otro procedimiento a veces si requiere un poquito más de días de incapacidad. ¿Cómo se realiza este procedimiento? Es una incisión por aquí abajo, justo en el pliegue donde termina el mentón y empieza la papada. Por esa incisión se realiza la disección de los tejidos para colocar el mentón que es un derivado del plástico o silastic. Este mentoncito no va a requerir que tú recambies el mentón en algún momento. Es un mentón que se va a utilizar de por vida y posterior a la colocación del implante, se realiza un cierre por debajo del mentoncito.  Una vez que realizamos el cierre, el retiro de puntos es alrededor de los 10 días aproximados. ",
+    videotext: {
+      es: "Te voy a hablar de un procedimiento muy discreto y muy elegante que es la mentoplastía. La mentoplastía es un procedimiento que nadie nota, usualmente te pueden llegar a decir como que algo te hiciste, pero no sé qué. Es un procedimiento que se realiza usualmente acompañado de otros procedimientos como lo es rinoplastia, liposucción de cuello, bichectomía. Usualmente no implica mucha inflamación ni mucha recuperación, una recuperación a muy largo plazo. Pero si se asocia a otro procedimiento a veces si requiere un poquito más de días de incapacidad. ¿Cómo se realiza este procedimiento? Es una incisión por aquí abajo, justo en el pliegue donde termina el mentón y empieza la papada. Por esa incisión se realiza la disección de los tejidos para colocar el mentón que es un derivado del plástico o silastic. Este mentoncito no va a requerir que tú recambies el mentón en algún momento. Es un mentón que se va a utilizar de por vida y posterior a la colocación del implante, se realiza un cierre por debajo del mentoncito.  Una vez que realizamos el cierre, el retiro de puntos es alrededor de los 10 días aproximados. ",
+      en: "I will talk about a very discreet and elegant procedure: mentoplasty. Mentoplasty is a procedure that no one notices; people may tell you that you look different, but they won't know why. It is usually performed together with other procedures like rhinoplasty, neck liposuction, or buccal fat removal. It typically doesn't involve much swelling or recovery time, unless combined with other procedures, which may require a few more days of recovery. How is this procedure done? An incision is made under the chin, in the crease where the chin meets the neck. Through this incision, the tissues are dissected to place the chin implant, made of plastic or silastic. This implant is meant to last a lifetime, and after its placement, the incision is closed. Sutures are removed after about 10 days.",
+    },
   },
   {
     id: 5,
-    title: "Bichectomia",
-    description:
-      "Extracción quirúrgica de las bolsas de bichat para redefinir el rostro.",
-    procedimiento: "Bichectomia",
+    title: {
+      es: "Bichectomia",
+      en: "Buccal Fat Removal",
+    },
+    description: {
+      es: "Extracción quirúrgica de las bolsas de bichat para redefinir el rostro.",
+      en: "Surgical removal of the buccal fat pads to redefine the face.",
+    },
+    procedimiento: {
+      es: "Bichectomia",
+      en: "Buccal Fat Removal",
+    },
     video: "https://www.youtube.com/embed/L2canuZCxDw?si=Yk0gOJDBzmw2uNVy",
-    videotext:
-      "Hoy te voy a hablar de un procedimiento que ha tenido mucho augue, en los últimos años que es la bichectomía. La bichectomía es la extracción de las bolsitas de bichat o bolitas de bichat que se encuentran en los cachetitos. Este procedimiento lo que va a hacer es realzar un poquito el pómulo, ya que va a retirar un poquito de volumen en la zona más inferior.  ¿Cómo saber si soy una candidata a este procedimiento? va a depender de la edad, va a depender si éstas se encuentran en una muy mala posición. O el tipo de rostro que tengamos y este se va a realizar mediante unas incisiones muy pequeñas alrededor de un centímetro por dentro de la boca, en la cual se van a extraer las bolsitas de bichat y se van a realizar un cierre con un puntito que normalmente es reabsorbible, por lo cual no se debe de quitar.  En cuanto al postoperatorio de este procedimiento, no implica realmente una incapacidad laboral, si tú trabajas de remoto o realizas mínimo esfuerzo, realmente podrías realizarte el procedimiento un día y al siguiente día estar volviendo a trabajar, pero en caso de que implique esfuerzos físicos, tal vez nos tendremos que quedar una semana en casa.",
+    videotext: {
+      es: "Hoy te voy a hablar de un procedimiento que ha tenido mucho augue, en los últimos años que es la bichectomía. La bichectomía es la extracción de las bolsitas de bichat o bolitas de bichat que se encuentran en los cachetitos. Este procedimiento lo que va a hacer es realzar un poquito el pómulo, ya que va a retirar un poquito de volumen en la zona más inferior.  ¿Cómo saber si soy una candidata a este procedimiento? va a depender de la edad, va a depender si éstas se encuentran en una muy mala posición. O el tipo de rostro que tengamos y este se va a realizar mediante unas incisiones muy pequeñas alrededor de un centímetro por dentro de la boca, en la cual se van a extraer las bolsitas de bichat y se van a realizar un cierre con un puntito que normalmente es reabsorbible, por lo cual no se debe de quitar.  En cuanto al postoperatorio de este procedimiento, no implica realmente una incapacidad laboral, si tú trabajas de remoto o realizas mínimo esfuerzo, realmente podrías realizarte el procedimiento un día y al siguiente día estar volviendo a trabajar, pero en caso de que implique esfuerzos físicos, tal vez nos tendremos que quedar una semana en casa.",
+      en: "Today I will talk about a procedure that has become very popular in recent years: buccal fat removal. This procedure involves removing the buccal fat pads, which are small pockets of fat in the cheeks. The goal is to slightly enhance the cheekbone area by removing some volume from the lower part of the cheeks. How do you know if you are a candidate for this procedure? It depends on your age, the position of the fat pads, and the shape of your face. The procedure is done through small incisions inside the mouth, about one centimeter long, where the buccal fat pads are removed, and the incision is closed with a tiny, usually absorbable suture. As for the recovery, it doesn't usually require time off work, but if your job involves physical effort, you might need about a week off.",
+    },
   },
   {
     id: 6,
-    title: "Otoplastia",
-    description:
-      "Cirugía de orejas para corrección de deformidades o alteraciones.",
-    procedimiento: "Otoplastia",
+    title: {
+      es: "Otoplastia",
+      en: "Otoplasty",
+    },
+    description: {
+      es: "Cirugía de orejas para corrección de deformidades o alteraciones.",
+      en: "Ear surgery to correct deformities or alterations.",
+    },
+    procedimiento: {
+      es: "Otoplastia",
+      en: "Otoplasty",
+    },
     video: "https://www.youtube.com/embed/toxE1iQ4-Rg?si=sTYifKddlxpLBiR-",
-    videotext:
-      "Hola, te voy a decir qué es la otoplastía y quiénes son candidatos para este procedimiento. La otoplastía es un procedimiento que se hace para reducir el tamaño de las orejitas. Es una cirugía y es un procedimiento pues mínimamente invasivo, se puede realizar incluso hasta dentro del quirófano.  Se realiza una incisión por detrás de la orejita, la cual no se nota normalmente y usualmente requiere unos puntos de sutura, los cuales se retiran a los 10 días aproximados. Se realiza una plicatura, o sea, un doblez del cartilaguito hacia atrás y se utiliza en personas que tienen sus orejitas muy prominentes por dos tipos de deformidades o alteraciones que tenemos en las orejas.  Una es que este cuenquito que tenemos que se llama concha esté muy prominente y el otro es que esta aplicatura normal no la tengamos, que tenemos esto planito y la orejita en asa. este es un procedimiento que se puede realizar dentro del consultorio incluso con la necesidad de sedación o sin sedación y se puede realizar también en quirófano para una forma más cómoda usualmente no requiere un proceso de incapacidad y no es una incapacidad muy incómoda, usualmente requiere un vendaje que se va a utilizar alrededor de la cabecita para limitar un poquito la inflamación de las orejas. ",
+    videotext: {
+      es: "Hola, te voy a decir qué es la otoplastía y quiénes son candidatos para este procedimiento. La otoplastía es un procedimiento que se hace para reducir el tamaño de las orejitas. Es una cirugía y es un procedimiento pues mínimamente invasivo, se puede realizar incluso hasta dentro del quirófano.  Se realiza una incisión por detrás de la orejita, la cual no se nota normalmente y usualmente requiere unos puntos de sutura, los cuales se retiran a los 10 días aproximados. Se realiza una plicatura, o sea, un doblez del cartilaguito hacia atrás y se utiliza en personas que tienen sus orejitas muy prominentes por dos tipos de deformidades o alteraciones que tenemos en las orejas.  Una es que este cuenquito que tenemos que se llama concha esté muy prominente y el otro es que esta aplicatura normal no la tengamos, que tenemos esto planito y la orejita en asa. este es un procedimiento que se puede realizar dentro del consultorio incluso con la necesidad de sedación o sin sedación y se puede realizar también en quirófano para una forma más cómoda usualmente no requiere un proceso de incapacidad y no es una incapacidad muy incómoda, usualmente requiere un vendaje que se va a utilizar alrededor de la cabecita para limitar un poquito la inflamación de las orejas. ",
+      en: "Hello, I will explain what otoplasty is and who the candidates for this procedure are. Otoplasty is a procedure done to reduce the size of protruding ears. It is a surgical and minimally invasive procedure that can even be done in the operating room. An incision is made behind the ear, which is not usually noticeable, and requires sutures that are removed after about 10 days. A fold is made in the cartilage to pin the ear back, and it is used for people with prominent ears due to two types of deformities: one where the concha is too prominent, and another where the normal fold is absent, causing the ear to stick out. This procedure can be done in the office with or without sedation, or in the operating room for more comfort. It usually doesn't require a complicated recovery process, just a bandage around the head to limit ear swelling.",
+    },
   },
   {
     id: 7,
-    title: "Levantamiento De Temporal",
-    description:
-      "Cirugía de lifting de tercio medio para rejuvenecimiento facial sin cicatrices visibles.",
-    procedimiento: "Levantamiento De Temporal",
+    title: {
+      es: "Levantamiento De Temporal",
+      en: "Temporal Lifting",
+    },
+    description: {
+      es: "Cirugía de lifting de tercio medio para rejuvenecimiento facial sin cicatrices visibles.",
+      en: "Middle third lifting surgery for facial rejuvenation without visible scars.",
+    },
+    procedimiento: {
+      es: "Levantamiento De Temporal",
+      en: "Temporal Lifting",
+    },
     video: "https://www.youtube.com/embed/mePSCGfblDE?si=Rru3sJbn6EyoFPXc",
-    videotext:
-      "Te voy a hablar de un procedimiento que se llama levantamiento del temporal. Tiene otros nombres como mini lifting o levantamiento del tercio medio. Este procedimiento se realiza por dentro del cabello y es una incisión en uso. Esta incisión o este abordaje queda escondido por el cabello y lo que realiza es un levantamiento del pómulo y la colita de la ceja. ¿Qué personas son candidatas para ese procedimiento? Personas que tengan una caída en su cejita por cuestiones genéticas o cuestiones de la edad. o personas que tengan un poquito su pómulo caído. Este abordaje va a ser este levantamiento del tercio, entonces va a ayudar a que la cara se vea más fresca y la cara se vea un poquito más rejuvenecida. Se puede realizar cuando ya tengamos algo de flacidez facial o cuando tengamos pérdida o caída de una de estas dos estructuras.  En cuanto al posoperatorio, usualmente no requiere mucha inflamación, pero pueden percibirse algunos moretes en la zona, por lo cual debemos de cuidarnos del sol y de los esfuerzos físicos. ",
+    videotext: {
+      es: "Te voy a hablar de un procedimiento que se llama levantamiento del temporal. Tiene otros nombres como mini lifting o levantamiento del tercio medio. Este procedimiento se realiza por dentro del cabello y es una incisión en uso. Esta incisión o este abordaje queda escondido por el cabello y lo que realiza es un levantamiento del pómulo y la colita de la ceja. ¿Qué personas son candidatas para ese procedimiento? Personas que tengan una caída en su cejita por cuestiones genéticas o cuestiones de la edad. o personas que tengan un poquito su pómulo caído. Este abordaje va a ser este levantamiento del tercio, entonces va a ayudar a que la cara se vea más fresca y la cara se vea un poquito más rejuvenecida. Se puede realizar cuando ya tengamos algo de flacidez facial o cuando tengamos pérdida o caída de una de estas dos estructuras.  En cuanto al posoperatorio, usualmente no requiere mucha inflamación, pero pueden percibirse algunos moretes en la zona, por lo cual debemos de cuidarnos del sol y de los esfuerzos físicos. ",
+      en: "I will talk about a procedure called temporal lifting, also known as mini-lifting or middle third lifting. This procedure is done within the hairline, so the incision is hidden by the hair. It lifts the cheek and the tail of the eyebrow. Candidates for this procedure are usually people with sagging eyebrows or cheeks due to genetics or aging. This approach helps to make the face look fresher and slightly rejuvenated. It can be done when there is some facial laxity or when there is loss or sagging of these structures. As for the postoperative period, it usually doesn't require much recovery time, but there might be some bruising in the area, so it's important to protect yourself from the sun and avoid physical exertion.",
+    },
   },
   {
     id: 8,
-    title: "Levantamiento De Cejas",
-    description: "Cirugía de corrección de altura de cejas.",
-    procedimiento: "Levantamiento De Cejas",
+    title: {
+      es: "Levantamiento De Cejas",
+      en: "Eyebrow Lifting",
+    },
+    description: {
+      es: "Cirugía de corrección de altura de cejas.",
+      en: "Surgery to correct eyebrow height.",
+    },
+    procedimiento: {
+      es: "Levantamiento De Cejas",
+      en: "Eyebrow Lifting",
+    },
     video: "https://www.youtube.com/embed/GTSIkh_bJdo?si=ZneTooQ28zh11RZ2",
-    videotext:
-      "Hola, te voy a decir qué es el levantamiento de cejas. El levantamiento de cejas es un abordaje que se puede realizar de dos formas. Una es una incisión por adentro del cabello, la cual no se nota, y la otra es una incisión directo en la ceja, por arriba de la ceja. Dependiendo del tipo de paciente, se elegirá uno o el otro tipo de abordaje. Ambos lo que realizan es la elevación de la ceja para esas personas que por la edad, por cuestiones genéticas, tienen la colita y el arquito de la ceja muy caído.  El posoperatorio de levantamiento de cejas que se realiza desde el abordaje frontal usualmente solo se asocia a inflamación durante un periodo corto de tiempo o moretes. Y el posoperatorio de las personas que se realiza en levantamiento de cejas de forma directa puede asociarse a una mala cicatrización, por ello es importante elegir bien a nuestro paciente.",
+    videotext: {
+      es: "Hola, te voy a decir qué es el levantamiento de cejas. El levantamiento de cejas es un abordaje que se puede realizar de dos formas. Una es una incisión por adentro del cabello, la cual no se nota, y la otra es una incisión directo en la ceja, por arriba de la ceja. Dependiendo del tipo de paciente, se elegirá uno o el otro tipo de abordaje. Ambos lo que realizan es la elevación de la ceja para esas personas que por la edad, por cuestiones genéticas, tienen la colita y el arquito de la ceja muy caído.  El posoperatorio de levantamiento de cejas que se realiza desde el abordaje frontal usualmente solo se asocia a inflamación durante un periodo corto de tiempo o moretes. Y el posoperatorio de las personas que se realiza en levantamiento de cejas de forma directa puede asociarse a una mala cicatrización, por ello es importante elegir bien a nuestro paciente.",
+      en: "Hello, I will explain what eyebrow lifting is. It can be done in two ways: one is an incision inside the hairline, which is not noticeable, and the other is an incision directly on the eyebrow, above the eyebrow. Depending on the patient, one approach or the other will be chosen. Both aim to elevate the eyebrow for those who, due to age or genetics, have a drooping eyebrow tail or arch. The recovery for eyebrow lifting, especially from the frontal approach, usually only involves short-term swelling or bruising. However, the recovery for the direct eyebrow lifting approach may be associated with poor scarring, so it's important to carefully select patients for this procedure.",
+    },
   },
   {
     id: 9,
-    title: "Levantamiento De Labio",
-    description:
-      "Cirugía para rejuvenecimiento de labios también llamada bullhorn lip lift.",
-    procedimiento: "Levantamiento De Labio",
+    title: {
+      es: "Levantamiento De Labio",
+      en: "Lip Lifting",
+    },
+    description: {
+      es: "Cirugía para rejuvenecimiento de labios también llamada bullhorn lip lift.",
+      en: "Surgery for lip rejuvenation also called bullhorn lip lift.",
+    },
+    procedimiento: {
+      es: "Levantamiento De Labio",
+      en: "Lip Lifting",
+    },
     video: "https://www.youtube.com/embed/AaoyFdXaZB0?si=MI_KRlq7qM9-JQs4",
-    videotext:
-      "Hola te voy a hablar de: El levantamiento del labio o rejuvenecimiento perioral, este es un procedimiento en el cual se valora todo el contorno de la boca para ver qué le podemos ofrecer a nuestro paciente. Existe desde la disminución del espacio que tenemos por arriba del labio hasta el levantamiento de comisuras y aumento de labio inferior. Este procedimiento se recomienda en pacientes que tienen caída de las comisuras, alargamiento de este espacio o incluso unos labios muy pequeños. Las complicaciones que se presentan en el rejuvenecimiento perioral o el levantamiento del labio son moretones con mucha frecuencia e inflamación. Existen muchas técnicas para realizar este procedimiento y este procedimiento o la técnica que se utilice va a depender mucho de tu tipo de labio y los requerimientos que éste tenga. ",
+    videotext: {
+      es: "Hola te voy a hablar de: El levantamiento del labio o rejuvenecimiento perioral, este es un procedimiento en el cual se valora todo el contorno de la boca para ver qué le podemos ofrecer a nuestro paciente. Existe desde la disminución del espacio que tenemos por arriba del labio hasta el levantamiento de comisuras y aumento de labio inferior. Este procedimiento se recomienda en pacientes que tienen caída de las comisuras, alargamiento de este espacio o incluso unos labios muy pequeños. Las complicaciones que se presentan en el rejuvenecimiento perioral o el levantamiento del labio son moretones con mucha frecuencia e inflamación. Existen muchas técnicas para realizar este procedimiento y este procedimiento o la técnica que se utilice va a depender mucho de tu tipo de labio y los requerimientos que éste tenga. ",
+      en: "Hello, I will talk about lip lifting or perioral rejuvenation. This procedure evaluates the entire contour of the mouth to determine what can be offered to the patient. It ranges from reducing the space above the lip to lifting the corners of the mouth and increasing the size of the lower lip. This procedure is recommended for patients with drooping mouth corners, elongation of the space above the lip, or very small lips. Complications from perioral rejuvenation or lip lifting are often bruising and swelling. There are many techniques for this procedure, and the choice of technique depends on the patient's lip type and specific requirements.",
+    },
   },
   {
     id: 10,
-    title: "Meloplastia",
-    procedimiento: "Meloplastia",
-    description: "Resección de mucosa bucal para redefinir rostro.",
+    title: {
+      es: "Meloplastia",
+      en: "Meloplasty",
+    },
+    procedimiento: {
+      es: "Meloplastia",
+      en: "Meloplasty",
+    },
+    description: {
+      es: "Resección de mucosa bucal para redefinir rostro.",
+      en: "Resection of buccal mucosa to redefine the face.",
+    },
     video: "https://www.youtube.com/embed/Q27uvpt5jiM?si=cC7npn4IXW0ZCE8w",
-    videotext:
-      "Hola, ¿Qué tal? te voy a hablar Sobre un procedimiento del cual se llama meloplastia. La meloplastia es un procedimiento quirúrgico el cual consiste en el retiro de mucosa y de tejido por dentro de las mejillas, el cual se utiliza con fines estéticos para reducir las mejillas o en los casos en los cuales los pacientes se muerden las mejillas puede reducir este trauma. Se va a realizar en consultorio con uso de anestesia local o incluso en el quirófano asociado a otros procedimientos como lo son: Bichectomía. La construcción de cuello, contorno mandibular o implante, metón. Requiere un mínimo de incapacidad y tiene una inflamación alrededor de tres a cinco días ",
+    videotext: {
+      es: "Hola, ¿Qué tal? te voy a hablar Sobre un procedimiento del cual se llama meloplastia. La meloplastia es un procedimiento quirúrgico el cual consiste en el retiro de mucosa y de tejido por dentro de las mejillas, el cual se utiliza con fines estéticos para reducir las mejillas o en los casos en los cuales los pacientes se muerden las mejillas puede reducir este trauma. Se va a realizar en consultorio con uso de anestesia local o incluso en el quirófano asociado a otros procedimientos como lo son: Bichectomía. La construcción de cuello, contorno mandibular o implante, metón. Requiere un mínimo de incapacidad y tiene una inflamación alrededor de tres a cinco días ",
+      en: "Hello, I will talk about a procedure called meloplasty. Meloplasty is a surgical procedure that involves removing mucosa and tissue from inside the cheeks. It is used to reduce the size of the cheeks or in cases where patients bite their cheeks, to reduce this trauma. It can be done in the office with local anesthesia or in the operating room, often in conjunction with other procedures like buccal fat removal, neck lift, mandibular contouring, or chin implant. It requires minimal recovery time and usually has inflammation for about three to five days.",
+    },
   },
   {
     id: 11,
-    title: "Aplicacion De Botox",
-    procedimiento: "Aplicación de Botox",
-    description:
-      "Toxina botulínica que relaja la musculatura lo que da una relajación de las líneas de la expresión facial.",
+    title: {
+      es: "Aplicacion De Botox",
+      en: "Botox Injection",
+    },
+    procedimiento: {
+      es: "Aplicación de Botox",
+      en: "Botox Injection",
+    },
+    description: {
+      es: "Toxina botulínica que relaja la musculatura lo que da una relajación de las líneas de la expresión facial.",
+      en: "Botulinum toxin that relaxes the muscles, reducing the appearance of facial expression lines.",
+    },
     video: "https://www.youtube.com/embed/pbWM3NiWaUg?si=e53OmlOo0VRxAORJ",
-    videotext:
-      "Hola, ¿Qué tal? Te voy a hablar sobre la toxina botulínica o el Botox. El Botox es un procedimiento que se realiza con mínimo dolor, con una duración en consultorio de alrededor de 15 minutos y las unidades que se van a aplicar van a depender del tamaño del músculo, y qué tan arrugada está la piel del paciente.   Ese es un procedimiento que se puede colocar desde los 20 años y no requiere incapacidad. ",
+    videotext: {
+      es: "Hola, ¿Qué tal? Te voy a hablar sobre la toxina botulínica o el Botox. El Botox es un procedimiento que se realiza con mínimo dolor, con una duración en consultorio de alrededor de 15 minutos y las unidades que se van a aplicar van a depender del tamaño del músculo, y qué tan arrugada está la piel del paciente.   Ese es un procedimiento que se puede colocar desde los 20 años y no requiere incapacidad. ",
+      en: "Hello, I will talk about botulinum toxin or Botox. Botox is a procedure that is done with minimal pain, takes about 15 minutes in the office, and the units applied depend on the size of the muscle and how wrinkled the patient's skin is. It can be done from the age of 20 and does not require downtime.",
+    },
   },
   {
     id: 12,
-    title: "Acido Hialuronico",
-    description:
-      "Colocación para aumento o definición de labios y pomulos , así como corrección de asimetrías visibles. Previene signos de envejecimiento ",
-    procedimiento: "Acido Hialuronico",
+    title: {
+      es: "Acido Hialuronico",
+      en: "Hyaluronic Acid",
+    },
+    description: {
+      es: "Colocación para aumento o definición de labios y pomulos , así como corrección de asimetrías visibles. Previene signos de envejecimiento ",
+      en: "Injection for lip and cheek augmentation or definition, correction of visible asymmetries, and prevention of aging signs.",
+    },
+    procedimiento: {
+      es: "Acido Hialuronico",
+      en: "Hyaluronic Acid",
+    },
     video: "https://www.youtube.com/embed/j5LH0diZLcE?si=iOh7xt-us55CEF7n",
-    videotext:
-      "Hola, ¿Qué tal? Te voy a hablar sobre un procedimiento el cual se llama meloplastía. La meloplastía es un procedimiento quirúrgico el cual consiste en el retiro de mucosa y de tejido por dentro de las mejillas, el cual se utiliza con fines estéticos para reducir las mejillas o en los casos en los cuales los pacientes se muerden las mejillas puede reducir este trauma.  Se va a realizar en consultorio con uso de anestesia local o incluso en quirófano asociado a otros procedimientos como lo son bichectomía, liposucción de cuello, contorno mandibular o implante de mentón. Requiere un mínimo de incapacidad de inflamación alrededor de 3 a 5 días.",
+    videotext: {
+      es: "Hola, ¿Qué tal? Te voy a hablar sobre un procedimiento el cual se llama meloplastía. La meloplastía es un procedimiento quirúrgico el cual consiste en el retiro de mucosa y de tejido por dentro de las mejillas, el cual se utiliza con fines estéticos para reducir las mejillas o en los casos en los cuales los pacientes se muerden las mejillas puede reducir este trauma.  Se va a realizar en consultorio con uso de anestesia local o incluso en quirófano asociado a otros procedimientos como lo son bichectomía, liposucción de cuello, contorno mandibular o implante de mentón. Requiere un mínimo de incapacidad de inflamación alrededor de 3 a 5 días.",
+      en: "Hello, I will talk about a procedure called meloplasty. Meloplasty is a surgical procedure that involves removing mucosa and tissue from inside the cheeks. It is used to reduce the size of the cheeks or in cases where patients bite their cheeks, to reduce this trauma. It can be done in the office with local anesthesia or in the operating room, often in conjunction with other procedures like buccal fat removal, neck lift, mandibular contouring, or chin implant. It requires minimal recovery time and usually has inflammation for about three to five days.",
+    },
   },
   {
     id: 13,
-    title: "Armonizacion Facial",
-    description:
-      "Aplicación de ácido hialurónico o grasa en áreas que carecen de volumen para lograr las proporciones faciales ideales o más armónicas.",
-    procedimiento: "Armonizacion Facial",
+    title: {
+      es: "Armonizacion Facial",
+      en: "Facial Harmonization",
+    },
+    description: {
+      es: "Aplicación de ácido hialurónico o grasa en áreas que carecen de volumen para lograr las proporciones faciales ideales o más armónicas.",
+      en: "Application of hyaluronic acid or fat in areas lacking volume to achieve ideal or more harmonious facial proportions.",
+    },
+    procedimiento: {
+      es: "Armonizacion Facial",
+      en: "Facial Harmonization",
+    },
     video: "https://www.youtube.com/embed/JaxANcggRe0?si=MYBrX5AQdesklxp9",
-    videotext:
-      "Hola, ¿Qué tal? Te voy a hablar sobre la armonización facial. La armonización facial es un conjunto de procedimientos tanto quirúrgicos como no quirúrgicos. Entre los procedimientos no quirúrgicos está la colocación de ácido hialurónico o Radiesse en algunas áreas de la cara que les falta volumen y dentro de los procedimientos quirúrgicos incluiría metoplastia, menoplastia, bichectomía y liposucción de cal y cuello. Dentro de la consulta de valoración vamos a ver cuáles de esto procedimientos son recomendados para ti para llegar a una adecuada armonización facial.  En cuanto al proceso de recuperación de cada uno de sus procedimientos va a variar de acuerdo a que este es un tratamiento que se realiza de forma personalizada, valorando las áreas de pérdida de volumen o de exceso de volumen que tenga tu rostro ",
+    videotext: {
+      es: "Hola, ¿Qué tal? Te voy a hablar sobre la armonización facial. La armonización facial es un conjunto de procedimientos tanto quirúrgicos como no quirúrgicos. Entre los procedimientos no quirúrgicos está la colocación de ácido hialurónico o Radiesse en algunas áreas de la cara que les falta volumen y dentro de los procedimientos quirúrgicos incluiría metoplastia, menoplastia, bichectomía y liposucción de cal y cuello. Dentro de la consulta de valoración vamos a ver cuáles de esto procedimientos son recomendados para ti para llegar a una adecuada armonización facial.  En cuanto al proceso de recuperación de cada uno de sus procedimientos va a variar de acuerdo a que este es un tratamiento que se realiza de forma personalizada, valorando las áreas de pérdida de volumen o de exceso de volumen que tenga tu rostro ",
+      en: "Hello, I will talk about facial harmonization. It is a set of surgical and non-surgical procedures. Non-surgical procedures include the injection of hyaluronic acid or Radiesse in areas of the face that lack volume, and surgical procedures may include meloplasty, menoplasty, buccal fat removal, and liposuction of the face and neck. During the evaluation consultation, we will determine which of these procedures are recommended for you to achieve proper facial harmonization. The recovery process for each of these procedures will vary as it is a personalized treatment, assessing the areas of volume loss or excess in your face.",
+    },
   },
   {
     id: 14,
-    title: "Perfilamiento Mandibular",
-    description:
-      "Colocación de ácido hialurónico o hidroxiapatita de calcio (radiesse) en mandíbula para su definición. ",
-    procedimiento: "Perfilamiento Mandibular",
+    title: {
+      es: "Perfilamiento Mandibular",
+      en: "Mandibular Contouring",
+    },
+    description: {
+      es: "Colocación de ácido hialurónico o hidroxiapatita de calcio (radiesse) en mandíbula para su definición. ",
+      en: "Injection of hyaluronic acid or calcium hydroxyapatite (Radiesse) in the jawline for definition.",
+    },
+    procedimiento: {
+      es: "Perfilamiento Mandibular",
+      en: "Mandibular Contouring",
+    },
     video: "https://www.youtube.com/embed/Tlz7g8pEzFc?si=ePdAH2Wn_kiLLrSz",
-    videotext:
-      "Hola, ¿Qué tal? te voy a hablar sobre un procedimiento que se llama perfilamiento mandibular. Este procedimiento se puede realizar con Radiesse  que es hidroxiapatita de calcio o con ácido ácido hialurónico  Este procedimiento se utiliza para darle volumen y maximizar la definición en contorno mandibular. Se realiza en consultorio con una duración de quince minutos y mínimo dolor y no requiere una incapacidad. ",
+    videotext: {
+      es: "Hola, ¿Qué tal? te voy a hablar sobre un procedimiento que se llama perfilamiento mandibular. Este procedimiento se puede realizar con Radiesse  que es hidroxiapatita de calcio o con ácido ácido hialurónico  Este procedimiento se utiliza para darle volumen y maximizar la definición en contorno mandibular. Se realiza en consultorio con una duración de quince minutos y mínimo dolor y no requiere una incapacidad. ",
+      en: "Hello, I will talk about a procedure called mandibular contouring. It can be done with Radiesse, which is calcium hydroxyapatite, or with hyaluronic acid. This procedure is used to add volume and enhance definition in the jawline. It is performed in the office, takes about fifteen minutes, causes minimal pain, and does not require downtime.",
+    },
   },
   //{
   //  id: 15,
@@ -158,13 +301,23 @@ const services = [
   // },
   {
     id: 17,
-    title: "Tratamiento En Ojeras",
-    description:
-      "Colocación de NCTF por mesoterapia para lograr disminuir coloración y mejorar la transición del párpado.",
-    procedimiento: "NCTF en ojeras",
+    title: {
+      es: "Tratamiento En Ojeras",
+      en: "Dark Circle Treatment",
+    },
+    description: {
+      es: "Colocación de NCTF por mesoterapia para lograr disminuir coloración y mejorar la transición del párpado.",
+      en: "Injection of NCTF by mesotherapy to reduce discoloration and improve the transition of the eyelid.",
+    },
+    procedimiento: {
+      es: "NCTF en ojeras",
+      en: "Dark Circle Treatment",
+    },
     video: "https://www.youtube.com/embed/98aPuW4LELY?si=o6vfBJgq66p455r5",
-    videotext:
-      "Hola, ¿Qué tal? Te voy a hablar sobre un procedimiento que es para mejorar la apariencia de las ojeras. Este es el NSTF.  Este producto mejora la elasticidad de la piel, mejora la luminosidad y revierte un poquito los efectos de la edad por debajo del ojito. Ya que la blefaroplastía disminuye la cantidad de piel o de grasa o mejora las condiciones del volumen del párpado, pero el NCTF lo que va a hacer es mejorar la calidad de la piel y la coloración de la piel. Requiere como mínimo dos a tres sesiones y se puede realizar en consultorio con una duración alrededor de 10 minutos. ",
+    videotext: {
+      es: "Hola, ¿Qué tal? Te voy a hablar sobre un procedimiento que es para mejorar la apariencia de las ojeras. Este es el NSTF.  Este producto mejora la elasticidad de la piel, mejora la luminosidad y revierte un poquito los efectos de la edad por debajo del ojito. Ya que la blefaroplastía disminuye la cantidad de piel o de grasa o mejora las condiciones del volumen del párpado, pero el NCTF lo que va a hacer es mejorar la calidad de la piel y la coloración de la piel. Requiere como mínimo dos a tres sesiones y se puede realizar en consultorio con una duración alrededor de 10 minutos. ",
+      en: "Hello, I will talk about a procedure for improving the appearance of dark circles. This is the NCTF treatment. This product improves skin elasticity, brightness, and slightly reverses the effects of aging under the eyes. While blepharoplasty reduces the amount of skin or fat or improves the volume conditions of the eyelid, NCTF improves the skin's quality and color. It requires at least two to three sessions and can be done in the office, taking about 10 minutes.",
+    },
   },
   // {
   //   id: 18,
@@ -174,19 +327,33 @@ const services = [
   // },
   {
     id: 19,
-    title: "Injerto Con Grasa O Transferencia En Rostro",
-    description:
-      "Procedimiento para redefinir los sitios de pérdida de grasa o mejorar las proporciones faciales.",
-    procedimiento: "Injerto de grasa en rostro",
+    title: {
+      es: "Injerto Con Grasa O Transferencia En Rostro",
+      en: "Fat Grafting Or Transfer In Face",
+    },
+    description: {
+      es: "Procedimiento para redefinir los sitios de pérdida de grasa o mejorar las proporciones faciales.",
+      en: "Procedure to redefine areas of fat loss or improve facial proportions.",
+    },
+    procedimiento: {
+      es: "Injerto de grasa en rostro",
+      en: "Fat Grafting Or Transfer In Face",
+    },
     video: "https://www.youtube.com/embed/pEj-YFrIddk?si=Pjs4cHCK2331DfKR",
-    videotext:
-      "Hola, ¿Qué tal? Te voy a hablar de un procedimiento que se llama lipo transferencia o injerto de grasa.  Este es un procedimiento en el cual se extrae grasa por debajo del ombligo para colocarlo en áreas que falte volumen en la cara.  Esta grasa se puede utilizar de diferentes formas para dar volumen en frente, en temporal, en pómulo o incluso en mentón y contorno mandibular. Usualmente se utiliza junto con otros procedimientos como lo son lipo de cuello y cara, colocación de mentón, bichectomía o para la armonización facial. Este procedimiento, además de dar volumen, va a mejorar la calidad de la piel. En cuanto a la recuperación, se asocia a mínima inflamación o presencia de moretes durante alrededor del quinto día hasta las dos semanas.",
+    videotext: {
+      es: "Hola, ¿Qué tal? Te voy a hablar de un procedimiento que se llama lipo transferencia o injerto de grasa.  Este es un procedimiento en el cual se extrae grasa por debajo del ombligo para colocarlo en áreas que falte volumen en la cara.  Esta grasa se puede utilizar de diferentes formas para dar volumen en frente, en temporal, en pómulo o incluso en mentón y contorno mandibular. Usualmente se utiliza junto con otros procedimientos como lo son lipo de cuello y cara, colocación de mentón, bichectomía o para la armonización facial. Este procedimiento, además de dar volumen, va a mejorar la calidad de la piel. En cuanto a la recuperación, se asocia a mínima inflamación o presencia de moretes durante alrededor del quinto día hasta las dos semanas.",
+      en: "Hello, I will talk about a procedure called lipotransfer or fat grafting. This procedure involves extracting fat from below the navel and placing it in areas of the face that lack volume. The fat can be used in different ways to add volume to the forehead, temples, cheeks, or even the chin and jawline. It is usually done together with other procedures like neck and face liposuction, chin placement, buccal fat removal, or facial harmonization. This procedure not only adds volume but also improves skin quality. Recovery is associated with minimal swelling or bruising, from about the fifth day up to two weeks.",
+    },
   },
 ];
 
 const { serviceName } = Astro.props;
 
-const currentService = services.find((s) => s.title === serviceName);
+const currentService = services.find(
+  (service) =>
+    service.title.es.toLowerCase() === serviceName.toLowerCase() ||
+    service.title.en.toLowerCase() === serviceName.toLowerCase()
+);
 
 if (!currentService) {
   throw new Error(`No service found with name: ${serviceName}`);
@@ -200,7 +367,11 @@ if (!currentService) {
         <div class="gap-2 mb-6 flex items-center">
           <Medical />
           <h2 class="text-[#798672] text-3xl font-bold">
-            Procedimiento: {currentService.procedimiento}
+            {
+              Lang
+                ? currentService.procedimiento.en
+                : currentService.procedimiento.es
+            }
           </h2>
         </div>
         <hr class="w-full border-[#798672] border-2 mb-6" />
@@ -218,31 +389,30 @@ if (!currentService) {
               ) : null}
 
               <h2 class="text-lg text-start mb-10 font-selna text-[#AA9170]  ">
-                "
-                {currentService.description
-                  ? currentService.description
-                  : "Descripcion no disponible para este servicio."}
-                "
+                {Lang
+                  ? currentService.description.en
+                  : currentService.description.es}
               </h2>
               <h1 class="mb-2 text-4xl text-[#AA9170] font-selna">
-                Resumen del video:
+                {Lang ? currentService.title.en : currentService.title.es}
               </h1>
               <p class="mt-2 font-normal text-lg font-japandi ">
-                {currentService.videotext}
+                {Lang
+                  ? currentService.videotext.en
+                  : currentService.videotext.es}
               </p>
               <p class="mt-2 font-normal text-2xl font-japandi text-[#AA9170]">
-                Cualquier duda te espero en la consulta o puedes agendar directo
-                en la página .
+                {Lang
+                  ? "If you are interested in this procedure, leave me a message or visit my page to make an evaluation appointment with me."
+                  : "Si estás interesada en este procedimiento, déjame un mensaje o visita mi página para hacer una cita de evaluación conmigo."}
               </p>
             </div>
           ) : (
             <div>
               <h2 class="text-lg text-start mb-10 font-selna text-[#AA9170]  ">
-                "
-                {currentService.description
-                  ? currentService.description
-                  : "Descripcion no disponible para este servicio."}
-                "
+                {Lang
+                  ? "This service does not have a description yet."
+                  : "Este servicio aún no tiene descripción."}
               </h2>
             </div>
           )
@@ -256,31 +426,44 @@ if (!currentService) {
       <h1
         class="text-center bg-[#6C5545] text-white py-2 font-bold font-poppins uppercase"
       >
-        Servicios
+        {Lang ? "Services" : "Servicios"}
       </h1>
       <hr class="border-[#798672] w-full border-1" />
       <ul>
         {
-          services.map((service) => (
-            <li class="mb-4 relative">
-              <a
-                class={`font-medium block py-1 w-full text-center group relative ${currentService.title === service.title ? "bg-[#798672] text-white" : ""}`}
-                href={`/services/${service.title.toLowerCase().replace(/ /g, "_")}`}
-                style="z-index: 1;"
-              >
-                <div
-                  class="absolute inset-0 bg-[#798672] transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-in-out"
-                  style="z-index: -1;"
-                />
-                <span class="group-hover:text-white">{service.title}</span>
-              </a>
-            </li>
-          ))
+          services.map((service) => {
+            // Convierte el título a snake_case según el idioma
+            const snakeCase = (Lang ? service.title.en : service.title.es)
+              .toLowerCase()
+              .replace(/ /g, "_");
+            // Determina si es el servicio actual (opcional: puedes mejorar la comparación)
+            const isActive =
+              (Lang
+                ? service.title.en.toLowerCase()
+                : service.title.es.toLowerCase()) === serviceName.toLowerCase();
+            return (
+              <li class="mb-4 relative">
+                <a
+                  class={`font-medium block py-1 w-full text-center group relative ${isActive ? "bg-[#798672] text-white" : ""}`}
+                  href={`${Lang ? `/en/services/${snakeCase}/` : `/servicios/${snakeCase}/`}`}
+                  style="z-index: 1;"
+                >
+                  <div
+                    class="absolute inset-0 bg-[#798672] transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-in-out"
+                    style="z-index: -1;"
+                  />
+                  <span class="group-hover:text-white">
+                    {Lang ? service.title.en : service.title.es}
+                  </span>
+                </a>
+              </li>
+            );
+          })
         }
         <li class="mb-2 relative">
           <a
             class="font-medium block py-1 w-full text-center group relative"
-            href="/services"
+            href={Lang ? "/en/services/" : "/servicios/"}
             style="z-index: 1;"
           >
             <div
@@ -288,17 +471,19 @@ if (!currentService) {
               style="z-index: -1;"
             >
             </div>
-            <span class="group-hover:text-white">Regresar a los servicios</span>
+            <span class="group-hover:text-white"
+              >{Lang ? "Back to services" : "Regresar a los servicios"}</span
+            >
           </a>
         </li>
       </ul>
     </aside>
     <div class="block md:hidden px-4">
-      <a href="/services">
+      <a href={Lang ? "/en/services/" : "/servicios/"}>
         <button
           class="text-white bg-[#6C5545] text-start rounded-3xl py-2 px-4 font-bold"
         >
-          Regresar a los servicios
+          {Lang ? "Back to services" : "Regresar a los servicios"}
         </button>
       </a>
     </div>

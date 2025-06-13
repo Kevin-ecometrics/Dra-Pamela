@@ -2,17 +2,19 @@
 import Layout from "@layouts/Layout.astro";
 import Hero from "@components/UI/blog/Hero.astro";
 import AppoitmentForm from "@components/UI/appointment/AppoitmentForm.astro";
+
+const Language = Astro.url.pathname.startsWith("/en/");
 ---
 
-<Layout
-  title="Descubre la nueva dimensión de belleza con resultados funcionales"
->
+<Layout title="Discover a new dimension of beauty with functional results">
   <Hero
     backgroundImage="/appointmentHero.webp"
     className="bg-[#798672] h-[324px] flex justify-center items-center"
   >
-    <h1 class="text-center text-white text-7xl font-prata">Agenda tu cita</h1>
+    <h1 class="text-center text-white text-7xl font-prata">
+      Book your appointment
+    </h1>
   </Hero>
   <div class="mb-8"></div>
-  <AppoitmentForm />
+  <AppoitmentForm Lang={Language} />
 </Layout>

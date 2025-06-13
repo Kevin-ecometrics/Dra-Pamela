@@ -1,13 +1,64 @@
 ---
 import { Image } from "astro:assets";
-import logo from "@assets/Dra. Pamela especialista en cirugia de cabeza cuello y otorrinolaringologia.png";
-import whatsApp from "@assets/Contactanos via WhatsApp para agendar con la Doctora Pamela.svg";
 import hero from "@assets/Resultados funcionales y esteticos realizados por la Doctora Pamela postoperatorios de los pacientes.png";
+import hero2 from "@assets/hero2.png";
+import hero3 from "@assets/hero3.png";
+import hero4 from "@assets/hero4.png";
+import hero5 from "@assets/hero5.png";
 import fondo from "@assets/background_image.png";
 import fondo2 from "@assets/background_image2.png";
 import fondo3 from "@assets/background_image3.png";
+import Carrousel from "./UI/react/Carrousel.tsx";
 
 const { Lang } = Astro.props;
+
+const heroImages = [
+  {
+    src: hero,
+    alt: Lang
+      ? "Dr. Pamela's results harmonize the facial structure, restore function, and enhance the beauty of her patients."
+      : "Los resultados de la Doctora Pamela obtenidos armonizan la estructura facial, dan funcionalidad y realzan la belleza de los pacientes",
+    title: Lang
+      ? "Dr. Pamela's results harmonize the facial structure, restore function, and enhance the beauty of her patients."
+      : "Los resultados de la Doctora Pamela obtenidos armonizan la estructura facial, dan funcionalidad y realzan la belleza de los pacientes",
+  },
+  {
+    src: hero2,
+    alt: Lang
+      ? "Before and after rhinoplasty by Dr. Pamela Perez."
+      : "Antes y después de rinoplastia por la Dra. Pamela Perez.",
+    title: Lang
+      ? "Before and after rhinoplasty by Dr. Pamela Perez."
+      : "Antes y después de rinoplastia por la Dra. Pamela Perez.",
+  },
+  {
+    src: hero3,
+    alt: Lang
+      ? "Patient profile improved through facial surgery."
+      : "Perfil del paciente mejorado mediante cirugía facial.",
+    title: Lang
+      ? "Patient profile improved through facial surgery."
+      : "Perfil del paciente mejorado mediante cirugía facial.",
+  },
+  {
+    src: hero4,
+    alt: Lang
+      ? "Natural results after nose surgery."
+      : "Resultados naturales después de cirugía de nariz.",
+    title: Lang
+      ? "Natural results after nose surgery."
+      : "Resultados naturales después de cirugía de nariz.",
+  },
+  {
+    src: hero5,
+    alt: Lang
+      ? "Functional and aesthetic recovery by Dr. Pamela."
+      : "Recuperación funcional y estética por la Dra. Pamela.",
+    title: Lang
+      ? "Functional and aesthetic recovery by Dr. Pamela."
+      : "Recuperación funcional y estética por la Dra. Pamela.",
+  },
+];
 ---
 
 <main class="bg-[#798672] md:h-[500px] text-white">
@@ -39,40 +90,33 @@ const { Lang } = Astro.props;
               : "Redefine la armonía de tu rostro, resalta tu singularidad con un aspecto natural. Refinamiento del perfil y armonización estética del conjunto nasal."
           }
         </span>
-      </div>
-      <div class="">
-        <Image
-          src={fondo2}
-          alt={Lang
-            ? "Your health in the hands of Dr. Pamela Pérez, a professional who ensures your comprehensive well-being"
-            : "Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral"}
-          title={Lang
-            ? "Your health in the hands of Dr. Pamela Pérez, a professional who ensures your comprehensive well-being"
-            : "Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral"}
-          class="z-10 right-0 top-0 absolute hidden md:block"
-        />
-        <Image
-          src={fondo3}
-          alt={Lang
-            ? "Your health in the hands of Dr. Pamela Pérez, a professional who ensures your comprehensive well-being"
-            : "Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral"}
-          title={Lang
-            ? "Your health in the hands of Dr. Pamela Pérez, a professional who ensures your comprehensive well-being"
-            : "Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral"}
-          class="z-0 right-32 top-[310px] absolute hidden md:block"
-        />
-
-        <Image
-          src={hero}
-          alt={Lang
-            ? "Dr. Pamela's results harmonize the facial structure, restore function, and enhance the beauty of her patients."
-            : "Los resultados de la Doctora Pamela obtenidos armonizan la estructura facial, dan funcionalidad y realzan la belleza de los pacientes"}
-          title={Lang
-            ? "Dr. Pamela's results harmonize the facial structure, restore function, and enhance the beauty of her patients."
-            : "Los resultados de la Doctora Pamela obtenidos armonizan la estructura facial, dan funcionalidad y realzan la belleza de los pacientes"}
-          class="md:absolute right-0 top-0 h-[487px]"
-          style="mask-image: linear-gradient(to bottom, black 80%, transparent);"
-        />
+        <div class="">
+          <Image
+            src={fondo2}
+            alt={Lang
+              ? "Your health in the hands of Dr. Pamela Pérez, a professional who ensures your comprehensive well-being"
+              : "Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral"}
+            title={Lang
+              ? "Your health in the hands of Dr. Pamela Pérez, a professional who ensures your comprehensive well-being"
+              : "Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral"}
+            class="z-10 right-0 top-0 absolute hidden md:block"
+          />
+          <Image
+            src={fondo3}
+            alt={Lang
+              ? "Your health in the hands of Dr. Pamela Pérez, a professional who ensures your comprehensive well-being"
+              : "Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral"}
+            title={Lang
+              ? "Your health in the hands of Dr. Pamela Pérez, a professional who ensures your comprehensive well-being"
+              : "Tu salud en manos de Dra. Pamela Pérez una profesional que garantiza tu bienestar integral"}
+            class="z-0 right-32 top-[310px] absolute hidden md:block"
+          />
+          <Carrousel
+            client:only="react"
+            images={heroImages}
+            className="md:absolute right-0 top-0 h-[487px] mask-b-from-80"
+          />
+        </div>
       </div>
     </div>
   </section>

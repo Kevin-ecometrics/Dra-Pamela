@@ -1,0 +1,21 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Hero from "@components/UI/Hero.astro";
+import Service from "@components/UI/react/Service";
+import BannerAppointment from "@components/BannerAppointment.astro";
+
+const Language = Astro.url.pathname.startsWith("/en/");
+---
+
+<Layout title="Servicios">
+  <Hero
+    backgroundImage="/serviceHero.webp"
+    className="bg-[#798672] h-[324px] flex justify-center items-center"
+  >
+    <h1 class="text-center text-white text-7xl font-prata">
+      {Language ? "Services" : "Servicios"}
+    </h1>
+  </Hero>
+  <Service client:load Lang={Language} />
+  <BannerAppointment bg="bg-[#AB9279]" Lang={Language} />
+</Layout>

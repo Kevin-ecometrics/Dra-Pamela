@@ -1,7 +1,9 @@
 ---
 import { Image } from "astro:assets";
-import Slider from "@components/UI/react/Slider";
+import BannerAppointment from "@components/BannerAppointment.astro";
+
 const { title } = Astro.props;
+
 import Fondo1 from "@assets/Descubre todo lo que necesitas saber sobre la rinoplastia y como la Dra Pamela Perez realiza este procedimiento con maestria.png";
 import Fondo2 from "@assets/background_image10.png";
 import Fondo3 from "@assets/background_image11.png";
@@ -10,17 +12,140 @@ import Fondo5 from "@assets/background_image13.png";
 import Fondo6 from "@assets/background_image14.png";
 import Fondo7 from "@assets/background_image15.png";
 import Fondo8 from "@assets/background_image16.png";
-import Antes from "@assets/blog_image2.png";
-import Despues from "@assets/blog_image3.png";
 import Fondo9 from "@assets/Luce un perfil que haga armonia con el resto de tu rostro y resalte tu belleza con la mejor Otorrinolaringologa en Tijuana.png";
-import BannerAppointment from "@components/BannerAppointment.astro";
+
+const Lang = Astro.url.pathname.startsWith("/en/");
+
+const t = Lang
+  ? {
+      fondo1Alt:
+        "Everything you need to know about rhinoplasty with Dr. Pamela Pérez",
+      fondo1Title:
+        "Everything you need to know about rhinoplasty with Dr. Pamela Pérez",
+      fondo9Alt:
+        "Achieve a profile that highlights your beauty with the best ENT specialist in Tijuana",
+      fondo9Title:
+        "Achieve a profile that highlights your beauty with the best ENT specialist in Tijuana",
+      intro1:
+        "One of the lesser-known secrets is that rhinoplasties are the most demanding, complex, and beautiful cosmetic surgeries.",
+      intro2:
+        "The nose is a complex organ supported by bone and cartilage. The nasal septum consists of bone and cartilage that extends from the nostrils to the upper throat. Rhinoplasty can correct those internal and external details.",
+      intro3: "Another secret behind rhinoplasty is: There is no maximum age.",
+      intro4:
+        "It’s never too late to improve your breathing and appearance. To undergo this procedure, you only need to be in good health.",
+      minAgeTitle: "What is the minimum age?",
+      minAgeText:
+        "It is important to note that performing this procedure at an early age depends on the presence of functional alterations or nasal obstructions. Facial structures go through different growth peaks depending on sex: 90% of facial development is typically complete by age 14–15 in girls, and 16–17 in boys.",
+      consultTitle: "Evaluation Consultation",
+      consultDesc:
+        "During your consultation your ENT doctor will conduct a thorough review to answer all your questions about procedures and your symptoms, such as:",
+      q1: "Why is my nose constantly congested?",
+      q2: "Why do I only breathe well on one side?",
+      q3: "Can I correct how it looks in profile?",
+      consultResult:
+        "During your review, you receive conscious care to understand your needs and expectations to improve the appearance of your nose. Everything possible is evaluated while respecting your natural facial structure.",
+      noseAnalysisTitle:
+        "This includes an analysis of your nose, which consists of:",
+      anal1: "Front view: checks for deviations.",
+      anal2:
+        "Profile view: evaluates shape and projection (how much the nose stands out).",
+      anal3: "Basal view: examines nostril symmetry and tip shape.",
+      anal4:
+        "All this is done aiming for facial harmony and prioritizing your health and well‑being.",
+      anal5:
+        "At the end, you’ll be shown a visualization of the results to personalize your nasal profile and highlight your features.",
+      suitableProcTitle:
+        "Based on the thorough review and exams, the doctor may perform one of the following procedures:",
+      openClosedTitle: "Open or Closed Rhinoplasty",
+      openClosedText:
+        "Both involve the same dissection and incisions. The only difference is that open rhinoplasty uses an incision under the nose—externally visible once healed—while closed rhinoplasty leaves the scar internally.",
+      duringTitle: "During the Procedure",
+      closed:
+        "Closed Rhinoplasty: involves two internal incisions. Through small, clean cuts, bone and cartilage are reshaped. Soft tissues then adapt to the new form, and the surgery ends by closing the incisions with dissolvable sutures. Advantage: generally shorter surgery time.",
+      open: "Open Rhinoplasty: involves an incision across the columella (between nostrils), which gives immediate access to bones and cartilage. Provides greater movement and visibility to the surgeon—ideal for substantial reshaping.",
+      buttonText: "Post-operative care: discover everything you should do.",
+      reconTitle: "Reconstructive Rhinoplasty",
+      reconText1:
+        "It is crucial to go to specialized experts. Otherwise, aesthetics may be prioritized over functionality, leading to excessive cartilage removal that can collapse the lateral cartilages, affecting both appearance and quality of life.",
+      reconText2:
+        "Open rhinoplasty is recommended because it offers better tissue exposure. These surgeries carry a higher risk of bleeding and altered tissues, but allow correction of large deformities or substantial nasal structure modifications, improving both form and function.",
+      resultsTitle: "Results",
+      resultsTime:
+        "The final result is typically achieved about one year after the procedure.",
+      reminder:
+        "Keep in mind: it's not just the surgery that's customized—post-operative care and follow-ups are also tailored. To get the nose you want, it's essential to attend your control visits with Dr. Pamela Pérez.",
+      cta: "If you're interested in results that enhance your beauty and overall well-being, we invite you to schedule your evaluation appointment in our calendar.",
+    }
+  : {
+      fondo1Alt:
+        "Todo lo que necesitas saber sobre la rinoplastia con la experta en cirugia de nariz la Dra. Pamela Pérez realiza",
+      fondo1Title:
+        "Todo lo que necesitas saber sobre la rinoplastia con la experta en cirugia de nariz la Dra. Pamela Pérez realiza",
+      fondo9Alt:
+        "Luce un perfil que resalte tu belleza con la mejor Otorrinolaringola en Tijuana",
+      fondo9Title:
+        "Luce un perfil que resalte tu belleza con la mejor Otorrinolaringola en Tijuana",
+      intro1:
+        "Uno de los secretos no tan conocidos es que las rinoplastias son las cirugías estéticas más exigentes, complejas y hermosas.",
+      intro2:
+        "La nariz es un órgano complejo donde su soporte está formado por hueso y la parte inferior es cartílago. El tabique nasal está compuesto de hueso y de cartílago que se extiende desde las fosas nasales hasta la parte superior de la garganta. Es un órgano cuya estructura a veces se daña interna y externamente, mediante la rinoplastia es que se puede corregir esos detallitos.",
+      intro3:
+        "Otro de los secretos detrás de hacerte una rinoplastia es: No existe una edad máxima",
+      intro4:
+        "Nunca es tarde para darte la oportunidad mejorar tu respiracion y apariencia. para someterte a este procedimiento solo necesitas gozar de un buen estado de salud",
+      minAgeTitle: "¿Cuál es la edad mínima?",
+      minAgeText:
+        "Es importante señalar que la realización de este procedimiento a edades tempranas dependerá de la presencia de alteraciones funcionales o de obstrucciones nasales\nLas estructuras faciales atraviesan distintos picos de crecimiento... en mujeres entre los 14 y 15 años; en hombres entre los 16 y 17 años.",
+      consultTitle: "Consulta de valoración",
+      consultDesc:
+        "Durante tu consulta tu otorrinolaringólogo hace una revisión exhaustiva para responder todas las dudas que tengas sobre los procedimientos y sobre tus molestias, como lo son:",
+      q1: "¿Porque tengo la nariz constantemente congestionada?",
+      q2: "¿Por qué solo respiro bien de un lado?",
+      q3: "¿puedo corregir como se ve de perfil?",
+      consultResult:
+        "Durante tu revisión, se te asegura una atención consciente para entender tus necesidades y tus expectativas para mejorar la apariencia de tu nariz. Durante tu revisión, se evalúa cuidadosamente lo que es posible realizar y lo que no, siempre respetando la forma natural de tu rostro.",
+      noseAnalysisTitle:
+        "Para ello se realiza un análisis de tu nariz que consiste en:",
+      anal1: "-Vista de frente: Se valora si hay desviaciones.",
+      anal2:
+        "Vista de perfil: Aquí la doctora valora la forma de tu nariz, su proyección que hace referencia a lo que sobresale tu nariz de la cara.",
+      anal3:
+        "-Vista basal: Se examina la simetría de las fosas nasales y la forma de la punta nasal.",
+      anal4:
+        "Todo ello se hace buscando tu armonía facial y ante todo priorizar tu salud y bienestar.",
+      anal5:
+        "Al final, se te proporcionará una visualización de los resultados para poder personalizar tu perfil nasal que haga resaltar tus facciones.",
+      suitableProcTitle:
+        "Dicho lo anterior y de acuerdo con la revisión exhaustiva y los exámenes solicitados, la doctora te puede realizar el procedimiento más adecuado, estos pueden ser los siguientes:",
+      openClosedTitle: "Rinoplastia cerrada o abierta",
+      openClosedText:
+        "En ambas se realiza la misma disección e incisiones. La única diferencia en cuanto a las incisiones es que, en la rinoplastia abierta, se va a realizar una incisión por abajo de la nariz, cicatrizando por fuera, raramente notable una vez sanado. En el caso de la rinoplastia cerrada, la cicatriz es interna.",
+      duringTitle: "Durante el procedimiento",
+      closed:
+        "Rinoplastia cerrada: Consiste en realizar dos incisiones en el interior de la nariz...",
+      open: "Rinoplastia Abierta: Consiste en realizar una incisión en la parte central de la nariz...",
+      buttonText:
+        "Los cuidados post operatorios, descubre todo lo que debes hacer.",
+      reconTitle: "Rinoplastia reconstructiva",
+      reconText1:
+        "Hacemos hincapié en que es importantísimo acudir con expertos especializados de lo contrario...",
+      reconText2:
+        "Se recomienda una rinoplastia abierta porque esta implica una mayor exposición de los tejidos...",
+      resultsTitle: "Resultados",
+      resultsTime:
+        "El resultado final se logra aproximadamente al cabo de un año.",
+      reminder:
+        "Te recordamos que no solo la operación está hecha a tu medida, la personalización abarca los cuidados postoperatorios y las visitas de seguimiento...",
+      cta: "Si te interesa resultados que realcen tu belleza y tu bienestar integral. Te invitamos a agendar tu cita de valoración en nuestro calendario",
+    };
 ---
 
+<!-- Imágenes de fondo -->
 <Image
   class="object-cover absolute translate-x-0 hidden lg:block"
   src={Fondo1}
-  alt="Todo lo que necesitas saber sobre la rinoplastia con la experta en cirugia de nariz la Dra. Pamela Pérez realiza"
-  title="Todo lo que necesitas saber sobre la rinoplastia con la experta en cirugia de nariz la Dra. Pamela Pérez realiza"
+  alt={t.fondo1Alt}
+  title={t.fondo1Title}
 />
 <Image
   class="object-cover absolute translate-x-[1378px] hidden lg:block"
@@ -42,200 +167,129 @@ import BannerAppointment from "@components/BannerAppointment.astro";
   src={Fondo5}
   alt="imagen de fondo"
 />
+
 <div class="flex flex-col md:w-[80%] mx-auto px-4">
   <div class="grid grid-cols-1 md:grid-cols-3">
-    <div class="col-span-1"></div>
+    <div></div>
     <div class="col-span-2 font-poppins">
       <h1
         class="text-[#798672] uppercase font-prata font-normal text-center sm:text-xl md:text-4xl lg:text-6xl py-6"
       >
         {title}
       </h1>
-      <p class="font-light mb-8 text-start relative z-20">
-        Uno de los secretos no tan conocidos es que las rinoplastias son las
-        cirugías estéticas más exigentes, complejas y hermosas.
-      </p>
-      <p class="font-normal text-start mb-8">
-        La nariz es un órgano complejo donde su soporte está formado por hueso y
-        la parte inferior es cartílago. El tabique nasal está compuesto de hueso
-        y de cartílago que se extiende desde las fosas nasales hasta la parte
-        superior de la garganta. Es un órgano cuya estructura a veces se daña
-        interna y externamente, mediante la rinoplastia es que se puede corregir
-        esos detallitos.
-      </p>
-      <p class="font-normal">
-        Otro de los secretos detrás de hacerte una rinoplastia es: No existe una
-        edad máxima
-      </p>
-
-      <p class="text-start">
-        Nunca es tarde para darte la oportunidad mejorar tu respiracion y
-        apariencia. para someterte a este procedimiento solo necesitas gozar de
-        un buen estado de salud
-      </p>
+      <p class="font-light mb-8 text-start relative z-20">{t.intro1}</p>
+      <p class="font-normal text-start mb-8">{t.intro2}</p>
+      <p class="font-normal">{t.intro3}</p>
+      <p class="text-start">{t.intro4}</p>
     </div>
   </div>
+
   <div class="flex justify-center items-center py-16">
-    <Slider
-      imageOne={{ src: Antes.src, alt: "Image one" }}
-      imageTwo={{ src: Despues.src, alt: "Image two" }}
-      client:visible
-    />
+    <figure class="relative">
+      <img
+        src="/Secretos de una Rinoplastia Exitosa de la Dr Pamela Perez.png"
+        alt="Cambios en la nariz antes y después de la rinoplastia"
+        title="Cambios en la nariz antes y después de la rinoplastia"
+      />
+      <p
+        class="absolute left-[20%] bottom-10 text-white md:text-4xl font-prata"
+      >
+        {Lang ? "Before:" : "Antes:"}
+      </p>
+      <p
+        class="absolute right-[20%] bottom-10 text-white md:text-4xl font-prata"
+      >
+        {Lang ? "After:" : "Después:"}
+      </p>
+    </figure>
   </div>
+
   <div class="grid grid-cols-1 md:grid-cols-3">
     <div class="col-span-2 font-poppins">
-      <h1 class="text-start font-bold mb-4">¿Cuál es la edad mínima?</h1>
-      <p class="text-start font-light mb-16">
-        Es importante señalar que la realización de este procedimiento a edades
-        tempranas dependerá de la presencia de alteraciones funcionales o de
-        obstrucciones nasales
-        <br />
-        Las estructuras faciales atraviesan distintos picos de crecimiento, lo que
-        varía según el sexo del paciente. En el caso de las mujeres, el 90% del desarrollo
-        facial suele estar completado entre los 14 y 15 años. En los hombres, el
-        90% del desarrollo facial se completa entre los 16 y 17 años
-      </p>
-      <h1 class="font-bold mb-4">Consulta de valoración</h1>
-      <p class="mb-4">
-        Durante tu consulta tu otorrinolaringólogo hace una revisión exhaustiva
-        para responder todas las dudas que tengas sobre los procedimientos y
-        sobre tus molestias, como lo son:
-      </p>
+      <h1 class="text-start font-bold mb-4">{t.minAgeTitle}</h1>
+      <p class="text-start font-light mb-16">{t.minAgeText}</p>
+
+      <h1 class="font-bold mb-4">{t.consultTitle}</h1>
+      <p class="mb-4">{t.consultDesc}</p>
       <ul class="list-disc pl-4 mb-8">
-        <li>¿Porque tengo la nariz constantemente congestionada?</li>
-        <li>¿Por qué solo respiro bien de un lado?</li>
-        <li>¿puedo corregir como se ve de perfil?</li>
+        <li>{t.q1}</li>
+        <li>{t.q2}</li>
+        <li>{t.q3}</li>
       </ul>
-      <p class="mb-16">
-        Durante tu revisión, se te asegura una atención consciente para entender
-        tus necesidades y tus expectativas para mejorar la apariencia de tu
-        nariz. Durante tu revisión, se evalúa cuidadosamente lo que es posible
-        realizar y lo que no, siempre respetando la forma natural de tu rostro.
-      </p>
-      <h1 class="font-bold mb-4">
-        Para ello se realiza un análisis de tu nariz que consiste en:
-      </h1>
+      <p class="mb-16">{t.consultResult}</p>
+
+      <h1 class="font-bold mb-4">{t.noseAnalysisTitle}</h1>
       <ul class="list-disc pl-4 mb-8">
-        <li>-Vista de frente: Se valora si hay desviaciones.</li>
-        <li>
-          Vista de perfil: Aquí la doctora valora la forma de tu nariz, su
-          proyección que hace referencia a lo que sobresale tu nariz de la cara.
-        </li>
-        <li>
-          -Vista basal: Se examina la simetría de las fosas nasales y la forma
-          de la punta nasal.
-        </li>
-        <li>
-          Todo ello se hace buscando tu armonía facial y ante todo priorizar tu
-          salud y bienestar.
-        </li>
-        <li>
-          Al final, se te proporcionará una visualización de los resultados para
-          poder personalizar tu perfil nasal que haga resaltar tus facciones.
-        </li>
+        <li>{t.anal1}</li>
+        <li>{t.anal2}</li>
+        <li>{t.anal3}</li>
+        <li>{t.anal4}</li>
+        <li>{t.anal5}</li>
       </ul>
-      <h1 class="font-bold mb-4">
-        Dicho lo anterior y de acuerdo con la revisión exhaustiva y los exámenes
-        solicitados, la doctora te puede realizar el procedimiento más adecuado,
-        estos pueden ser los siguientes:
-      </h1>
-      <h1 class="font-bold mb-4">Rinoplastia cerrada o abierta</h1>
+
+      <h1 class="font-bold mb-4">{t.suitableProcTitle}</h1>
+      <h1 class="font-bold mb-4">{t.openClosedTitle}</h1>
+      <p>{t.openClosedText}</p>
+
+      <h1 class="font-bold mb-4">{t.duringTitle}</h1>
       <p>
-        En ambas se realiza la misma disección e incisiones. La única diferencia
-        en cuanto a las incisiones es que, en la rinoplastia abierta, se va a
-        realizar una incisión por abajo de la nariz, cicatrizando por fuera,
-        raramente notable una vez sanado. En el caso de la rinoplastia cerrada,
-        la cicatriz es interna.
-      </p>
-      <h1 class="font-bold mb-4">Durante el procedimiento</h1>
-      <p>
-        <strong> Rinoplastia cerrada: </strong>
-        Consiste en realizar dos incisiones en el interior de la nariz, a través
-        de las incisiones y mediante cortes pequeñitos y limpios se accede al tallado
-        óseo y cartilaginoso para dar la forma deseada, una vez modificado, los tejidos
-        blandos que recubren los cartílagos y huesos de la nariz se adaptaran a la
-        nueva forma. La cirugía finaliza cerrando las incisiones con puntos que desaparecen
-        a lo largo del periodo postoperatorio.
-        <br />
-        La ventaja de una rinoplastia cerrada es que puede ser más breve en comparación
-        a la abierta
+        <strong>
+          {Lang ? "Closed Rhinoplasty:" : "Rinoplastia cerrada:"}
+        </strong>
+        {t.closed}
       </p>
       <p>
-        <strong> Rinoplastia Abierta:</strong>
-        Consiste en realizar una incisión en la parte central de la nariz, en la
-        separación entre las fosas nasales, lo que permite un acceso inmediato a
-        huesos y cartílagos, permite mayor movimiento y visibilidad al cirujano,
-        es una intervención más compleja que permite cambiar sustancialmente la forma
-        de la nariz.
+        <strong>
+          {Lang ? "Open Rhinoplasty:" : "Rinoplastia abierta:"}
+        </strong>
+        {t.open}
       </p>
     </div>
-    <div class="col-span-1"></div>
+    <div></div>
     <Image
+      class="object-cover absolute translate-x-[1000px] hidden lg:block"
       src={Fondo6}
       alt="imagen de fondo"
-      class="object-cover absolute translate-x-[1000px] hidden lg:block"
     />
   </div>
+
   <div class="grid grid-cols-1 md:grid-cols-3">
-    <div class="col-span-1">
+    <div class="col-span-1 relative mb-12 lg:mb-0">
       <Image
+        class="absolute translate-x-[-200px] z-10 translate-y-12 hidden lg:block"
         src={Fondo8}
         alt="imagen de fondo"
-        class="absolute translate-x-[-200px] z-10 translate-y-12 hidden lg:block"
       />
       <Image
-        src={Fondo9}
-        alt="Luce un perfil que resalte tu belleza con la mejor Otorrinolaringola en Tijuana"
-        title="Luce un perfil que resalte tu belleza con la mejor Otorrinolaringola en Tijuana"
         class="absolute translate-x-[-200px] translate-y-[75px] hidden lg:block"
+        src={Fondo9}
+        alt={t.fondo9Alt}
+        title={t.fondo9Title}
       />
       <Image
+        class="absolute translate-x-80 hidden lg:block"
         src={Fondo7}
         alt="imagen de fondo"
-        class="absolute translate-x-80 hidden lg:block"
       />
     </div>
-    <div class="col-span-2 py-12 text-start">
+
+    <div class="col-span-2 py-12 text-start font-poppins">
       <button
         class="text-white bg-[#798672] px-4 py-1 cursor-default rounded-2xl mb-4"
       >
-        Los cuidados post operatorios, descubre todo lo que debes hacer.
+        {t.buttonText}
       </button>
-      <p class="mb-4 font-bold">Rinoplastia reconstructiva</p>
-      <p>
-        Hacemos hincapié en que es importantísimo acudir con expertos
-        especializados de lo contrario. Hay casos en los que se prioriza una
-        estética sin funcionalidad en la que pacientes sufren de una resección
-        excesiva del dorso cartilaginoso lo que puede producir un colapso de los
-        cartílagos laterales superiores no solo afectando la estética sino la
-        calidad de vida.
-      </p>
-      <p>
-        Se recomienda una rinoplastia abierta porque esta implica una mayor
-        exposición de los tejidos. Estas cirugías implican mayor riesgo de
-        desangrado y que los tejidos no estén como normalmente están, mediante
-        rinoplastia abierta se puede corregir grandes deformidades o realizar
-        modificaciones sustanciales a la forma de la naricita. Para mejorar las
-        estructuras óseas y cartilaginosas nasales para conseguir la forma
-        deseada y sobre volver a su funcionalidad.
-      </p>
-      <h1 class="font-bold mb-4 text-2xl">Resultados</h1>
-      <h1 class="font-bold mb-4">
-        El resultado final se logra aproximadamente al cabo de un año.
-      </h1>
-      <p class="mb-8">
-        Te recordamos que no solo la operación está hecha a tu medida, la
-        personalización abarca los cuidados postoperatorios y las visitas de
-        seguimiento. Para conseguir la nariz que deseas, es esencial realizar
-        puntualmente tus visitas de control con la Doctora Pamela Pérez.
-      </p>
 
-      <p>
-        Si te interesa resultados que realcen tu belleza y tu bienestar
-        integral. Te invitamos a agendar tu cita de valoración en nuestro
-        calendario
-      </p>
+      <p class="mb-4 font-bold">{t.reconTitle}</p>
+      <p>{t.reconText1}</p>
+      <p>{t.reconText2}</p>
+
+      <h1 class="font-bold mb-4 text-2xl">{t.resultsTitle}</h1>
+      <h1 class="font-bold mb-4">{t.resultsTime}</h1>
+      <p class="mb-8">{t.reminder}</p>
+      <p>{t.cta}</p>
     </div>
   </div>
 </div>
-<BannerAppointment bg="bg-[#A2948D]" />
+
+<BannerAppointment bg="bg-[#A2948D]" Lang={Lang} />

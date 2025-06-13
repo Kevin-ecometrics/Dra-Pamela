@@ -9,8 +9,10 @@ import PDFDocument from "./Pdf";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import { motion } from "framer-motion";
 import logo from "@assets/Acerca de la Dra. Pamela donde se funciona experiencia tecnica y compromiso con la trasformacion que va mas alla de la superficie.png";
-
-const App: React.FC = () => {
+interface Language {
+  Lang: boolean;
+}
+const App: React.FC<Language> = ({ Lang }) => {
   interface BookedHour {
     date: string;
     hour: string;
@@ -49,99 +51,148 @@ const App: React.FC = () => {
       : "";
     return bookedHours.some((bh) => bh.date === date && bh.hour === time24);
   });
-  const title = allHoursBooked
-    ? "No hay horario disponible"
-    : "Selecciona una hora";
+  const texts = {
+    es: {
+      noAvailable: "No hay horario disponible",
+      selectHour: "Selecciona una hora",
+      fullName: "Nombre Completo",
+      email: "Correo Electrónico",
+      phone: "Teléfono",
+      schedule: "Agendar",
+      loadingDoc: "Cargando documento...",
+      downloadPDF: "Descargar PDF",
+      close: "Cerrar",
+      emailLabel: "Correo",
+      phoneLabel: "Teléfono",
+      nameLabel: "Nombre",
+      hourLabel: "Hora",
+      dateLabel: "Fecha de la cita",
+      addressLabel: "Dirección",
+      address: `P.º del Centenario 9580
+          Zona Urbana Rio Tijuana
+          22010 Tijuana, B.C.`,
+      phoneAlert:
+        "El teléfono debe contener solo números y tener exactamente 10 dígitos",
+      months: [
+        "Enero",
+        "Febrero",
+        "Marzo",
+        "Abril",
+        "Mayo",
+        "Junio",
+        "Julio",
+        "Agosto",
+        "Septiembre",
+        "Octubre",
+        "Noviembre",
+        "Diciembre",
+      ],
+      weekDays: [
+        { name: "Domingo", short: "D", isWeekend: true },
+        { name: "Lunes", short: "L" },
+        { name: "Martes", short: "M" },
+        { name: "Miércoles", short: "M" },
+        { name: "Jueves", short: "J" },
+        { name: "Viernes", short: "V" },
+        { name: "Sábado", short: "S", isWeekend: false },
+      ],
+      nextMonth: "Mes siguiente",
+      previousMonth: "Mes anterior",
+      openMonthSelector: "Abrir selector de mes",
+      openYearSelector: "Abrir selector de año",
+      closeMonthSelector: "Cerrar selector de mes",
+      closeYearSelector: "Cerrar selector de año",
+      defaultPlaceholder: "Seleccionar...",
+      from: "de",
+      to: "a",
+      digitSeparator: ",",
+    },
+    en: {
+      noAvailable: "No available slots",
+      selectHour: "Select a time",
+      fullName: "Full Name",
+      email: "Email",
+      phone: "Phone",
+      schedule: "Book",
+      loadingDoc: "Loading document...",
+      downloadPDF: "Download PDF",
+      close: "Close",
+      emailLabel: "Email",
+      phoneLabel: "Phone",
+      nameLabel: "Name",
+      hourLabel: "Time",
+      dateLabel: "Appointment date",
+      addressLabel: "Address",
+      address: `P.º del Centenario 9580
+          Zona Urbana Rio Tijuana
+          22010 Tijuana, B.C.`,
+      phoneAlert: "Phone must be exactly 10 digits and only numbers",
+      months: [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ],
+      weekDays: [
+        { name: "Sunday", short: "S", isWeekend: true },
+        { name: "Monday", short: "M" },
+        { name: "Tuesday", short: "T" },
+        { name: "Wednesday", short: "W" },
+        { name: "Thursday", short: "T" },
+        { name: "Friday", short: "F" },
+        { name: "Saturday", short: "S", isWeekend: false },
+      ],
+      nextMonth: "Next Month",
+      previousMonth: "Previous Month",
+      openMonthSelector: "Open Month Selector",
+      openYearSelector: "Open Year Selector",
+      closeMonthSelector: "Close Month Selector",
+      closeYearSelector: "Close Year Selector",
+      defaultPlaceholder: "Select...",
+      from: "from",
+      to: "to",
+      digitSeparator: ",",
+    },
+  };
+
+  const t = Lang ? texts.en : texts.es;
+
+  const title = allHoursBooked ? t.noAvailable : t.selectHour;
   const myCustomLocale = {
-    months: [
-      "Enero",
-      "Febrero",
-      "Marzo",
-      "Abril",
-      "Mayo",
-      "Junio",
-      "Julio",
-      "Agosto",
-      "Septiembre",
-      "Octubre",
-      "Noviembre",
-      "Diciembre",
-    ],
-
-    // week days by order
-    weekDays: [
-      {
-        name: "Domingo", // used for accessibility
-        short: "D", // displayed at the top of days' rows
-        isWeekend: true, // is it a formal weekend or not?
-      },
-      {
-        name: "Lunes",
-        short: "L",
-      },
-      {
-        name: "Martes",
-        short: "M",
-      },
-      {
-        name: "Miércoles",
-        short: "M",
-      },
-      {
-        name: "Jueves",
-        short: "J",
-      },
-      {
-        name: "Viernes",
-        short: "V",
-      },
-      {
-        name: "Sabado",
-        short: "S",
-        isWeekend: false,
-      },
-    ],
-
-    // just play around with this number between 0 and 6
+    months: t.months,
+    weekDays: t.weekDays,
     weekStartingIndex: 0,
-
-    // return a { year: number, month: number, day: number } object
     getToday(gregorainTodayObject: DateObject): DateObject {
       return gregorainTodayObject;
     },
-
     toNativeDate(date: DateObject): Date {
       return new Date(date.year, date.month - 1, date.day);
     },
-
     getMonthLength(date: DateObject): number {
       return new Date(date.year, date.month, 0).getDate();
     },
-
     transformDigit(digit: number): number {
       return digit;
     },
-
-    // texts in the date picker
-    nextMonth: "Next Month",
-    previousMonth: "Previous Month",
-    openMonthSelector: "Open Month Selector",
-    openYearSelector: "Open Year Selector",
-    closeMonthSelector: "Close Month Selector",
-    closeYearSelector: "Close Year Selector",
-    defaultPlaceholder: "Select...",
-
-    // for input range value
-    from: "from",
-    to: "to",
-
-    // used for input value when multi dates are selected
-    digitSeparator: ",",
-
-    // if your provide -2 for example, year will be 2 digited
+    nextMonth: t.nextMonth,
+    previousMonth: t.previousMonth,
+    openMonthSelector: t.openMonthSelector,
+    openYearSelector: t.openYearSelector,
+    closeMonthSelector: t.closeMonthSelector,
+    closeYearSelector: t.closeYearSelector,
+    defaultPlaceholder: t.defaultPlaceholder,
+    from: t.from,
+    to: t.to,
+    digitSeparator: t.digitSeparator,
     yearLetterSkip: 0,
-
-    // is your language rtl or ltr?
     isRtl: false,
   };
 
@@ -151,9 +202,7 @@ const App: React.FC = () => {
     const isNumeric = /^\d+$/.test(phone);
 
     if (!isNumeric || phone.length !== 10) {
-      alert(
-        "El teléfono debe contener solo números y tener exactamente 10 dígitos"
-      );
+      alert(t.phoneAlert);
       return;
     }
 
@@ -258,7 +307,7 @@ const App: React.FC = () => {
                     : hour === 12
                     ? `12:00 PM`
                     : `${hour - 12}:00 PM`;
-                const time24 = hour < 10 ? `0${hour}:00:00` : `${hour}:00:00`; // Asegúrate de que la hora esté formateada como HH:00:00
+                const time24 = hour < 10 ? `0${hour}:00:00` : `${hour}:00:00`;
                 const date = selectedDay
                   ? `${selectedDay.year}-${
                       selectedDay.month < 10
@@ -269,13 +318,12 @@ const App: React.FC = () => {
                         ? "0" + selectedDay.day
                         : selectedDay.day
                     }`
-                  : ""; // Asegúrate de que la fecha esté formateada como YYYY-MM-DD
+                  : "";
                 if (
                   bookedHours.some(
                     (bh) => bh.date === date && bh.hour === time24
                   )
                 ) {
-                  // Esta hora ya está reservada para el día seleccionado, así que no la mostramos
                   return null;
                 }
                 return (
@@ -288,7 +336,7 @@ const App: React.FC = () => {
             <input
               type="text"
               className="border-2 border-gray-300 p-2 rounded-md text-center focus:outline-none w-80"
-              placeholder="Nombre Completo"
+              placeholder={t.fullName}
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -296,7 +344,7 @@ const App: React.FC = () => {
             <input
               type="email"
               className="border-2 border-gray-300 p-2 rounded-md text-center focus:outline-none w-80"
-              placeholder="Correo Electrónico"
+              placeholder={t.email}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -304,7 +352,7 @@ const App: React.FC = () => {
             <input
               type="tel"
               className="border-2 border-gray-300 p-2 rounded-md text-center focus:outline-none w-80"
-              placeholder="Teléfono"
+              placeholder={t.phone}
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               required
@@ -314,7 +362,7 @@ const App: React.FC = () => {
               className="bg-[#798672] text-white p-2 rounded-md w-80 focus:outline-none  transition duration-300 ease-in-out"
               type="submit"
             >
-              Agendar
+              {t.schedule}
             </button>
           </form>
           <Toaster position="top-right" />
@@ -328,15 +376,13 @@ const App: React.FC = () => {
                       selectedDay.year,
                       selectedDay.month - 1,
                       selectedDay.day
-                    ).toLocaleDateString("es-ES", {
+                    ).toLocaleDateString(Lang ? "en-US" : "es-ES", {
                       year: "numeric",
                       month: "long",
                       day: "numeric",
                     })}`}
                     modalEvent="Dra. Pamela Perez"
-                    modalLocation="P.º del Centenario 9580
-                    Zona Urbana Rio Tijuana
-                    22010 Tijuana, B.C."
+                    modalLocation={t.address}
                     time={selectedTime}
                   />
                 }
@@ -344,35 +390,31 @@ const App: React.FC = () => {
                   selectedDay.year,
                   selectedDay.month - 1,
                   selectedDay.day
-                ).toLocaleDateString("es-ES", {
+                ).toLocaleDateString(Lang ? "en-US" : "es-ES", {
                   year: "numeric",
                   month: "long",
                   day: "numeric",
                 })}.pdf`}
               >
-                {({ loading }) =>
-                  loading ? "Cargando documento..." : "Descargar PDF"
-                }
+                {({ loading }) => (loading ? t.loadingDoc : t.downloadPDF)}
               </PDFDownloadLink>
             }
-            confirmText="Cerrar"
+            confirmText={t.close}
             content={[
-              `Correo: ${email}`,
-              `Telefono: ${phone}`,
-              `Nombre: ${name}`,
-              `Hora: ${selectedTime}`,
-              `Fecha de la cita: ${new Date(
+              `${t.emailLabel}: ${email}`,
+              `${t.phoneLabel}: ${phone}`,
+              `${t.nameLabel}: ${name}`,
+              `${t.hourLabel}: ${selectedTime}`,
+              `${t.dateLabel}: ${new Date(
                 selectedDay.year,
                 selectedDay.month - 1,
                 selectedDay.day
-              ).toLocaleDateString("es-ES", {
+              ).toLocaleDateString(Lang ? "en-US" : "es-ES", {
                 year: "numeric",
                 month: "long",
                 day: "numeric",
               })}`,
-              `Dirección: P.º del Centenario 9580
-          Zona Urbana Rio Tijuana
-          22010 Tijuana, B.C.`,
+              `${t.addressLabel}: ${t.address}`,
             ]}
             image="logo_alternativo"
             isOpen={isOpen}

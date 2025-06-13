@@ -11,18 +11,18 @@ interface FormProps {
 
 const navItemsES: NavItem[] = [
   { href: "/", label: "Inicio" },
-  { href: "/gallery", label: "Galería" },
-  { href: "/services", label: "Servicios" },
-  { href: "/blog", label: "Blog" },
-  { href: "/appointment", label: "Agendar Cita" },
+  { href: "/galeria/", label: "Galería" },
+  { href: "/servicios/", label: "Servicios" },
+  { href: "/blog/", label: "Blog" },
+  { href: "/cita/", label: "Agendar Cita" },
 ];
 
 const navItemsEN: NavItem[] = [
   { href: "/en/", label: "Home" },
-  { href: "/en/gallery", label: "Gallery" },
-  { href: "/en/services", label: "Services" },
-  { href: "/en/blog", label: "Blog" },
-  { href: "/en/appointment", label: "Book Appointment" },
+  { href: "/en/gallery/", label: "Gallery" },
+  { href: "/en/services/", label: "Services" },
+  { href: "/en/blog/", label: "Blog" },
+  { href: "/en/appointment/", label: "Book Appointment" },
 ];
 
 const Navbar: React.FC<FormProps> = ({ Lang }) => {
@@ -226,20 +226,46 @@ const Navbar: React.FC<FormProps> = ({ Lang }) => {
         </div>
       </nav>
       {/* Mobile Menu */}
+      {/* Overlay */}
+      {isMobileMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-40 z-40 transition-opacity duration-300"
+          onClick={toggleMobileMenu}
+          aria-label={Lang ? "Close menu overlay" : "Cerrar menú"}
+        />
+      )}
       <aside
-        className={`fixed top-0 right-0 h-full text-center bg-[#798672] p-4 transform border border-gray-800 transition-transform duration-300 ease-in-out z-50 ${
+        className={`fixed top-0 left-0 w-full h-full text-center bg-[#798672] p-0 shadow-2xl transform transition-transform duration-300 ease-in-out z-50 flex flex-col ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         } md:hidden`}
         aria-label={Lang ? "Mobile Navigation" : "Navegación móvil"}
+        style={{ minWidth: "100vw" }}
       >
-        <div className="flex justify-end">
+        {/* Header with close button */}
+        <div className="flex justify-between items-center px-4 py-3 border-b border-gray-700 bg-[#798672]">
+          <a href="/" className="flex-1 flex justify-center">
+            <img
+              src="/Dra. Pamela especialista en cirugia de cabeza cuello y otorrinolaringologia.png"
+              alt={
+                Lang
+                  ? "Dr. Pamela guarantees procedures with a comprehensive approach in facial surgery and otorhinolaryngology"
+                  : "La Doctora Pamela garantiza procedimientos con enfoque integral en la cirugía facial y otorrinolaringología"
+              }
+              title={
+                Lang
+                  ? "Dr. Pamela guarantees procedures with a comprehensive approach in facial surgery and otorhinolaryngology"
+                  : "La Doctora Pamela garantiza procedimientos con enfoque integral en la cirugía facial y otorrinolaringología"
+              }
+              className="h-12 mx-auto"
+            />
+          </a>
           <button
-            className="text-white focus:outline-none"
+            className="text-white focus:outline-none ml-2"
             onClick={toggleMobileMenu}
             aria-label={Lang ? "Close mobile menu" : "Cerrar menú móvil"}
           >
             <svg
-              className="w-6 h-6"
+              className="w-7 h-7"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -254,61 +280,97 @@ const Navbar: React.FC<FormProps> = ({ Lang }) => {
             </svg>
           </button>
         </div>
-
-        <a href="/">
-          <img
-            src="/Dra. Pamela especialista en cirugia de cabeza cuello y otorrinolaringologia.png"
-            alt={
-              Lang
-                ? "Dr. Pamela guarantees procedures with a comprehensive approach in facial surgery and otorhinolaryngology"
-                : "La Doctora Pamela garantiza procedimientos con enfoque integral en la cirugía facial y otorrinolaringología"
-            }
+        {/* Navigation links */}
+        <nav className="flex-1 overflow-y-auto py-6 px-4">
+          {isBlogPage ? (
+            <ul>
+              {blogsURL.map((item) => (
+                <li key={item.href} className="mb-4 font-bold py-2">
+                  <a
+                    href={item.href}
+                    className={`block rounded-lg px-3 py-2 text-gray-200 hover:bg-[#6a7a5e] hover:text-white transition-colors duration-200 ${
+                      pathname === item.href
+                        ? "bg-[#6a7a5e] text-white font-bold"
+                        : ""
+                    }`}
+                    aria-label={item.title}
+                  >
+                    {item.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <ul>
+              {navItems.map((item) => (
+                <li key={item.href} className="mb-4 font-bold">
+                  <a
+                    href={item.href}
+                    className={`block rounded-lg px-3 py-2 text-gray-200 hover:bg-[#6a7a5e] hover:text-white transition-colors duration-200 ${
+                      pathname === item.href
+                        ? "bg-[#6a7a5e] text-white font-bold"
+                        : ""
+                    }`}
+                    aria-label={item.label}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
+          {/* WhatsApp Button */}
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://wa.me/+526634395024/?text=I would like more information about your services."
             title={
               Lang
-                ? "Dr. Pamela guarantees procedures with a comprehensive approach in facial surgery and otorhinolaryngology"
-                : "La Doctora Pamela garantiza procedimientos con enfoque integral en la cirugía facial y otorrinolaringología"
+                ? "Dr Pamela | Contact via WhatsApp"
+                : "Dra Pamela | Contacto vía WhatsApp"
             }
-          />
-        </a>
-
-        {isBlogPage ? (
-          <ul className="px-4">
-            {blogsURL.map((item) => (
-              <li key={item.href} className="mb-4 font-bold py-2">
-                <a
-                  href={item.href}
-                  className={`text-gray-300 hover:text-white transition-colors duration-200 ${
-                    pathname === item.href ? "text-white font-bold " : ""
-                  }`}
-                  aria-label={item.title}
-                >
-                  {item.title}
-                </a>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <ul className="px-4">
-            {navItems.map((item) => (
-              <li key={item.href} className="mb-4 font-bold">
-                <a
-                  href={item.href}
-                  className={`text-gray-300 hover:text-white transition-colors duration-200 ${
-                    pathname === item.href ? "text-white font-bold " : ""
-                  }`}
-                  aria-label={item.label}
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        )}
-        <div className="absolute bottom-0 left-0 w-full py-6 text-white text-center border-t border-white">
-          <p>
+            className="block mt-8 mb-4"
+          >
+            <button
+              className="w-full flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg shadow transition"
+              aria-label="WhatsApp"
+            >
+              <img
+                src="/Contactanos via WhatsApp para agendar con la Doctora Pamela.svg"
+                title="whatsapp-icon"
+                alt="whatsapp-icon"
+                className="h-6 w-6"
+              />
+              {Lang ? "WhatsApp" : "WhatsApp"}
+            </button>
+          </a>
+        </nav>
+        {/* Footer */}
+        <div className="py-2">
+          <hr className="border-white opacity-40" />
+          <p className="text-center text-white text-md mt-8">
             {Lang
-              ? `Dr. Pamela Perez ${year} ©.`
-              : `Dra. Pamela Perez ${year} ©.`}
+              ? `All rights reserved by Dr. Pamela Perez ${year} ©. `
+              : `Todos los derechos reservados por Dra. Pamela Perez ${year} ©. `}
+            <a
+              className="hover:underline"
+              href="http://www.doctorapamelaperez.com/"
+              title={
+                Lang
+                  ? "Dr. Pamela Perez | Absolute Personalization"
+                  : "Dra. Pamela Perez | Personalización Absoluta"
+              }
+            >
+              doctorapamelaperez.com
+            </a>
+            {Lang ? " is developed by " : " está desarrollado por "}
+            <a
+              className="hover:underline"
+              href="https://ecommetrica.com/"
+              title="Ecommetrica | eCommerce meticulously appraised."
+            >
+              ecommetrica.com
+            </a>
           </p>
         </div>
       </aside>

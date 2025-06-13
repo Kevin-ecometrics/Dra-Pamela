@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import Slider from "@components/UI/react/Slider";
 const { title } = Astro.props;
 import Fondo2 from "@assets/background_image10.png";
 import Fondo3 from "@assets/background_image11.png";
@@ -8,152 +7,239 @@ import Fondo4 from "@assets/background_image12.png";
 import Fondo5 from "@assets/background_image13.png";
 import Fondo6 from "@assets/background_image14.png";
 import Fondo7 from "@assets/background_image15.png";
-import Antes from "@assets/blog_image5.png";
-import Despues from "@assets/blog_image6.png";
+
 import Fondo10 from "@assets/Antes de realizarse una blefaroplastia y tratamientos complementarios con la Dra Pamela Perez.png";
 import Fondo11 from "@assets/Mirada renovada y rostro rejuvenecido con una blefaroplastia y tratamientos complementarios en manos de la Dra Pamela Perez.png";
 import BannerAppointment from "@components/BannerAppointment.astro";
+
+const Lang = Astro.url.pathname.startsWith("/en/");
+
+const textEn = {
+  backgroundAlt: "Background image",
+  intro1:
+    "Over time, we begin to notice changes around our eyes as the eyelid muscles weaken. This can reduce peripheral vision, becoming both a functional and aesthetic issue.",
+  intro2:
+    "Here's a brief list of signs that indicate it's time to refresh your look. Blepharoplasty might be a great option.",
+  signs: [
+    "Upper eyelid bags or sagging",
+    "Excess skin blocking your peripheral vision",
+    "Excess skin on the lower eyelids",
+    "Under-eye bags",
+  ],
+  intro3:
+    "The eye area is delicate and highly visible, so it's essential to be treated by experts to preserve natural facial features while restoring brightness and youthfulness to your gaze.",
+  beforeAfter: {
+    before: "Before",
+    after: "After",
+  },
+  faqTitle: "Frequently Asked Questions Before a Blepharoplasty",
+  questions: [
+    {
+      question: "How do I know if I'm a candidate?",
+      answer:
+        "We start with a consultation where we carefully examine your face and eyes to determine whether you need an upper, lower, or both blepharoplasties. We provide clear, simple information so you can proceed confidently. After the evaluation, we may request additional tests.",
+    },
+    {
+      question: "What happens during the surgery?",
+      answer:
+        "In upper blepharoplasty, excess skin is removed from the upper eyelid and sutured along the natural crease, making the scar barely visible. In lower blepharoplasty, the under-eye bags are removed by extracting excess skin.",
+    },
+    {
+      question: "Is it very painful?",
+      answer:
+        "Since it's a minimally invasive procedure, there's no need to worry. Initially, you might experience mild blurry vision, itching, swelling, and small bruises around the eyes—this is part of the normal healing process.",
+      img: "/Blog miradas renovadas Blefaroplastia y sus beneficios de la Dr Pamela Perez.png",
+    },
+    {
+      question: "When will I see results?",
+      answer:
+        "Results can be noticed between the third and fourth week, becoming final after eight weeks. Follow-up appointments will be scheduled to guide your recovery process.",
+    },
+    {
+      question: "When can I return to work and daily life?",
+      answer:
+        "This depends on your body and how well you follow post-operative care. Usually, after about a week and a half, you can resume daily activities unless your job involves strenuous movement, lifting, or prolonged standing. Avoid sports, sun exposure, or straining your eyes. Rest properly with your head elevated and adopt healthy habits—avoid alcohol and tobacco to support healing.",
+    },
+  ],
+  conclusion:
+    "Once healed, enjoy this more refreshed version of yourself. If you're interested in this procedure, don't hesitate to contact me for a consultation.",
+  imageAlts: {
+    blepharoplasty1:
+      "Dr. Pamela Perez rejuvenates your eyes and face with blepharoplasty",
+    blepharoplasty2:
+      "Blepharoplasty by Dr. Pamela brings big changes with minimal intervention",
+  },
+};
+
+const textEs = {
+  backgroundAlt: "Imagen de fondo",
+  intro1:
+    "Con los años empezamos a notar alteraciones en la zona de nuestros ojos, debido a que los músculos del párpado se debilitan, lo que puede generar disminución de la visión periférica, convirtiéndose en un problema funcional y estético.",
+  intro2:
+    "Aquí te presentamos una breve lista de señales que indican que es momento de rejuvenecer tu mirada, y la blefaroplastia puede ser una buena opción.",
+  signs: [
+    "Bolsas o flacidez en párpados superiores",
+    "Exceso de piel en los párpados que bloquea tu visión periférica",
+    "Exceso de piel en párpados inferiores",
+    "Bolsas debajo de los ojos",
+  ],
+  intro3:
+    "La zona de los ojos es delicada y altamente visible, por lo que es esencial que sea tratada por expertos para preservar la naturalidad de las facciones, mientras se recupera el brillo y la juventud en la mirada.",
+  beforeAfter: {
+    before: "Antes",
+    after: "Después",
+  },
+  faqTitle: "Preguntas frecuentes previo a una blefaroplastia",
+  questions: [
+    {
+      question: "¿Cómo saber si soy candidato?",
+      answer:
+        "Comenzamos con una consulta de valoración, donde examinamos tu rostro y tus ojos minuciosamente para determinar si necesitas una blefaroplastia superior, inferior o ambas. Nos esforzamos en ofrecerte información clara y sencilla para que puedas continuar con el proceso. Después de esta evaluación, te pedimos algunos estudios.",
+    },
+    {
+      question: "¿Qué pasa durante la cirugía?",
+      answer:
+        "En una blefaroplastia superior: Se extirpa la piel sobrante en la parte superior del párpado, se realiza una sutura que siguiendo la línea del pliegue del párpado se esconde y resulta imperceptible. En una blefaroplastia inferior se elimina la parte sobrante de la piel situada en el párpado inferior, conocidas como bolsas.",
+    },
+    {
+      question: "¿Será muy doloroso?",
+      answer:
+        "Dado que se trata de un procedimiento mínimamente invasivo, no hay motivo de preocupación. Es posible que al principio experimentes una visión ligeramente borrosa y algo de picazón, hinchazón y moretones pequeñitos alrededor de los ojos, pero no es motivo de preocupación, ya que tus párpados están en proceso de cicatrización, lo cual es completamente normal.",
+      img: "/Blog miradas renovadas Blefaroplastia y sus beneficios de la Dr Pamela Perez.png",
+    },
+    {
+      question: "¿Cuánto tardan en verse los resultados?",
+      answer:
+        "Podrás notar los resultados entre la 3 y 4 semana, y después de 8 semanas los resultados serán definitivos. Además, se te programarán citas de seguimiento donde te explicarán en detalle el estado del proceso de recuperación en el que te encuentres.",
+    },
+    {
+      question: "¿Cuándo podré volver al trabajo y mi vida cotidiana?",
+      answer:
+        "Esta etapa depende del cuerpo de cada persona y de cómo haya llevado a cabo los cuidados postoperatorios. Por lo general, tras una semana y media puedes reincorporarte a tus actividades cotidianas y trabajo. Claro esto está sujeto siempre y cuando no requieran movimientos bruscos, cargar peso o permanecer largos periodos de pie. Es importante evitar actividades como deportes, estar bajo el sol, no forzar la vista por periodos prolongados en el celular o computadora y descansar adecuadamente con la cabeza elevada, adoptar hábitos saludables, evitando el consumo de alcohol, tabaco ya que puede afectar tu proceso de recuperación.",
+    },
+  ],
+  conclusion:
+    "Una vez sanado, disfruta de esta versión más rejuvenecida. Si te interesa este procedimiento, no dudes en escribirme para agendar una consulta.",
+  imageAlts: {
+    blepharoplasty1:
+      "La doctora Pamela Perez renueva tu mirada y rostro con una blefaroplastia",
+    blepharoplasty2:
+      "La blefaroplastia con la Dra Pamela es un procedimiento mínimamente invasivo con grandes cambios",
+  },
+};
+
+const text = Lang ? textEn : textEs;
 ---
 
-<Image src={Fondo3} alt="Image one" class="absolute hidden lg:block" />
+<Image src={Fondo3} alt={text.backgroundAlt} class="absolute hidden lg:block" />
 <Image
   src={Fondo2}
-  alt="Image one"
+  alt={text.backgroundAlt}
   class="absolute translate-x-[1370px] hidden lg:block"
 />
-<div class="flex flex-col md:w-[50%] px-8 mx-auto">
-  <div class="flex justify-center items-center flex-col">
-    <div class="font-poppins">
-      <h1
-        class="text-[#798672] uppercase font-prata font-normal text-center sm:text-xl md:text-4xl lg:text-6xl py-6"
-      >
-        {title}
-      </h1>
-      <p class="font-semibold mb-8 font-boldtext-start">
-        Con los años empezamos a notar alteraciones en la zona de nuestros ojos,
-        debido a que los músculos del parpado se debilitan lo que puede generar
-        disminución de la visión periférica, convirtiéndose en un problema
-        funcional y estético.
+<article class="relative">
+  <div class="flex flex-col md:w-[50%] px-8 mx-auto">
+    <div class="flex justify-center items-center flex-col">
+      <div class="font-poppins">
+        <h1
+          class="text-[#798672] uppercase font-prata font-normal text-center sm:text-xl md:text-4xl lg:text-6xl py-6"
+        >
+          {title}
+        </h1>
+        <p class="font-semibold mb-8 font-boldtext-start">
+          {text.intro1}
+        </p>
+        <p class="font-light mb-8 font-boldtext-start">
+          {text.intro2}
+        </p>
+        <ul class="list-disc pl-4 mb-8">
+          {text.signs.map((item) => <li>{item}</li>)}
+        </ul>
+        <p class="font-normal text-start mb-8">
+          {text.intro3}
+        </p>
+      </div>
+    </div>
+
+    <div class="flex justify-center items-center py-16">
+      <Image
+        src={Fondo4}
+        alt={text.backgroundAlt}
+        class="absolute translate-x-[-690px] translate-y-[-300px] hidden lg:block"
+      />
+      <Image
+        src={Fondo5}
+        alt={text.backgroundAlt}
+        class="absolute translate-x-[690px] translate-y-[-150px] hidden lg:block"
+      />
+      <figure class="relative">
+        <img
+          src="/miradas renovadas Blefaroplastia y sus beneficios.png"
+          alt=""
+        />
+        <p class="absolute left-[20%] top-10 text-white md:text-4xl font-prata">
+          {Lang ? "Before" : "Antes"}
+        </p>
+        <p
+          class="absolute right-[20%] top-10 text-white md:text-4xl font-prata"
+        >
+          {Lang ? "After" : "Después"}
+        </p>
+      </figure>
+    </div>
+
+    <div class="flex font-poppins flex-col">
+      <Image
+        src={Fondo7}
+        alt={text.backgroundAlt}
+        class="absolute translate-x-[-400px] translate-y-64 hidden lg:block"
+      />
+      <Image
+        src={Fondo6}
+        alt={text.backgroundAlt}
+        class="absolute translate-x-[750px] translate-y-[-150px] hidden lg:block"
+      />
+
+      <p class="text-start mb-8 font-bold">
+        {text.faqTitle}
       </p>
-      <p class="font-light mb-8 font-boldtext-start">
-        Aquí te presentamos una breve lista de señales que indican que es
-        momento de rejuvenecer tu mirada, y la blefaroplastia puede ser una
-        buena opción.
+
+      {
+        text.questions.map((item) => (
+          <>
+            <p class="mb-8 font-bold">{item.question}</p>
+            <p class="mb-4">{item.answer}</p>
+            <figure class="mb-8 relative">
+              <img src={item.img} alt="" />
+              <p class="absolute left-[20%] bottom-10 text-white md:text-4xl font-prata">
+                {Lang ? "Before:" : "Antes:"}
+              </p>
+              <p class="absolute right-[20%] bottom-10 text-white md:text-4xl font-prata">
+                {Lang ? "After:" : "Después:"}
+              </p>
+            </figure>
+          </>
+        ))
+      }
+
+      <p class="mb-4">
+        {text.conclusion}
       </p>
-      <ul class="list-disc pl-4 mb-8">
-        <li>-Bolsas o flacidez en parpados superiores</li>
-        <li>
-          -Exceso de piel en los parpados que bloquea tu visión periférica
-        </li>
-        <li>-Exceso de piel en parpados inferiores</li>
-        <li>-Bolsas debajo de los ojos</li>
-      </ul>
-      <p class="font-normal text-start mb-8">
-        La zona de los ojos es delicada y altamente visible, por lo que es
-        esencial que sea tratada por expertos para preservar la naturalidad de
-        las facciones, mientras se recupera el brillo y la juventud en la
-        mirada.
-      </p>
+
+      <Image
+        src={Fondo10}
+        alt={text.imageAlts.blepharoplasty1}
+        title={text.imageAlts.blepharoplasty1}
+        class="absolute bottom-0 left-0 hidden lg:block"
+      />
+      <Image
+        src={Fondo11}
+        alt={text.imageAlts.blepharoplasty2}
+        title={text.imageAlts.blepharoplasty2}
+        class="absolute bottom-0 right-0 hidden lg:block"
+      />
     </div>
   </div>
-  <div class="flex justify-center items-center py-16">
-    <Image
-      src={Fondo4}
-      alt="Image one"
-      class="absolute translate-x-[-690px] translate-y-[-300px] hidden lg:block"
-    />
-    <Image
-      src={Fondo5}
-      alt="Image one"
-      class="absolute translate-x-[690px] translate-y-[-150px] hidden lg:block"
-    />
+</article>
 
-    <Slider
-      imageOne={{ src: Antes.src, alt: "Image one" }}
-      imageTwo={{ src: Despues.src, alt: "Image two" }}
-      client:visible
-    />
-  </div>
-  <div class="flex font-poppins flex-col">
-    <Image
-      src={Fondo7}
-      alt="Image one"
-      class="absolute translate-x-[-400px] translate-y-64 hidden lg:block"
-    />
-    <Image
-      src={Fondo6}
-      alt="Image one"
-      class="absolute translate-x-[750px] translate-y-[-150px] hidden lg:block"
-    />
-    <p class="text-start mb-8 font-bold">
-      Preguntas frecuentes previo a una blefaroplastia
-    </p>
-    <p class="mb-8 font-bold">¿Cómo saber si soy candidato?</p>
-    <p class="mb-4">
-      Comenzamos con una consulta de valoración, donde examinamos tu rostro y
-      tus ojos minuciosamente para determinar si necesitas una blefaroplastia
-      superior, inferior o ambas. Nos esforzamos en ofrecerte información clara
-      y sencilla para que puedas continuar con el proceso. Después de esta
-      evaluación, te pedimos algunos estudios.
-    </p>
-    <p class="mb-8 font-bold">¿Qué pasa durante la cirugía?</p>
-    <p class="mb-4">
-      En una blefaroplastia superior: Se extirpa la piel sobrante en la parte
-      superior de tu parpadito, se realiza una sutura que siguiendo la línea del
-      pliegue de tu parpado se esconde y resulta imperceptible.
-      <br />
-      En una blefaroplastia inferior se elimina la parte sobrante de la piel situada
-      en el parpado inferior, conocidas como bolsas.
-    </p>
-    <p class="mb-4 font-bold">¿Será muy doloroso?</p>
-    <p class="mb-8">
-      Dado que se trata de un procedimiento mínimamente invasivo, no hay motivo
-      de preocupación.
-      <br />
-      Es posible que al principio experimentes una visión ligeramente borrosa y algo
-      de picazón, hinchazón y moretones pequeñitos alrededor de los ojos, pero no
-      es motivo de preocupación, ya que tus párpados están en proceso de cicatrización,
-      lo cual es completamente normal.
-    </p>
-    <p class="mb-4 font-bold">¿Cuánto tardan en verse los resultados?</p>
-    <p class="mb-4">
-      Podrás notar los resultados entre la 3 y 4 semana, y después de 8 semanas
-      los resultados serán definitivos. Además, se te programarán citas de
-      seguimiento donde te explicarán en detalle el estado del proceso de
-      recuperación en el que te encuentres.
-    </p>
-    <p class="mb-8 font-bold">
-      ¿Cuándo podré volver al trabajo y mi vida cotidiana?
-    </p>
-    <p class="mb-4">
-      Esta etapa depende del cuerpo de cada persona y de cómo haya llevado a
-      cabo los cuidados postoperatorios. Por lo general, tras una semana y media
-      puedes reincorporarte a tus actividades cotidianas y trabajo. Claro esto
-      está sujeto siempre y cuando no requieran movimientos bruscos, cargar peso
-      o permanecer largos periodos de pie.
-      <br />
-      Es importante evitar actividades como deportes, estar bajo el sol, no forzar
-      la vista por periodos prologados en el celular o computadora y descansar adecuadamente
-      con la cabeza elevada, adoptar hábitos saludables, evitando el consumo de alcohol,
-      tabaco ya que puede afectar tu proceso de recuperación.
-    </p>
-    <p class="mb-4">
-      Una vez sanado, disfruta de esta versión más rejuvenecida, si te interesa
-      este procedimiento no dudes en escribirme para agendar una consulta
-    </p>
-
-    <Image
-      src={Fondo10}
-      alt="La doctora Pamela Perez renueva tu mirada y rostro con una blefaroplastia "
-      title="La doctora Pamela Perez renueva tu mirada y rostro con una blefaroplastia "
-      class="absolute translate-x-[-400px] translate-y-[445px] hidden lg:block"
-    />
-    <Image
-      src={Fondo11}
-      alt="La blefaroplastia con la Dra Pamela es un procedimiento minimamente invasivo con grandes cambios  "
-      title="La blefaroplastia con la Dra Pamela es un procedimiento minimamente invasivo con grandes cambios  "
-      class="absolute translate-x-[800px] translate-y-[445px] hidden lg:block"
-    />
-  </div>
-</div>
-<BannerAppointment bg="bg-[#AB9279]" />
+<BannerAppointment bg="bg-[#AB9279]" Lang={Lang} />

@@ -1,12 +1,10 @@
 ---
 import { Image } from "astro:assets";
+import { FaInstagram, FaFacebookF, FaTiktok } from "react-icons/fa";
 
 import catalog from "@assets/Antes y despues de una nariz que requeria una modificacion para su correcta funcion.png";
 import catalog2 from "@assets/Resultados hermosos de una nariz despues de 3 meses.png";
 import catalog3 from "@assets/La Rinoseptumplastia y lipo de cuello proporcionan cambios impresionantes.png";
-import Instagram from "@components/icons/instagram.astro";
-import Facebook from "@components/icons/Facebook.astro";
-import TikTok from "@components/icons/tiktok.astro";
 import Fondo from "@assets/background_image7.png";
 import Fondo2 from "@assets/background_image8.png";
 import Fondo3 from "@assets/background_image9.png";
@@ -127,39 +125,46 @@ const { Lang } = Astro.props;
     >
       {Lang ? "Follow me on social media" : "Sígueme en mis redes sociales"}
     </h1>
+    <div class="flex flex-col gap-4 items-center">
+      <a
+        href="https://www.instagram.com/dra_pamelaperez/"
+        target="_blank"
+        class="flex justify-center items-center gap-3 mb-6"
+      >
+        <div class="bg-[#6C5545] p-2 rounded-full">
+          <FaInstagram className="text-white text-2xl" />
+        </div>
+        <p class="prata font-normal text-xl hover:text-[#798672]">
+          Dra_Pamela Perez
+        </p>
+      </a>
 
-    <a
-      href="https://www.instagram.com/dra_pamelaperez/"
-      target="_blank"
-      class="flex justify-center items-center gap-2 mb-6"
-    >
-      <Instagram class="stroke-[#6C5545] size-8" />
-      <p class="prata font-normal text-xl hover:text-[#798672]">
-        Dra_Pamela Perez
-      </p>
-    </a>
+      <a
+        href="https://www.facebook.com/otorrino.drapamelaperez"
+        target="_blank"
+        class="flex justify-center items-center gap-3 mb-6"
+      >
+        <div class="bg-[#6C5545] p-2 rounded-full">
+          <FaFacebookF className="text-white text-2xl" />
+        </div>
+        <p class="prata font-normal text-xl hover:text-[#798672]">
+          Dra. Pamela Perez
+        </p>
+      </a>
 
-    <a
-      href="https://www.facebook.com/otorrino.drapamelaperez"
-      target="_blank"
-      class="flex justify-center items-center gap-3 mb-6"
-    >
-      <Facebook />
-      <p class="prata font-normal text-xl hover:text-[#798672]">
-        Dra. Pamela Perez
-      </p>
-    </a>
-
-    <a
-      href="https://www.tiktok.com/@dra_pamelaperez"
-      target="_blank"
-      class="flex justify-center items-center gap-2 mb-6"
-    >
-      <TikTok class="stroke-[#6C5545]" />
-      <p class="prata font-normal text-xl hover:text-[#798672]">
-        @dra_pamelaprez
-      </p>
-    </a>
+      <a
+        href="https://www.tiktok.com/@dra_pamelaperez"
+        target="_blank"
+        class="flex justify-center items-center gap-3 mb-6"
+      >
+        <div class="bg-[#6C5545] p-2 rounded-full">
+          <FaTiktok className="text-white text-2xl" />
+        </div>
+        <p class="prata font-normal text-xl hover:text-[#798672]">
+          @dra_pamelaperez
+        </p>
+      </a>
+    </div>
   </div>
 
   <div class="iphone-case case-2 py-8 md:py-0">
