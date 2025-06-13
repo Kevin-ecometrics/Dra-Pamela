@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import SwitchLanguageButton from "./SwitchLanguageButton";
 
 interface NavItem {
   href: string;
@@ -113,7 +114,7 @@ const Navbar: React.FC<FormProps> = ({ Lang }) => {
         <div className="text-white shadow-2xl">
           <div className="mx-auto px-4 flex justify-between items-center">
             <a
-              href="/"
+              href={Lang ? "/en/" : "/"}
               className="text-lg font-bold"
               aria-label={Lang ? "Home" : "Inicio"}
             >
@@ -164,26 +165,31 @@ const Navbar: React.FC<FormProps> = ({ Lang }) => {
                 ))}
               </ul>
             )}
+            <div className="flex items-center space-x-4">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://wa.me/+526634395024/?text=I would like more information about your services."
+                title={
+                  Lang
+                    ? "Dr Pamela | Contact via WhatsApp"
+                    : "Dra Pamela | Contacto vía WhatsApp"
+                }
+              >
+                <li className="flex items-center gap-2 cursor-pointer">
+                  <img
+                    src="/Contactanos via WhatsApp para agendar con la Doctora Pamela.svg"
+                    title="whatsapp-icon"
+                    alt="whatsapp-icon"
+                  />
+                  {Lang ? "WhatsApp" : "WhatsApp"}
+                </li>
+              </a>
+              <div className="hidden md:block">
+                <SwitchLanguageButton />
+              </div>
+            </div>
 
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://wa.me/+526634395024/?text=I would like more information about your services."
-              title={
-                Lang
-                  ? "Dr Pamela | Contact via WhatsApp"
-                  : "Dra Pamela | Contacto vía WhatsApp"
-              }
-            >
-              <li className="flex items-center gap-2 cursor-pointer">
-                <img
-                  src="/Contactanos via WhatsApp para agendar con la Doctora Pamela.svg"
-                  title="whatsapp-icon"
-                  alt="whatsapp-icon"
-                />
-                {Lang ? "WhatsApp" : "WhatsApp"}
-              </li>
-            </a>
             {/* Mobile Menu Button */}
             <button
               className="md:hidden text-white focus:outline-none"
@@ -243,7 +249,7 @@ const Navbar: React.FC<FormProps> = ({ Lang }) => {
       >
         {/* Header with close button */}
         <div className="flex justify-between items-center px-4 py-3 border-b border-gray-700 bg-[#798672]">
-          <a href="/" className="flex-1 flex justify-center">
+          <a href={Lang ? "/en/" : "/"} className="flex-1 flex justify-center">
             <img
               src="/Dra. Pamela especialista en cirugia de cabeza cuello y otorrinolaringologia.png"
               alt={
@@ -344,6 +350,7 @@ const Navbar: React.FC<FormProps> = ({ Lang }) => {
               {Lang ? "WhatsApp" : "WhatsApp"}
             </button>
           </a>
+          <SwitchLanguageButton />
         </nav>
         {/* Footer */}
         <div className="py-2">

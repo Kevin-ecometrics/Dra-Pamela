@@ -10,7 +10,7 @@ const Testimonial: React.FC<Props> = ({ Lang }) => {
   return (
     <>
       <main className="">
-        <h1 className="text-[#798672] text-5xl font-prata text-start md:mb-0 mb-12">
+        <h1 className="text-[#798672] text-5xl font-prata text-center md:text-start md:mb-0 mb-12">
           {Lang ? "Testimonials" : "Testimonios"}
         </h1>
         <section className="hidden md:block">

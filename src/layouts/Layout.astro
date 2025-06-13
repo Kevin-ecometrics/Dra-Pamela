@@ -80,7 +80,7 @@ const Language = Astro.url.pathname.startsWith("/en/");
   </head>
   <body class="overflow-x-hidden">
     <ClientRouter />
-    <Navbar client:visible Lang={Language} />
+    <Navbar client:only="react" Lang={Language} />
     <slot />
     <Footer Lang={Language} />
   </body>

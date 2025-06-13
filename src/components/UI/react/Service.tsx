@@ -122,7 +122,7 @@ const services = [
     hoverIcon: "/icono7B.webp",
     link: {
       es: "levantamiento_de_temporal",
-      en: "temporal_lift",
+      en: "temporal_lifting",
     },
   },
   {
@@ -139,7 +139,7 @@ const services = [
     hoverIcon: "/icono8B.webp",
     link: {
       es: "levantamiento_de_cejas",
-      en: "brow_lift",
+      en: "brow_lifting",
     },
   },
   {
@@ -156,7 +156,7 @@ const services = [
     hoverIcon: "/icono9B.webp",
     link: {
       es: "levantamiento_de_labio",
-      en: "lip_lift",
+      en: "lip_lifting",
     },
   },
   {
