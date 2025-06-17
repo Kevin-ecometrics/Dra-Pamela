@@ -149,7 +149,6 @@ const Form: React.FC<FormProps> = ({ Lang }) => {
             {t.button}
           </button>
         </div>
-        <hr className="bg-[#9C9C9C]" />
       </form>
       <Toaster position="top-right" />
     </section>

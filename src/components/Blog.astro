@@ -1,8 +1,11 @@
 ---
-import Card from "@components/UI/Card.astro";
+import Card from "@components/UI/Card";
 import fotoblog1 from "@assets/blog1.webp";
+import fotoblog1B from "@assets/blog1.2.webp";
 import fotoblog2 from "@assets/blog2.webp";
+import fotoblog2B from "@assets/blog2.2.webp";
 import fotoblog3 from "@assets/blog3.webp";
+import fotoblog3B from "@assets/blog3.2.webp";
 
 const { Lang } = Astro.props;
 ---
@@ -13,45 +16,60 @@ const { Lang } = Astro.props;
       {Lang ? "More Information" : "Más información"}
     </h1>
 
-    <div class="flex flex-col justify-between space-y-4 mt-4">
+    <div class="flex flex-col justify-between space-y-4 mt-4 gap-4">
       <Card
+        client:visible
         title={Lang
           ? "Secrets of a Successful Rhinoplasty"
           : "Secretos de una Rinoplastia Exitosa"}
-        image={fotoblog1}
+        image={fotoblog3B}
+        hoverImage={fotoblog3}
         titleImage={Lang
           ? "Discover everything you need to know about rhinoplasty and how Dr. Pamela Pérez masterfully performs this procedure."
           : "Descubre todo lo que necesitas saber sobre la rinoplastia y cómo la Dra. Pamela Pérez realiza este procedimiento con maestría."}
         link={Lang
           ? "/en/blog/secrets-of-a-successful-rhinoplasty/"
           : "/blog/secretos-de-una-rinoplastia-exitosa/"}
-        button={Lang ? "Read More" : "Leer Más"}
+        button={Lang ? "See" : "Ver"}
+        subtitle={Lang
+          ? "Everything you need to know about rhinoplasty and how Dr. Pamela Pérez masterfully performs this procedure. From customization to recovery, discover the secrets to a successful transformation."
+          : "Todo lo que necesitas saber sobre la rinoplastía y cómo la Dra. Pamela Pérez realiza este procedimiento con maestría. Desde la personalización hasta la recuperación, descubre los secretos para una transformación exitosa."}
       />
       <Card
+        client:visible
+        hoverImage={fotoblog2}
         title={Lang
           ? "Refreshed Gaze: Blepharoplasty and Its Benefits"
           : "Mirada Renovada: Blefaroplastia y sus Beneficios"}
-        image={fotoblog2}
+        image={fotoblog2B}
         titleImage={Lang
           ? "Learn how blepharoplasty can rejuvenate your eyes and enhance your appearance with natural-looking results."
           : "Descubre cómo la blefaroplastia puede rejuvenecer tu mirada y realzar tu apariencia con resultados naturales."}
         link={Lang
           ? "/en/blog/refreshed-gaze-blepharoplasty-benefits/"
           : "/blog/mirada-renovada-blefaroplastia-y-sus-beneficios/"}
-        button={Lang ? "Read More" : "Leer Más"}
+        button={Lang ? "See" : "Ver"}
+        subtitle={Lang
+          ? "Discover the fascinating world of blepharoplasty with Dr. Pamela Pérez. This blog explores how this procedure can rejuvenate your gaze and enhance your appearance with natural results."
+          : "Descubre lo fascinante de la blefaroplastia con la Dra. Pamela Pérez. Este blog explora cómo este procedimiento puede rejuvenecer tu mirada y realzar tu apariencia con resultados naturales."}
       />
       <Card
+        client:visible
+        hoverImage={fotoblog1}
         title={Lang
           ? "The Science of Facial Rejuvenation: Non-Surgical Treatments"
           : "La Ciencia del Rejuvenecimiento Facial: Tratamientos No Quirúrgicos"}
-        image={fotoblog3}
+        image={fotoblog1B}
         titleImage={Lang
           ? "Explore non-invasive options that rejuvenate your skin and facial features with the latest technologies."
           : "Explora opciones no invasivas que rejuvenecen tu piel y rasgos faciales con las tecnologías más avanzadas."}
         link={Lang
           ? "/en/blog/science-of-facial-rejuvenation-non-surgical-treatments/"
           : "/blog/la-ciencia-del-rejuvenecimiento-facial-tratamientos-no-quirurgicos/"}
-        button={Lang ? "Read More" : "Leer Más"}
+        button={Lang ? "See" : "Ver"}
+        subtitle={Lang
+          ? "Dive into the world of non-surgical treatments with Dr. Pamela Pérez. From dermal fillers to advanced technologies, discover how to rejuvenate your skin and facial features without surgery."
+          : "Adéntrate en el universo de los tratamientos no quirúrgicos con la Dra. Pamela Pérez. Desde rellenos dérmicos hasta tecnologías avanzadas, descubre cómo rejuvenecer tu piel y rasgos faciales sin cirugía."}
       />
     </div>
   </div>

@@ -1,6 +1,6 @@
 ---
 import Medical from "@components/icons/serviceIcon";
-
+import Copy from "@components/UI/react/Copy";
 const { Lang } = Astro.props;
 const services = [
   {
@@ -364,15 +364,20 @@ if (!currentService) {
   <section class="py-16 grid grid-cols-1 md:grid-cols-3 gap-4">
     <div class="col-span-2 md:w-[700px] mx-auto">
       <div class="px-4 md:px-0">
-        <div class="gap-2 mb-6 flex items-center">
-          <Medical />
-          <h2 class="text-[#798672] text-3xl font-bold">
-            {
-              Lang
-                ? currentService.procedimiento.en
-                : currentService.procedimiento.es
-            }
-          </h2>
+        <div class="gap-2 mb-6 flex items-center justify-between">
+          <div class="items-center flex">
+            <Medical />
+            <h2 class="text-[#798672] text-3xl font-bold">
+              {
+                Lang
+                  ? currentService.procedimiento.en
+                  : currentService.procedimiento.es
+              }
+            </h2>
+          </div>
+          <div>
+            <Copy client:only="react" Lang={Lang} />
+          </div>
         </div>
         <hr class="w-full border-[#798672] border-2 mb-6" />
         {

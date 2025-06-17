@@ -15,13 +15,13 @@ const Mision: React.FC<MissionProps> = ({ mission }) => {
   return (
     <main className="py-16 px-4 sm:px-8 md:px-16">
       <section
-        className="flex flex-wrap justify-center items-start gap-12"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center mb-8 px-4"
         aria-label="Mission Section"
       >
         {mission.map((item, index) => (
           <div
             key={index}
-            className={`${item.background} shadow-lg px-6 py-8 w-full max-w-sm min-h-[460px] flex flex-col justify-start items-center transition-all duration-300 hover:scale-[1.02]`}
+            className={`${item.background} shadow-lg px-6 py-8 w-[288px] max-w-sm min-h-[460px] flex flex-col justify-start items-center transition-all duration-300 hover:scale-[1.02]`}
           >
             <h1
               className={`font-prata text-5xl text-center ${item.textcolor} mb-4`}

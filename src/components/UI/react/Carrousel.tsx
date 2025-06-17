@@ -26,11 +26,11 @@ const Carrousel: React.FC<CarrouselProps> = ({ images, className }) => {
   const imgObj = images && images[index] ? images[index] : undefined;
   const imgSrc = imgObj?.src?.src ? imgObj.src.src : imgObj?.src;
 
-  // Animation variants
+  // Animation variants: solo opacidad
   const variants = {
-    enter: { opacity: 0, x: 40 },
-    center: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: -40 },
+    enter: { opacity: 0 },
+    center: { opacity: 1 },
+    exit: { opacity: 0 },
   };
 
   return (

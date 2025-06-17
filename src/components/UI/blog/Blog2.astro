@@ -135,7 +135,7 @@ const text = Lang ? textEn : textEs;
 <Image
   src={Fondo2}
   alt={text.backgroundAlt}
-  class="absolute translate-x-[1370px] hidden lg:block"
+  class="absolute right-0 hidden lg:block"
 />
 <article class="relative">
   <div class="flex flex-col md:w-[50%] px-8 mx-auto">
@@ -153,7 +153,10 @@ const text = Lang ? textEn : textEs;
           {text.intro2}
         </p>
         <ul class="list-disc pl-4 mb-8">
-          {text.signs.map((item) => <li>{item}</li>)}
+          <li>{text.signs[0]}</li>
+          <li>{text.signs[1]}</li>
+          <li>{text.signs[2]}</li>
+          <li>{text.signs[3]}</li>
         </ul>
         <p class="font-normal text-start mb-8">
           {text.intro3}
@@ -204,23 +207,67 @@ const text = Lang ? textEn : textEs;
         {text.faqTitle}
       </p>
 
-      {
-        text.questions.map((item) => (
-          <>
-            <p class="mb-8 font-bold">{item.question}</p>
-            <p class="mb-4">{item.answer}</p>
-            <figure class="mb-8 relative">
-              <img src={item.img} alt="" />
-              <p class="absolute left-[20%] bottom-10 text-white md:text-4xl font-prata">
-                {Lang ? "Before:" : "Antes:"}
-              </p>
-              <p class="absolute right-[20%] bottom-10 text-white md:text-4xl font-prata">
-                {Lang ? "After:" : "Después:"}
-              </p>
-            </figure>
-          </>
-        ))
-      }
+      {/* Question 1 */}
+      <p class="mb-8 font-bold">{text.questions[0].question}</p>
+      <p class="mb-4">{text.questions[0].answer}</p>
+      <figure class="mb-8 relative">
+        <img src={text.questions[0].img} alt="" />
+        <p
+          class="absolute left-[20%] bottom-10 text-white md:text-4xl font-prata"
+        >
+          {Lang ? "Before:" : "Antes:"}
+        </p>
+        <p
+          class="absolute right-[20%] bottom-10 text-white md:text-4xl font-prata"
+        >
+          {Lang ? "After:" : "Después:"}
+        </p>
+      </figure>
+
+      {/* Question 2 */}
+      <p class="mb-8 font-bold">{text.questions[1].question}</p>
+      <p class="mb-4">{text.questions[1].answer}</p>
+
+      {/* Question 3 */}
+      <p class="mb-8 font-bold">{text.questions[2].question}</p>
+      <p class="mb-8">{text.questions[2].answer}</p>
+
+      <div class="flex justify-center items-center py-16">
+        <Image
+          src={Fondo4}
+          alt={text.backgroundAlt}
+          class="absolute translate-x-[-690px] translate-y-[-300px] hidden lg:block"
+        />
+        <Image
+          src={Fondo5}
+          alt={text.backgroundAlt}
+          class="absolute translate-x-[690px] translate-y-[-150px] hidden lg:block"
+        />
+        <figure class="relative">
+          <img
+            src="/Blog miradas renovadas Blefaroplastia y sus beneficios de la Dr Pamela Perez.png"
+            alt=""
+          />
+          <p
+            class="absolute left-[20%] bottom-10 text-white md:text-4xl font-prata"
+          >
+            {Lang ? "Before" : "Antes"}
+          </p>
+          <p
+            class="absolute right-[20%] bottom-10 text-white md:text-4xl font-prata"
+          >
+            {Lang ? "After" : "Después"}
+          </p>
+        </figure>
+      </div>
+
+      {/* Question 4 */}
+      <p class="mb-8 font-bold">{text.questions[3].question}</p>
+      <p class="mb-4">{text.questions[3].answer}</p>
+
+      {/* Question 5 */}
+      <p class="mb-8 font-bold">{text.questions[4].question}</p>
+      <p class="mb-4">{text.questions[4].answer}</p>
 
       <p class="mb-4">
         {text.conclusion}

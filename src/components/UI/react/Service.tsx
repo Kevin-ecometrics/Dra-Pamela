@@ -317,6 +317,14 @@ const ServiceComponent: React.FC<Language> = ({ Lang }) => {
             : "Conoce todo lo que ofrecemos para ti"}
         </p>
         <hr className="border-[#798672] border-1 w-full" />
+        <div className="mt-8">
+          <iframe
+            className="w-full h-[600px] mb-8"
+            src="https://www.youtube.com/embed/1yswKIKXJEo?si=p244s4FRMXGEB47o"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          />
+        </div>
 
         <article className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mb-8">
           {services.map((service: Service, index: number) => (
