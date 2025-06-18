@@ -17,7 +17,7 @@ const BentoGrid: React.FC = () => {
       srcTwo: "/gallery/gallery1B.png",
       width: 1028,
       height: 1400,
-      alt: "1-pic",
+      alt: "0-pic",
       title: "title",
     },
     {
@@ -25,7 +25,7 @@ const BentoGrid: React.FC = () => {
       srcTwo: "/gallery/gallery2.png",
       width: 728,
       height: 1000,
-      alt: "2-pic",
+      alt: "1-pic",
       title: "title",
     },
     {
@@ -33,7 +33,7 @@ const BentoGrid: React.FC = () => {
       srcTwo: "/gallery/gallery3.png",
       width: 728,
       height: 1000,
-      alt: "3-pic",
+      alt: "2-pic",
       title: "title",
     },
     {
@@ -41,7 +41,7 @@ const BentoGrid: React.FC = () => {
       srcTwo: "/gallery/gallery4.png",
       width: 728,
       height: 1000,
-      alt: "4-pic",
+      alt: "3-pic",
       title: "title",
     },
     {
@@ -49,7 +49,7 @@ const BentoGrid: React.FC = () => {
       srcTwo: "/gallery/gallery5.png",
       width: 728,
       height: 1000,
-      alt: "5-pic",
+      alt: "4-pic",
       title: "title",
     },
     {
@@ -57,7 +57,7 @@ const BentoGrid: React.FC = () => {
       srcTwo: "/gallery/pamela_gallery.webp",
       width: 1028,
       height: 728,
-      alt: "6-pic",
+      alt: "5-pic",
       title: "title",
     },
     {
@@ -102,10 +102,10 @@ const BentoGrid: React.FC = () => {
     },
     {
       src: "/gallery/gallery10.png",
-      srcTwo: "/gallery/gallery10.png",
+      srcTwo: "/gallery/gallery10B.png",
       width: 1028,
       height: 728,
-      alt: "1-pic",
+      alt: "11-pic",
       title: "title",
     },
     {
@@ -113,7 +113,7 @@ const BentoGrid: React.FC = () => {
       srcTwo: "/gallery/gallery11.png",
       width: 1028,
       height: 528,
-      alt: "2-pic",
+      alt: "12-pic",
       title: "title",
     },
     {
@@ -121,7 +121,7 @@ const BentoGrid: React.FC = () => {
       srcTwo: "/gallery/gallery12.png",
       width: 1028,
       height: 528,
-      alt: "3-pic",
+      alt: "13-pic",
       title: "title",
     },
     {
@@ -129,7 +129,7 @@ const BentoGrid: React.FC = () => {
       srcTwo: "/gallery/gallery13.png",
       width: 1028,
       height: 528,
-      alt: "4-pic",
+      alt: "14-pic",
       title: "title",
     },
     {
@@ -137,39 +137,79 @@ const BentoGrid: React.FC = () => {
       srcTwo: "/gallery/pamela_gallery3.webp",
       width: 1028,
       height: 728,
-      alt: "5-pic",
+      alt: "15-pic",
       title: "title",
     },
     {
-      src: "/gallery/1 A.webp",
-      srcTwo: "/gallery/1 B.webp",
+      src: "/gallery/gallery14.png",
+      srcTwo: "/gallery/gallery14.png",
       width: 1028,
       height: 728,
-      alt: "6-pic",
+      alt: "16-pic",
       title: "title",
     },
     {
-      src: "/gallery/pamela_gallery5.webp",
-      srcTwo: "/gallery/pamela_gallery5.webp",
+      src: "/gallery/gallery15.png",
+      srcTwo: "/gallery/gallery15.png",
       width: 1028,
       height: 728,
-      alt: "7-pic",
+      alt: "17-pic",
       title: "title",
     },
     {
-      src: "/gallery/14 A.webp",
-      srcTwo: "/gallery/14 B.webp",
+      src: "/gallery/gallery16.png",
+      srcTwo: "/gallery/gallery16.png",
       width: 1028,
       height: 728,
-      alt: "8-pic",
+      alt: "18-pic",
       title: "title",
     },
     {
-      src: "/gallery/3 A.webp",
-      srcTwo: "/gallery/3 B.webp",
+      src: "/gallery/gallery17.png",
+      srcTwo: "/gallery/gallery17.png",
       width: 1028,
       height: 728,
-      alt: "9-pic",
+      alt: "19-pic",
+      title: "title",
+    },
+    {
+      src: "/gallery/gallery18.png",
+      srcTwo: "/gallery/gallery18.png",
+      width: 1028,
+      height: 728,
+      alt: "20-pic",
+      title: "title",
+    },
+    {
+      src: "/gallery/gallery19.png",
+      srcTwo: "/gallery/gallery19.png",
+      width: 1028,
+      height: 728,
+      alt: "21-pic",
+      title: "title",
+    },
+    {
+      src: "/gallery/gallery22.png",
+      srcTwo: "/gallery/gallery22B.png",
+      width: 1028,
+      height: 728,
+      alt: "22-pic",
+      title: "title",
+    },
+    {
+      src: "/gallery/gallery20.png",
+      srcTwo: "/gallery/gallery20.png",
+      width: 1028,
+      height: 728,
+      alt: "23-pic",
+      title: "title",
+    },
+    {
+      src: "/gallery/gallery21.png",
+      srcTwo: "/gallery/gallery21.png",
+      width: 1028,
+      height: 728,
+      alt: "24-pic",
       title: "title",
     },
     {
@@ -177,7 +217,47 @@ const BentoGrid: React.FC = () => {
       srcTwo: "/gallery/pamela_gallery4.webp",
       width: 1028,
       height: 728,
-      alt: "10-pic",
+      alt: "25-pic",
+      title: "title",
+    },
+    {
+      src: "/gallery/gallery23.png",
+      srcTwo: "/gallery/gallery23B.png",
+      width: 1028,
+      height: 728,
+      alt: "26-pic",
+      title: "title",
+    },
+    {
+      src: "/gallery/gallery24.png",
+      srcTwo: "/gallery/gallery24.png",
+      width: 1028,
+      height: 728,
+      alt: "27-pic",
+      title: "title",
+    },
+    {
+      src: "/gallery/gallery25.png",
+      srcTwo: "/gallery/gallery25.png",
+      width: 1028,
+      height: 728,
+      alt: "28-pic",
+      title: "title",
+    },
+    {
+      src: "/gallery/gallery26.png",
+      srcTwo: "/gallery/gallery26.png",
+      width: 1028,
+      height: 728,
+      alt: "29-pic",
+      title: "title",
+    },
+    {
+      src: "/gallery/gallery27.png",
+      srcTwo: "/gallery/gallery27.png",
+      width: 1028,
+      height: 728,
+      alt: "30-pic",
       title: "title",
     },
   ];
@@ -199,11 +279,21 @@ const BentoGrid: React.FC = () => {
     "col-start-4 row-start-9", // 14
     "col-start-3 col-span-2 row-start-10",
     "col-span-4 row-span-2 row-start-11", // 16
-    "row-start-13", // 17
-    "row-start-13", // 18
-    "row-start-13", // 19
-    "row-start-13", // 20
+    "col-start-1", // 17
+    "col-start-2", // 18
+    "col-start-3", // 19
+    "col-start-4", // 20
     "col-span-4 row-span-2 row-start-14", // 21
+    "col-span-2 row-start-16", // 22
+    "col-start-3 col-span-2 row-span-2 row-start-16", // 23
+    "col-start-1 row-start-17", // 24
+    "col-start-2 row-start-17", // 25
+    "col-span-4 row-span-2 row-start-18", // 26
+    "col-span-2 row-span-2 row-start-20", // 27
+    "col-start-3 row-start-20", // 28
+    "col-start-4 row-start-20", // 29
+    "col-start-3 row-start-21", // 30
+    "col-start-4 row-start-21", // 31
   ];
 
   const handleImageClick = (primary: string, secondary: string) => {
@@ -217,8 +307,8 @@ const BentoGrid: React.FC = () => {
   return (
     <div className="flex items-center justify-center">
       <div className="w-[1100px] px-8 my-4">
-        <div className="md:grid md:grid-cols-4 md:grid-rows-15 gap-8">
-          {Array.from({ length: 21 }).map((_, i) => {
+        <div className="md:grid md:grid-cols-4 md:grid-rows-21 gap-8">
+          {Array.from({ length: 31 }).map((_, i) => {
             const classNames = [
               gridPositions[i] || "",
               "rounded-xl",
@@ -234,7 +324,7 @@ const BentoGrid: React.FC = () => {
             return (
               <div key={i} className={classNames}>
                 {photo ? (
-                  i === 0 || i === 6 || i === 11 ? (
+                  i === 0 || i === 6 || i === 11 || i === 22 || i === 26 ? (
                     <div className="compare-slider-container">
                       <ReactCompareSlider
                         itemOne={
