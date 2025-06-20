@@ -262,12 +262,19 @@ const App: React.FC<Language> = ({ Lang }) => {
     getBookedHours();
   }, [resetSelect]);
 
+  const today = new Date();
+  const localDate = {
+    year: today.getFullYear(),
+    month: today.getMonth() + 1,
+    day: today.getDate(),
+  };
+
   return (
     <div className="flex gap-4">
       <Calendar
         value={selectedDay}
         colorPrimary="#798672"
-        minimumDate={utils("en").getToday()}
+        minimumDate={localDate}
         onChange={(value: Day) => setSelectedDay(value)}
         calendarClassName="border-2 border-gray-800 rounded-xl"
         locale={{
