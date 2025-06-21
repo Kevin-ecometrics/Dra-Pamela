@@ -9,6 +9,7 @@ import Video from "@components/Video.astro";
 import Hero from "@components/Header.astro";
 import Form from "@components/UI/react/Form";
 import BannerAppointment from "@components/BannerAppointment.astro";
+import Testimonial from "@components/UI/react/Testimonial";
 
 const Language = Astro.url.pathname.startsWith("/en/");
 ---
@@ -18,9 +19,10 @@ const Language = Astro.url.pathname.startsWith("/en/");
 >
   <Hero Lang={Language} />
   <About Lang={Language} />
-  <Content Lang={Language} />
+  <Testimonial client:visible Lang={Language} />
   <Banner Lang={Language} />
   <Video Lang={Language} />
+  <Content Lang={Language} />
   <Blog Lang={Language} />
   <BannerAppointment bg="bg-[#AB9279]" Lang={Language} />
   <Form client:visible Lang={Language} />

@@ -1,7 +1,6 @@
 ---
 import Education from "@components/UI/react/Education";
 import Mision from "@components/UI/react/Mision";
-import Testimonial from "@components/UI/react/Testimonial";
 
 const { Lang } = Astro.props;
 
@@ -67,6 +66,5 @@ let mision = [
     </h1>
     <Education client:visible education={education} />
     <Mision client:visible mission={mision} />
-    <Testimonial client:visible Lang={Lang} />
   </div>
 </section>

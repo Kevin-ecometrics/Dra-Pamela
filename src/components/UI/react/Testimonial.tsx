@@ -9,7 +9,7 @@ interface Props {
 const Testimonial: React.FC<Props> = ({ Lang }) => {
   return (
     <>
-      <main className="">
+      <main className="px-8 py-8 md:py-16 md:w-[95rem] mx-auto">
         <h1 className="text-[#798672] text-5xl font-prata text-center md:text-start md:mb-0 mb-12">
           {Lang ? "Testimonials" : "Testimonios"}
         </h1>
