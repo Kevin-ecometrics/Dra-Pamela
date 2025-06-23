@@ -13,9 +13,14 @@ const Language = Astro.url.pathname.startsWith("/en/");
   <!-- Layout -->
   <main>
     <Hero
-      className="bg-[#798672] h-[324px] flex justify-center items-center"
-      backgroundImage="/blogHero.webp"
+      className="bg-[#798672] h-[324px] flex justify-center items-center relative"
+      backgroundImage="/banner4.webp"
     >
+      <img
+        src="/banner_imagen2.webp"
+        class="absolute left-0 md:block hidden"
+        alt=""
+      />
       <h1 class="text-center text-white text-7xl font-prata">Blog</h1>
     </Hero>
     <div class="mb-8"></div>

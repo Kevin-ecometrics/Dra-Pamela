@@ -35,9 +35,15 @@ const Language = Astro.url.pathname.startsWith("/en/");
 
 <Layout title={`Service: ${formattedServiceName}`}>
   <Hero
-    backgroundImage="/serviceHero.webp"
-    className="bg-[#798672] h-[324px] flex justify-center items-center"
+    backgroundImage="/banner5.webp"
+    className="bg-[#798672] relative h-[324px] flex justify-center items-center"
   >
+    <img
+      src="/banner_imagen1.webp"
+      class="absolute left-0 md:block hidden"
+      alt=""
+    />
+
     <h1 class="text-center text-white text-4xl md:text-7xl font-prata">
       {formattedServiceName}
     </h1>

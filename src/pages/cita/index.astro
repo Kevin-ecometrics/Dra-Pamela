@@ -10,9 +10,14 @@ const Language = Astro.url.pathname.startsWith("/en/");
   title="Descubre la nueva dimensión de belleza con resultados funcionales"
 >
   <Hero
-    backgroundImage="/appointmentHero.webp"
-    className="bg-[#798672] h-[324px] flex justify-center items-center"
+    backgroundImage="/banner1.webp"
+    className="bg-[#798672] h-[324px] flex justify-center items-center relative"
   >
+    <img
+      src="/banner_imagen4.webp"
+      class="absolute left-0 md:block hidden"
+      alt=""
+    />
     <h1 class="text-center text-white text-7xl font-prata">Agenda tu cita</h1>
   </Hero>
   <div class="mb-8"></div>

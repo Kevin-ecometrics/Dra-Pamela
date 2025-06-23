@@ -11,9 +11,14 @@ import BannerAppointment from "@components/BannerAppointment.astro";
 >
   <main>
     <Hero
-      backgroundImage="/galleryHero.webp"
-      className=" h-[324px] flex justify-center items-center"
+      backgroundImage="/banner2.webp"
+      className=" h-[324px] flex justify-center items-center relative"
     >
+      <img
+        src="/banner_imagen3.webp"
+        class="absolute left-0 md:block hidden"
+        alt=""
+      />
       <h1 class="text-center text-white text-7xl font-prata">Galería</h1>
     </Hero>
     <Bento client:visible />
