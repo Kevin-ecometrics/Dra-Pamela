@@ -103,13 +103,7 @@ const Navbar: React.FC<FormProps> = ({ Lang }) => {
         aria-label={Lang ? "Main Navigation" : "Navegación Principal"}
       >
         <p className="md:flex md:justify-end font-poppins py-3 px-4">
-          {Lang
-            ? "Monday - Saturday: 9:00 AM - 5:00 PM"
-            : "Lunes - Sábado: 9:00 AM - 5:00 PM"}{" "}
-          &nbsp;
-          <span className="block">
-            {Lang ? "Sunday: Closed" : "Domingo: Cerrado"}
-          </span>
+          {Lang ? "schedule M-S 9:00am-5:00pm" : "Horario L-S 9:00am-5:00pm"}
         </p>
         <div className="text-white shadow-2xl">
           <div className="mx-auto px-4 flex justify-between items-center">
